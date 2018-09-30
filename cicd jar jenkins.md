@@ -1,48 +1,48 @@
-- ### ´´½¨jenkins
-1. ´´½¨Amazon EC2ÊµÀı£¬Ñ¡ÔñÊµÀıÀàĞÍºÍÌí¼Ó´æ´¢¡£
-   ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-1.png)
-2. ÔÚ¡°¸ß¼¶ÏêÏ¸ĞÅÏ¢¡±ÀïÃæÊäÈëÆô¶¯½Å±¾
-   ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-2.png)
+- ### åˆ›å»ºjenkins
+1. åˆ›å»ºAmazon EC2å®ä¾‹ï¼Œé€‰æ‹©å®ä¾‹ç±»å‹å’Œæ·»åŠ å­˜å‚¨ã€‚
+   ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-1.png)
+2. åœ¨â€œé«˜çº§è¯¦ç»†ä¿¡æ¯â€é‡Œé¢è¾“å…¥å¯åŠ¨è„šæœ¬
+   ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-2.png)
 
 ```
 #!/bin/bash
 yum -y update
 yum install -y ruby
 yum install -y aws-cli
-yum install ¨Cy git
+yum install â€“y git
 cd /home/ec2-user
 wget https://bucket-name.s3.amazonaws.com/latest/install
 chmod +x ./install
 ./install auto
 
 ```
-3. bucket name¶ÔÓ¦ÁĞ±íÎª
-    ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-3.png)
-4.  EC2Æô¶¯³É¹¦ºó£¬Ê¹ÓÃSSHµ½¸ÃEC2£¬Ê¹ÓÃÈçÏÂÃüÁî¼ìÑéAgentÊÇ·ñ¹¤×÷Õı³£¡£
+3. bucket nameå¯¹åº”åˆ—è¡¨ä¸º
+    ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-3.png)
+4.  EC2å¯åŠ¨æˆåŠŸåï¼Œä½¿ç”¨SSHåˆ°è¯¥EC2ï¼Œä½¿ç”¨å¦‚ä¸‹å‘½ä»¤æ£€éªŒAgentæ˜¯å¦å·¥ä½œæ­£å¸¸ã€‚
 
 ```
 sudo service codedeploy-agent status
 Result: The AWS CodeDeploy agent is running as PID 3523
 
 ```
-- ### Ê¹ÓÃGithubÍĞ¹ÜÔ´´úÂë£¬²¢ÅäÖÃwebhook×Ô¶¯´¥·¢
-1. Ê×ÏÈ½øÈë×Ô¼ºµÄGithubµØÖ·£¬µã»÷https://github.com/settings/tokens£¬Éú³ÉGitHub token£¬Õâ¸ötokenÓÃÓÚjenkins·ÃÎÊGitHub¡£
+- ### ä½¿ç”¨Githubæ‰˜ç®¡æºä»£ç ï¼Œå¹¶é…ç½®webhookè‡ªåŠ¨è§¦å‘
+1. é¦–å…ˆè¿›å…¥è‡ªå·±çš„Githubåœ°å€ï¼Œç‚¹å‡»https://github.com/settings/tokensï¼Œç”ŸæˆGitHub tokenï¼Œè¿™ä¸ªtokenç”¨äºjenkinsè®¿é—®GitHubã€‚
 
-    ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-4.png)
-2. ÎªĞèÒª×öCI/CDµÄGitHub´´½¨hook£¬ÊµÏÖ´úÂë¸üĞÂ×Ô¶¯Í¨ÖªJenkins£¬Payload URLÉèÖÃJenkins ServerµÄµØÖ·£¬Ä¬ÈÏJenkins¼àÌı8080¶Ë¿Ú¡£¼ÇÂ¼ÏÂÉú³ÉµÄtoken×Ö·û´®£¬±ÈÈç£º bf6adc27311a39ad0b5c9a63xxxxxxxxxxxxxx
-3. ´´½¨Ò»¸öĞÂµÄrepository
-   ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-5.png)
-4. ´´½¨±¾´Î»·¾³ËùĞèÒªµÄGit²Ö¿â£¬±ÈÈçÃûÎªAWS-BJS-CodeDeploy-CICD-Jenkins¡£µã»÷¡°Settings¡±ÅäÖÃwebhooks¡£
-   ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-6.png)
-5. µã»÷¡°Add Webhooks¡±
-6. ÔÚPayload URL£¬ÊäÈëhttp://EC2¹«ÍøIPµØÖ·/github-wekhook/£¬ÈçÏÂÍ¼ËùÊ¾£º
-    ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-7.png)
-- ### ²¿ÊğJenkins£¬²¢°²×°CodeDeploy²å¼ş
-1. °²×°ÈçºÎ½Å±¾°²×°Jenkins£¬Ä¬ÈÏJavaµÄ»·¾³ÊÇ1.7µÄ£¬¿ÉÒÔÏÈÉı¼¶µ½Java 1.8°æ±¾¡£
+    ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-4.png)
+2. ä¸ºéœ€è¦åšCI/CDçš„GitHubåˆ›å»ºhookï¼Œå®ç°ä»£ç æ›´æ–°è‡ªåŠ¨é€šçŸ¥Jenkinsï¼ŒPayload URLè®¾ç½®Jenkins Serverçš„åœ°å€ï¼Œé»˜è®¤Jenkinsç›‘å¬8080ç«¯å£ã€‚è®°å½•ä¸‹ç”Ÿæˆçš„tokenå­—ç¬¦ä¸²ï¼Œæ¯”å¦‚ï¼š bf6adc27311a39ad0b5c9a63xxxxxxxxxxxxxx
+3. åˆ›å»ºä¸€ä¸ªæ–°çš„repository
+   ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-5.png)
+4. åˆ›å»ºæœ¬æ¬¡ç¯å¢ƒæ‰€éœ€è¦çš„Gitä»“åº“ï¼Œæ¯”å¦‚åä¸ºAWS-BJS-CodeDeploy-CICD-Jenkinsã€‚ç‚¹å‡»â€œSettingsâ€é…ç½®webhooksã€‚
+   ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-6.png)
+5. ç‚¹å‡»â€œAdd Webhooksâ€
+6. åœ¨Payload URLï¼Œè¾“å…¥http://EC2å…¬ç½‘IPåœ°å€/github-wekhook/ï¼Œå¦‚ä¸‹å›¾æ‰€ç¤ºï¼š
+    ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-7.png)
+- ### éƒ¨ç½²Jenkinsï¼Œå¹¶å®‰è£…CodeDeployæ’ä»¶
+1. å®‰è£…å¦‚ä½•è„šæœ¬å®‰è£…Jenkinsï¼Œé»˜è®¤Javaçš„ç¯å¢ƒæ˜¯1.7çš„ï¼Œå¯ä»¥å…ˆå‡çº§åˆ°Java 1.8ç‰ˆæœ¬ã€‚
 
 ```
 sudo -s
-java ¨Cversion
+java â€“version
 yum install java-1.8.0
 yum remove java-1.7.0-openjdk
 wget -O /etc/yum.repos.d/jenkins.repo http://jenkins-ci.org/redhat/jenkins.repo
@@ -50,51 +50,51 @@ rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 yum install jenkins
 chkconfig jenkins on
 service jenkins start
-//²é¿´JenkinsÄ¬ÈÏÃÜÂë
+//æŸ¥çœ‹Jenkinsé»˜è®¤å¯†ç 
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ```
-2. ÔÚä¯ÀÀÆ÷ÊäÈëÊäÈëEC2µÄ¹«ÍøIPµØÖ·£¨×îºÃ°ó¶¨Ò»¸öµ¯ĞÔEIP£©£¬±ÈÈç54.223.215.xx:8080£¬È»ºó³öÏÖÈçÏÂ½çÃæ£¬ÊäÈëÉÏÃæµÃµ½µÄÄ¬ÈÏÃÜÂë¡£
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-8.png)
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-9.png)
-3. ´´½¨ÓÃ»§ÃûºÍÃÜÂë£¬¾Íµ½ÈçÏÂ½çÃæ£¬Õâ¸öÊ±ºòJenkins¾Í¿ÉÒÔ½øĞĞÅäÖÃÁË¡£
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-10.png)
-4. ½øÈëÏµÍ³ÅäÖÃ
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-11.png)
-5. ÊäÈëJenkins URL£¬µã»÷¡°Add¡±Ìí¼ÓJenkins
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-12.png)
-6. ÊäÈëGithub»ñÈ¡µÄAccess Token£¬µã»÷¡°Ìí¼Ó¡±¡£
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-13.png)
-7. µã»÷¡°Test Connection¡±£¬Ã»ÓĞ±¨´íËµÃ÷ÅäÖÃ³É¹¦¡£
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-14.png)
-8. Ìí¼Ó¹ÜÀí²å¼ş
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-15.png)
-9. Ìí¼ÓAWS CodeDeployµÄ²å¼ş£¬µã»÷¡°Install without restart¡±
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-16.png)
-10. ĞÂ½¨Ò»Jenkins¸öÏîÄ¿£¬µã»÷¡°Create a new project¡±
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-17.png)
-11. ÅäÖÃGithubÏîÄ¿µÄµØÖ·£¬Ô´´úÂë¹ÜÀíÑ¡ÔñGit·½Ê½¡£
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-18.png)
-12. ´¥·¢¹¹½¨£¬Ñ¡ÔñGithub hook trigger for GITScm polling
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-19.png)
-13. Ñ¡Ôñ¡°Ìí¼Ó¹¹½¨²½Öè¡±
-    Ñ¡Ôñ¡°AWS cloud build¡±²å¼ş
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-20.png)
-14. ÆäÓà±£³Ö¿Õ°×
-    µã»÷¡°Ìí¼Ó¹¹½¨²½Öè¡±
-    Ñ¡ÔñÖ´ĞĞ shell
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-21.png)
+2. åœ¨æµè§ˆå™¨è¾“å…¥è¾“å…¥EC2çš„å…¬ç½‘IPåœ°å€ï¼ˆæœ€å¥½ç»‘å®šä¸€ä¸ªå¼¹æ€§EIPï¼‰ï¼Œæ¯”å¦‚54.223.215.xx:8080ï¼Œç„¶åå‡ºç°å¦‚ä¸‹ç•Œé¢ï¼Œè¾“å…¥ä¸Šé¢å¾—åˆ°çš„é»˜è®¤å¯†ç ã€‚
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-8.png)
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-9.png)
+3. åˆ›å»ºç”¨æˆ·åå’Œå¯†ç ï¼Œå°±åˆ°å¦‚ä¸‹ç•Œé¢ï¼Œè¿™ä¸ªæ—¶å€™Jenkinså°±å¯ä»¥è¿›è¡Œé…ç½®äº†ã€‚
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-10.png)
+4. è¿›å…¥ç³»ç»Ÿé…ç½®
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-11.png)
+5. è¾“å…¥Jenkins URLï¼Œç‚¹å‡»â€œAddâ€æ·»åŠ Jenkins
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-12.png)
+6. è¾“å…¥Githubè·å–çš„Access Tokenï¼Œç‚¹å‡»â€œæ·»åŠ â€ã€‚
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-13.png)
+7. ç‚¹å‡»â€œTest Connectionâ€ï¼Œæ²¡æœ‰æŠ¥é”™è¯´æ˜é…ç½®æˆåŠŸã€‚
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-14.png)
+8. æ·»åŠ ç®¡ç†æ’ä»¶
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-15.png)
+9. æ·»åŠ AWS CodeDeployçš„æ’ä»¶ï¼Œç‚¹å‡»â€œInstall without restartâ€
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-16.png)
+10. æ–°å»ºä¸€Jenkinsä¸ªé¡¹ç›®ï¼Œç‚¹å‡»â€œCreate a new projectâ€
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-17.png)
+11. é…ç½®Githubé¡¹ç›®çš„åœ°å€ï¼Œæºä»£ç ç®¡ç†é€‰æ‹©Gitæ–¹å¼ã€‚
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-18.png)
+12. è§¦å‘æ„å»ºï¼Œé€‰æ‹©Github hook trigger for GITScm polling
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-19.png)
+13. é€‰æ‹©â€œæ·»åŠ æ„å»ºæ­¥éª¤â€
+    é€‰æ‹©â€œAWS cloud buildâ€æ’ä»¶
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-20.png)
+14. å…¶ä½™ä¿æŒç©ºç™½
+    ç‚¹å‡»â€œæ·»åŠ æ„å»ºæ­¥éª¤â€
+    é€‰æ‹©æ‰§è¡Œ shell
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-21.png)
 15. 
 ```
-aws s3 cp s3://yuan0928/target/test_springboot.jar ./   //ÄúÔÚcodeBuildÖĞĞ´µÄÎÄ¼şÊä³öµÄÎ»ÖÃ
+aws s3 cp s3://yuan0928/target/test_springboot.jar ./   //æ‚¨åœ¨codeBuildä¸­å†™çš„æ–‡ä»¶è¾“å‡ºçš„ä½ç½®
 mkdir target
 mv test_springboot.jar target/
 
 ```
 
-   ÕâÈıĞĞ½Å±¾µÄÒâË¼ÊÇ°ÑÉÏÒ»²½ÖèÉú³ÉµÄjar°üÌí¼Óµ½»·¾³ÖĞ£¬·½±ãºóĞøµÄ²¿Êğ¹¤×÷¡£
-16. Ñ¡Ôñ¡°Post-build Actions¡±£¬ÊäÈëCodeDeployÏà¹ØĞÅÏ¢£¬ÇøÓòÑ¡ÔñÄúËùÔÚµÄcode deployµÄregion
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-22.png)
-17. ÈÏÖ¤·½Ê½¿ÉÒÔÊäÈëAWS Access KeyºÍSecurity Key£¬Èç¹ûÊÇÉú²ú»·¾³½¨ÒéÊ¹ÓÃÁÙÊ±µÄcredentials¡£
-     ![Í¼Æ¬1](./assets/cicd-jar-jenkins/cicd-jar-jenkins-23.png)
-18. µã»÷¡°Ó¦ÓÃ¡± ¡°±£´æ¡±
+   è¿™ä¸‰è¡Œè„šæœ¬çš„æ„æ€æ˜¯æŠŠä¸Šä¸€æ­¥éª¤ç”Ÿæˆçš„jaråŒ…æ·»åŠ åˆ°ç¯å¢ƒä¸­ï¼Œæ–¹ä¾¿åç»­çš„éƒ¨ç½²å·¥ä½œã€‚
+16. é€‰æ‹©â€œPost-build Actionsâ€ï¼Œè¾“å…¥CodeDeployç›¸å…³ä¿¡æ¯ï¼ŒåŒºåŸŸé€‰æ‹©æ‚¨æ‰€åœ¨çš„code deployçš„region
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-22.png)
+17. è®¤è¯æ–¹å¼å¯ä»¥è¾“å…¥AWS Access Keyå’ŒSecurity Keyï¼Œå¦‚æœæ˜¯ç”Ÿäº§ç¯å¢ƒå»ºè®®ä½¿ç”¨ä¸´æ—¶çš„credentialsã€‚
+     ![å›¾ç‰‡1](./assets/cicd-jar-jenkins/jar-jenkins-23.png)
+18. ç‚¹å‡»â€œåº”ç”¨â€ â€œä¿å­˜â€
