@@ -161,9 +161,12 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
 - Elastic Load Balancing（ELB）
 
+  Elastic Load Balancing 可以在多个目标（如 Amazon EC2 实例、容器和 IP 地址）之间自动分配传入的应用程序流量，**实现负载均衡**。它可以在单个可用区内处理不断变化的应用程序流量负载，也**可以跨多个可用区**处理此类负载。Elastic Load Balancing 提供**三种负载均衡器**，它们均能实现高可用性、自动扩展和可靠的安全性，因此能让您的应用程序获得容错能力，有关 ELB 的更多信息，请参阅[Elastic Load Balancing](https://amazonaws-china.com/cn/elasticloadbalancing/?nc2=h_m1)。
+
+  一个合理的 ELB：
+
   - 直接与 Internets Gateway 连接
-  - 与 Auto Scaling 连接
-  - 负责负载均衡
+  - 与 **Auto Scaling  Group** 连接
 
 - 堡垒机(可用 NAT 实例代替) / NAT 网关
 
@@ -176,17 +179,30 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
   - 最好仅向特定的IP地址范围开放，这个地址范围通常可设定为您单位的企业网络
   - 直接与 Internets Gateway 连接
   - 位与**公有子网**
-  - 负责其他私有子网与 Internet 的通信
 
-- 位与 Auto Scaling 中的 Web 实例（也可以是其他类型的应用实例）
+- 位与 Auto Scaling Group 中的 Web 实例（也可以是其他类型的应用实例）
 
-  - 实例应分别位与**多个可用区**的**私有子网**中
+  使用 Amazon EC2 Auto Scaling，您可以维持应用程序的可用性，并根据自己定义的条件以动态方式自动扩展或缩减 Amazon EC2 的容量。您可以将 Amazon EC2 Auto Scaling 用于 EC2 实例的队列管理，以帮助维持队列的正常运行和可用性，并确保当前运行的是所需数量的 Amazon EC2 实例。您还能将 Amazon EC2 Auto Scaling 用于 EC2 实例的动态扩展，以便在需求高峰期自动增加 Amazon EC2 实例的数量来维持性能，并在需求较低时自动减少容量来降低成本。
+
+  通常情况下，**Auto Scaling 会与 ELB 结合使用**，之后实例在启动后会自动加入 ELB 的目标组，在终止实例前会先等待 ELB 连接耗尽。有关 Auto Scaling 的更多信息，请参阅[Auto Scaling](https://amazonaws-china.com/cn/ec2/autoscaling/?nc2=h_m1)。
+
+  - 为了保证实例的安全与可用性，实例应分别位于**多个可用区**的**私有子网**中
 
 - 数据库实例
 
-  - 位与**私有子网**中
-  - 使用主从架构
-  - **主**数据库与**从**数据库应位与**不同的可用区**中
+  - 为了保证您数据的安全，数据库实例不应能直接从外网访问，数据库实例应位于**私有子网**中。
+
+  - 使用**主从架构**：
+
+    - 将读操作和写操作分离到不同的数据库上，避免主服务器出现性能瓶颈
+
+    - 主服务器进行写操作时，不影响查询应用服务器的查询性能，降低阻塞，提高并发
+
+    - 数据拥有多个容灾副本，提高数据安全性，同时当主服务器故障时，**可立即切换到其他服务器**，提高系统可用性
+
+      如图所示，图中**橙色实线**为正常状况下流经数据库的流量，当**主服务器**发生故障后，**从服务器**可代替主服务器提供服务，此时的流量如**橙色虚线**所示。
+
+  - 为了保证可用性，**主**数据库与**从**数据库应位与**不同的可用区**中
 
 ## VPC Wizard
 
@@ -209,10 +225,4 @@ VPC 控制台中提供了四种 VPC 向导用于创建常用场景下的 VPC 的
 - [仅具有私有子网, 以及 AWS 托管 VPN 访问权限的 VPC](https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Scenario4.html):
 
   适用于将数据中心扩展到云中的 VPC，无需将您的网络连接到 Internet 即可使用 Amazon 基础设备。
-
-
-
-
-
-
 
