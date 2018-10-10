@@ -2,13 +2,13 @@
 
 本文主要包含以下内容
 
-- public subnet  和 private subnet 的区别
+- 公有子网（public subnet ）和 私有子网（private subnet ）的区别
 - 如何新建 IGW, 如何更改路由表
 - 如何创建 NAT 网关,如何更改路由表
 - 合理的 web hosting 的网络拓扑
 - VPC Wizard
 
-## Public Subnet 与 Private Subnet
+## 公有子网与私有子网
 
 - **子网**: VPC 是跨**可用区**的. 在创建 VPC 后需要为**每个可用区**添加一个或多个子网. 子网**不可跨**可用区.
 - **公有子网**( public subnet ): 子网的**关联路由表** **包含** 指向 **Internet 网关(Internet Gateways)**的路由的子网
@@ -30,11 +30,9 @@
 Internet 网关有两个用途:
 
 1. 在 VPC 路由表中为 Internet 可路由流量提供目标
-
 2. 为已经分配了公有 IPv4 地址的实例执行网络地址转换 (NAT)
 
-
-当生成AWS账户的时候，AWS系统会默认的在每一个区域内斗生成一个默认的VPC，并且这个默认的VPC已经绑定了一个Internet网关；一个Internet网关一次只能绑定一个VPC；当VPC中有EC2实例等AWS资源的时候，Internet网关是不能手动和相结合的VPC相分离的
+当生成AWS账户的时候，AWS系统会默认的在每一个区域内都生成一个默认的VPC，并且这个默认的VPC已经绑定了一个Internet网关；一个Internet网关一次只能绑定一个VPC；当VPC中有EC2实例等AWS资源的时候，Internet网关是不能手动和相结合的VPC相分离的
 
 > **路由表**
 >
@@ -85,7 +83,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
     >
     > 该路由表所属的**VPC** 的CIDR是`192.168.0.0/16`, 现该路由表有两个条目
     >
-    > -  **local 网关路由条目**(第一行): 默认生成, 手动不能更改
+    > - **local 网关路由条目**(第一行): 默认生成, 手动不能更改
     >
     >   **子网**可以通过 **local 网关路由条目**和**该 VPC (192.168.0.0./16)**中的**其他子网互相通信**
     >
@@ -112,6 +110,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 #### 配置 NAT 网关
 
 - **创建 NAT 网关**
+
   - 打开 Amazon VPC 控制台 <https://console.aws.amazon.com/vpc/>。
 
   - 在导航窗格中，依次选择 **NAT Gateways**、**Create NAT Gateway**。
@@ -132,7 +131,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
   如果 NAT 网关变为 `Failed` 状态，则表示在创建过程中发生了错误。有关更多信息，请参阅 [NAT 网关变为 Failed 状态](https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html#nat-gateway-troubleshooting-failed)。
 
-- **为 NAT 网关创建路由**
+- **为 NAT 网关配置路由表**
 
   - 打开 Amazon VPC 控制台 <https://console.aws.amazon.com/vpc/>
 
@@ -154,22 +153,37 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
 ## 合理的 web hosting 的网络拓扑
 
-![image-20180821171757732](assets/vpc_guide/Web Hosting.png)
+![image-20180821171757732](assets/vpc_guide/Web%20Hosting.png)
 
 一个合理的 Web Hosting 应该包含有以下几部分:
 
 - Internets Gateway
-- ELB
+
+- Elastic Load Balancing（ELB）
+
   - 直接与 Internets Gateway 连接
   - 与 Auto Scaling 连接
   - 负责负载均衡
-- 堡垒机(可用 NAT 实例代替)/ NAT 网关
+
+- 堡垒机(可用 NAT 实例代替) / NAT 网关
+
+  通常情况下，堡垒机（也称为“跳转机”）是在系统中访问私有主机的一个最佳实践。例如，您的系统可能包含一个不希望被公开访问的应用服务器，当需要在这台服务器上进行产品的更新或系统补丁程序的管理时，您通常会登录到堡垒机，然后从那里访问（即“跳转到”）应用服务器。
+
+  在本拓扑中，Web 实例以及数据库实例位于**私有子网**中，无法被直接访问。因此，您需要通过堡垒机来访问并管理这些实例。
+
+  一个合理的堡垒机：
+
+  - 最好仅向特定的IP地址范围开放，这个地址范围通常可设定为您单位的企业网络
   - 直接与 Internets Gateway 连接
   - 位与**公有子网**
   - 负责其他私有子网与 Internet 的通信
-- 位与 Auto Scaling 中的实例
+
+- 位与 Auto Scaling 中的 Web 实例（也可以是其他类型的应用实例）
+
   - 实例应分别位与**多个可用区**的**私有子网**中
+
 - 数据库实例
+
   - 位与**私有子网**中
   - 使用主从架构
   - **主**数据库与**从**数据库应位与**不同的可用区**中
