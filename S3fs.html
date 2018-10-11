@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>利用S3FS自建NFS · GitBook</title>
+        <title>NFS: 利用S3FS自建NFS · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -18,6 +18,10 @@
             
                 
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
                 
             
                 
@@ -123,6 +127,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.2" data-path="Aurora-vs-MySQL.html">
+            
+                <a href="Aurora-vs-MySQL.html">
+            
+                    
+                    Aurora & MySQL 性能对比试验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="redis_benchmark.html">
+            
+                <a href="redis_benchmark.html">
+            
+                    
+                    Amazon ElastiCache for Redis 基准测试
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -133,7 +163,7 @@
                 <span>
             
                     
-                    自动化部署
+                    自动部署
             
                 </span>
             
@@ -160,7 +190,7 @@
                 <a href="MangoDB.html">
             
                     
-                    MongoDB快速部署
+                    MongoDB: MongoDB快速部署
             
                 </a>
             
@@ -173,7 +203,7 @@
                 <a href="S3fs.html">
             
                     
-                    利用S3FS自建NFS
+                    NFS: 利用S3FS自建NFS
             
                 </a>
             
@@ -191,7 +221,7 @@
                 <span>
             
                     
-                    虚拟映像
+                    网络 & 加速
             
                 </span>
             
@@ -200,12 +230,102 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="SMS_vm-import.html">
+        <li class="chapter " data-level="1.4.1" data-path="ByPassICP.html">
+            
+                <a href="ByPassICP.html">
+            
+                    
+                    海外域名部署方案：海外域名向国内用户提供服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="vpc_guide.html">
+            
+                <a href="vpc_guide.html">
+            
+                    
+                    VPC 配置指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    迁移服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="SMS_vm-import.html">
             
                 <a href="SMS_vm-import.html">
             
                     
-                    利用SMS&VM-Import迁移VM
+                    镜像迁移：SMS & VM-Import快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="TransferDomainRoute53.html">
+            
+                <a href="TransferDomainRoute53.html">
+            
+                    
+                    域名迁移：从GoDaddy到Route 53
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    物联网 IoT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <a target="_blank" href="https://chinalabs.github.io/aws-iot-labs/">
+            
+                    
+                    HandsOn: IOT系列动手实验
             
                 </a>
             
@@ -248,7 +368,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >利用S3FS自建NFS</a>
+        <a href="." >NFS: 利用S3FS自建NFS</a>
     </h1>
 </div>
 
@@ -386,7 +506,7 @@
 
             
                 
-                <a href="MangoDB.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: MongoDB快速部署">
+                <a href="MangoDB.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: MongoDB: MongoDB快速部署">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -398,7 +518,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"利用S3FS自建NFS","level":"1.3.3","depth":2,"next":{"title":"虚拟映像","level":"1.4","depth":1,"ref":"","articles":[{"title":"利用SMS&VM-Import迁移VM","level":"1.4.1","depth":2,"path":"SMS_vm-import.md","ref":"SMS_vm-import.md","articles":[]}]},"previous":{"title":"MongoDB快速部署","level":"1.3.2","depth":2,"path":"MangoDB.md","ref":"MangoDB.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123322271-1"},"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"S3fs.md","mtime":"2018-08-14T05:26:23.465Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-14T05:27:07.403Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NFS: 利用S3FS自建NFS","level":"1.3.3","depth":2,"next":{"title":"网络 & 加速","level":"1.4","depth":1,"ref":"","articles":[{"title":"海外域名部署方案：海外域名向国内用户提供服务","level":"1.4.1","depth":2,"path":"ByPassICP.md","ref":"ByPassICP.md","articles":[]},{"title":"VPC 配置指南","level":"1.4.2","depth":2,"path":"vpc_guide.md","ref":"vpc_guide.md","articles":[]}]},"previous":{"title":"MongoDB: MongoDB快速部署","level":"1.3.2","depth":2,"path":"MangoDB.md","ref":"MangoDB.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus","expandable-chapters"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"S3fs.md","mtime":"2018-10-11T05:07:28.240Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-11T05:08:15.191Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -417,6 +537,10 @@
     
         
         <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         

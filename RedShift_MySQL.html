@@ -21,6 +21,10 @@
                 
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -52,6 +56,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="Aurora-vs-MySQL.html" />
     
     
 
@@ -121,6 +127,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.2" data-path="Aurora-vs-MySQL.html">
+            
+                <a href="Aurora-vs-MySQL.html">
+            
+                    
+                    Aurora & MySQL 性能对比试验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="redis_benchmark.html">
+            
+                <a href="redis_benchmark.html">
+            
+                    
+                    Amazon ElastiCache for Redis 基准测试
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -131,7 +163,7 @@
                 <span>
             
                     
-                    自动化部署
+                    自动部署
             
                 </span>
             
@@ -158,7 +190,7 @@
                 <a href="MangoDB.html">
             
                     
-                    MongoDB快速部署
+                    MongoDB: MongoDB快速部署
             
                 </a>
             
@@ -171,7 +203,7 @@
                 <a href="S3fs.html">
             
                     
-                    利用S3FS自建NFS
+                    NFS: 利用S3FS自建NFS
             
                 </a>
             
@@ -189,7 +221,7 @@
                 <span>
             
                     
-                    虚拟映像
+                    网络 & 加速
             
                 </span>
             
@@ -198,12 +230,102 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="SMS_vm-import.html">
+        <li class="chapter " data-level="1.4.1" data-path="ByPassICP.html">
+            
+                <a href="ByPassICP.html">
+            
+                    
+                    海外域名部署方案：海外域名向国内用户提供服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="vpc_guide.html">
+            
+                <a href="vpc_guide.html">
+            
+                    
+                    VPC 配置指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    迁移服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="SMS_vm-import.html">
             
                 <a href="SMS_vm-import.html">
             
                     
-                    利用SMS&VM-Import迁移VM
+                    镜像迁移：SMS & VM-Import快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="TransferDomainRoute53.html">
+            
+                <a href="TransferDomainRoute53.html">
+            
+                    
+                    域名迁移：从GoDaddy到Route 53
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    物联网 IoT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <a target="_blank" href="https://chinalabs.github.io/aws-iot-labs/">
+            
+                    
+                    HandsOn: IOT系列动手实验
             
                 </a>
             
@@ -387,7 +509,7 @@
 <ol>
 <li><p>&#x542F;&#x52A8;&#x5B9E;&#x4F8B;</p>
 <ul>
-<li><p>&#x6253;&#x5F00; Amazon EC2 &#x63A7;&#x5236;&#x53F0; <a href="https://console.aws.amazon.com/ec2/" target="_blank">https://console.aws.amazon.com/ec2/</a>&#x3002;&#x9009;&#x62E9;&#x60A8;&#x8981;&#x5728;&#x5176;&#x4E2D;&#x521B;&#x5EFA;EC2&#x5B9E;&#x4F8B;&#x7684;&#x533A;&#x57DF;&#x3002;&#x8FD9;&#x91CC;&#x4E3A;&#x4FDD;&#x8BC1;&#x4E0E;&#x4E4B;&#x524D;&#x521B;&#x5EFA; RedShift&#x3001;RDS &#x7684;&#x533A;&#x57DF;&#x76F8;&#x540C;&#x3002; </p>
+<li><p>&#x6253;&#x5F00; Amazon EC2 &#x63A7;&#x5236;&#x53F0; <a href="https://console.aws.amazon.com/ec2/" target="_blank">https://console.aws.amazon.com/ec2/</a>&#x3002;&#x9009;&#x62E9;&#x60A8;&#x8981;&#x5728;&#x5176;&#x4E2D;&#x521B;&#x5EFA;EC2&#x5B9E;&#x4F8B;&#x7684;&#x533A;&#x57DF;&#x3002;&#x8FD9;&#x91CC;&#x4E3A;&#x4FDD;&#x8BC1;&#x4E0E;&#x4E4B;&#x524D;&#x521B;&#x5EFA; RedShift&#x3001;RDS &#x7684;&#x533A;&#x57DF;&#x76F8;&#x540C;, &#x8BF7;&#x9009;&#x62E9;<strong>&#x4FC4;&#x52D2;&#x5188;</strong>&#x3002; </p>
 </li>
 <li><p>&#x4ECE;&#x63A7;&#x5236;&#x53F0;&#x63A7;&#x5236;&#x9762;&#x677F;&#x4E2D;&#xFF0C;&#x9009;&#x62E9; <strong>&#x542F;&#x52A8;&#x5B9E;&#x4F8B;</strong>&#x3002;</p>
 </li>
@@ -642,6 +764,10 @@ LIMIT 10;
             
                 
                 
+                <a href="Aurora-vs-MySQL.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Aurora & MySQL 性能对比试验">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
             
         
     </div>
@@ -649,7 +775,7 @@ LIMIT 10;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RedShift vs. MySQL对比实验","level":"1.2.1","depth":2,"next":{"title":"自动化部署","level":"1.3","depth":1,"ref":"","articles":[{"title":"EC2,EBS,AMI,Snapshot自动打Tag","level":"1.3.1","depth":2,"path":"EC2_Auto_Tag.md","ref":"EC2_Auto_Tag.md","articles":[]},{"title":"MongoDB快速部署","level":"1.3.2","depth":2,"path":"MangoDB.md","ref":"MangoDB.md","articles":[]},{"title":"利用S3FS自建NFS","level":"1.3.3","depth":2,"path":"S3fs.md","ref":"S3fs.md","articles":[]}]},"previous":{"title":"数据库","level":"1.2","depth":1,"ref":"","articles":[{"title":"RedShift vs. MySQL对比实验","level":"1.2.1","depth":2,"path":"RedShift_MySQL.md","ref":"RedShift_MySQL.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123322271-1"},"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"RedShift_MySQL.md","mtime":"2018-08-14T05:26:23.465Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-14T05:27:07.403Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RedShift vs. MySQL对比实验","level":"1.2.1","depth":2,"next":{"title":"Aurora & MySQL 性能对比试验","level":"1.2.2","depth":2,"path":"Aurora-vs-MySQL.md","ref":"Aurora-vs-MySQL.md","articles":[]},"previous":{"title":"数据库","level":"1.2","depth":1,"ref":"","articles":[{"title":"RedShift vs. MySQL对比实验","level":"1.2.1","depth":2,"path":"RedShift_MySQL.md","ref":"RedShift_MySQL.md","articles":[]},{"title":"Aurora & MySQL 性能对比试验","level":"1.2.2","depth":2,"path":"Aurora-vs-MySQL.md","ref":"Aurora-vs-MySQL.md","articles":[]},{"title":"Amazon ElastiCache for Redis 基准测试","level":"1.2.3","depth":2,"path":"redis_benchmark.md","ref":"redis_benchmark.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus","expandable-chapters"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"RedShift_MySQL.md","mtime":"2018-10-11T05:07:28.240Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-11T05:08:15.191Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -668,6 +794,10 @@ LIMIT 10;
     
         
         <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         
