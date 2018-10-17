@@ -3,7 +3,7 @@
 * [简介](README.md)
 * 数据库
   * [RedShift vs. MySQL对比实验](RedShift_MySQL.md)
-  * [Aurora & MySQL 性能对比试验](Aurora-vs-MySQL.md)
+  * [Aurora & MySQL 性能对比试验](database/Aurora-vs-MySQL.md)
   * [Amazon ElastiCache for Redis 基准测试](redis_benchmark.md)
 * 自动部署    
   * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
