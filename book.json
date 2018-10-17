@@ -2,13 +2,18 @@
   "styles": {
     "website": "styles/website.css"
   },
-  "plugins": ["ga", "disqus", "expandable-chapters"],
+  "plugins": ["ga", "disqus", "expandable-chapters", "page-toc"],
   "pluginsConfig": {
     "ga": {
       "token": "UA-123322271-1"
     },
     "disqus": {
       "shortName": "chinalabs"
+    },
+    "page-toc": {
+      "selector": ".markdown-section h2, .markdown-section h3, .markdown-section h4",
+      "position": "top",
+      "showByDefault": true
     },
     "expandable-chapters":{}
   }

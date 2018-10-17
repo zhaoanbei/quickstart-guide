@@ -5,8 +5,8 @@
 
 ### 数据库
 
-* [RedShift & MySQL 性能对比实验](RedShift_MySQL.md)
-* [Aurora & MySQL 性能对比试验](Aurora-vs-MySQL.md)
+* <a href="https://chinalabs.github.io/quickstart-guide/RedShift_MySQL.html" target="_blank">RedShift & MySQL 性能对比实验</a>
+* [Aurora & MySQL 性能对比试验](database/Aurora-vs-MySQL.md)
 * [Amazon ElastiCache for Redis 基准测试](redis_benchmark.md)
 
 ### 自动部署
