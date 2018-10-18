@@ -2,13 +2,13 @@
 
 您可以启动Quick Start，将 MongoDB 部署到 AWS 账户中现有的 Virtual Private Cloud (VPC) 中。完成部署需要约 15 分钟。请查看下述实施详细信息，按照此指南后面部分提供的分步说明进行操作。 
 
-[![Image link china](assets/mongodb/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=MongoDB&templateURL=https://s3.cn-north-1.amazonaws.com.cn/cf-templates-z1djf3w2msli-cn-north-1/2018199qBj-mongodb.template) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](assets/mongodb/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=MongoDB&templateURL=https://s3.amazonaws.com/quickstart-reference/mongodb/latest/templates/mongodb.template)
+[![Image link china](../assets/mongodb/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=MongoDB&templateURL=https://s3.cn-north-1.amazonaws.com.cn/chinalabs/templates/MongoDB/templates/mongodb.template) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](../assets/mongodb/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=MongoDB&templateURL=https://s3.amazonaws.com/quickstart-reference/mongodb/latest/templates/mongodb.template)
 
 ## 步骤一：加载Quick Start
 
 1. 在您的 AWS 控制台中选择 AWS CloudFormation ，开始部署 MangoDB 集群。
 
-![Image one](assets/mongodb/01.png)
+![Image one](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/MongoDB/01.png)
 
 
 2. 在配置前，请确保您的VPC在不同可用区中有两个公有子网和三个私有子网（可选），以及 DHCP 选项中配置的域名选项，如 [Amazon VPC 文档](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html) 中所述。
@@ -16,7 +16,7 @@
 4. 检查导航栏右上角显示的所在区域，根据需要进行更改。
 5. 在 **Select Template** 页面上，若使用默认模板则保留模板 URL 的默认设置，或选择上传您的Template文件，然后选择 **Next** 。
 
-![Image two](assets/mongodb/02.png)
+![Image two](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/MongoDB/02.png)
 
 
 6. 在 **Specify Details** 页面上，更改堆栈名称（可选）。填写模板的参数，并仔细检查默认设置中的其他参数，根据需要进行更改（见下表）。完成后选择 **Next** 进入下一步。
@@ -64,14 +64,14 @@ _AWS 快速入门配置：_
 8. 在 **Review** 页面上，查看并确认模板设置。选择 **Capabilities** 下的复选框，以确认模板将创建 IAM 资源。
 
 
-![Image](assets/mongodb/03.png)
+![Image](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/MongoDB/03.png)
 
 
 9. 选择 **Create** 以部署堆栈。
 10. 监控堆栈的状态。当状态为 **CREATE\_COMPLETE** 时 (如图4所示)，表示 MongoDB 群集已淮备就绪。
 
 
-![Image](assets/mongodb/04.png)
+![Image](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/MongoDB/04.png)
 
 
 ## 步骤二 连接到 MongoDB 节点
@@ -79,7 +79,7 @@ _AWS 快速入门配置：_
 当 AWS CloudFormation 模板成功创建堆栈后，您需要通过AWS账户中已安装的软件运行MongoDB 节点。请使用 SSH 连接到堡垒主机实例，以连接到任一 MongoDB 节点，即在 Amazon EC2 控制台中，选择该堡垒实例，然后选择 **Connect** 。
 
 
-![Image](assets/mongodb/05.png)
+![Image](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/MongoDB/05.png)
 
 
 使用 SSH 连接到堡垒主机实例后，您可以通过类似的方式连接到任何 MongoDB 节点 (选择节点，然后选择 **Connect** 以查找 SSH 命令)。

@@ -12,7 +12,7 @@
 ### 自动部署
 
 * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
-* [MongoDB: MongoDB快速部署](MangoDB.md)
+* [MongoDB: MongoDB快速部署](database/MangoDB.md)
 * [NFS: 利用S3FS自建NFS](S3fs.md)
 
 ### 网络 & 加速
