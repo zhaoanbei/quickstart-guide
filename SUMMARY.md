@@ -7,7 +7,7 @@
   * [Amazon ElastiCache for Redis 基准测试](redis_benchmark.md)
 * 自动部署    
   * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
-  * [MongoDB: MongoDB快速部署](MangoDB.md)
+  * [MongoDB: MongoDB快速部署](database/MangoDB.md)
   * [NFS: 利用S3FS自建NFS](S3fs.md)
 * 网络 & 加速
   * [海外域名部署方案：海外域名向国内用户提供服务](ByPassICP.md)
