@@ -1,0 +1,833 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>中国区服务迁移：从北京区到宁夏区 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc/page-toc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../dms-mongo-to-s3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    数据库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../RedShift_MySQL.html">
+            
+                <a href="../RedShift_MySQL.html">
+            
+                    
+                    RedShift vs. MySQL对比实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../database/Aurora-vs-MySQL.html">
+            
+                <a href="../database/Aurora-vs-MySQL.html">
+            
+                    
+                    Aurora & MySQL 性能对比试验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../redis_benchmark.html">
+            
+                <a href="../redis_benchmark.html">
+            
+                    
+                    Amazon ElastiCache for Redis 基准测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    自动部署
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../EC2_Auto_Tag.html">
+            
+                <a href="../EC2_Auto_Tag.html">
+            
+                    
+                    EC2,EBS,AMI,Snapshot自动打Tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../database/MangoDB.html">
+            
+                <a href="../database/MangoDB.html">
+            
+                    
+                    MongoDB: MongoDB快速部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../S3fs.html">
+            
+                <a href="../S3fs.html">
+            
+                    
+                    NFS: 利用S3FS自建NFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    网络 & 加速
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ByPassICP.html">
+            
+                <a href="../ByPassICP.html">
+            
+                    
+                    海外域名部署方案：海外域名向国内用户提供服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../vpc_guide.html">
+            
+                <a href="../vpc_guide.html">
+            
+                    
+                    VPC 配置指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    迁移服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="SMS_vm-import.html">
+            
+                <a href="SMS_vm-import.html">
+            
+                    
+                    镜像迁移：本地镜像导入AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="TransferDomainRoute53.html">
+            
+                <a href="TransferDomainRoute53.html">
+            
+                    
+                    域名迁移：从GoDaddy到Route 53
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../dms-mongo-to-s3.html">
+            
+                <a href="../dms-mongo-to-s3.html">
+            
+                    
+                    数据库迁移：使用AWS DMS迁移MongoDB到S3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="BJStoZHY.html">
+            
+                <a href="BJStoZHY.html">
+            
+                    
+                    中国区服务迁移：从北京区到宁夏区
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    物联网 IoT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <a target="_blank" href="https://chinalabs.github.io/aws-iot-labs/">
+            
+                    
+                    HandsOn: IOT系列动手实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../DockerGuide.html">
+            
+                <a href="../DockerGuide.html">
+            
+                    
+                    环境配置：在 Windows 中配置 Docker 镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >中国区服务迁移：从北京区到宁夏区</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="aws&#x670D;&#x52A1;&#x8FC1;&#x79FB;&#xFF1A;&#x4ECE;&#x5317;&#x4EAC;&#x533A;&#x5230;&#x5230;&#x5B81;&#x590F;&#x533A;">AWS&#x670D;&#x52A1;&#x8FC1;&#x79FB;&#xFF1A;&#x4ECE;&#x5317;&#x4EAC;&#x533A;&#x5230;&#x5230;&#x5B81;&#x590F;&#x533A;</h1>
+<p>&#x672C;&#x6307;&#x5357;&#x5C06;&#x9010;&#x6B65;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5C06;&#x60A8;&#x5728; AWS &#x5317;&#x4EAC;&#x533A;&#x57DF;&#x7684;&#x670D;&#x52A1;&#x8FC1;&#x79FB;&#x5230;&#x5B81;&#x590F;&#x533A;&#x57DF;&#xFF0C;&#x6DB5;&#x62EC;&#x8303;&#x56F4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>EC2 &amp; AMI</li>
+<li>EBS</li>
+<li>S3</li>
+<li>RDS</li>
+<li>Redis</li>
+<li>DynamoDB</li>
+</ul>
+<h2 id="1-&#x5C06;-ec2--ami-&#x670D;&#x52A1;&#x4ECE;-bjs-&#x8FC1;&#x79FB;&#x81F3;-zhy">1. &#x5C06; EC2 &amp; AMI &#x670D;&#x52A1;&#x4ECE; BJS &#x8FC1;&#x79FB;&#x81F3; ZHY</h2>
+<p>&#x672C;&#x90E8;&#x5206;&#x5C06;&#x9010;&#x6B65;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5C06; EC2 &#x5B9E;&#x4F8B;&#x5BFC;&#x51FA;&#x4E3A; AMI&#xFF0C;&#x5E76;&#x4ECE;&#x5317;&#x4EAC;&#x8FC1;&#x79FB;&#x5230;&#x5B81;&#x590F;&#x533A;&#x3002;</p>
+<h4 id="&#x6B65;&#x9AA4;&#x4E00;-&#x521B;&#x5EFA;ami">&#x6B65;&#x9AA4;&#x4E00; &#x521B;&#x5EFA;AMI</h4>
+<ul>
+<li>&#x5728; EC2 &#x63A7;&#x5236;&#x53F0;&#x4E2D;&#xFF0C;&#x5728;&#x5DE6;&#x4FA7;&#x9009;&#x62E9;&#x680F;&#x4E2D;&#x70B9;&#x51FB; Instances&#xFF0C;&#x9009;&#x4E2D;&#x60A8;&#x5E0C;&#x671B;&#x8FC1;&#x79FB;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x53F3;&#x952E;&#x9009;&#x62E9; Image -&gt; Create Image&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/01.png" alt="image 01"></p>
+<ul>
+<li><p>&#x4E5F;&#x53EF;&#x9009;&#x62E9;&#x4F7F;&#x7528; CLI &#x547D;&#x4EE4;&#x884C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<p> aws ec2 create-image --instance-id [your instance id] --name [your AMI name]</p>
+</li>
+<li><p>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x5DE6;&#x4FA7;&#x9009;&#x62E9; Images-&gt; AMIs &#x68C0;&#x67E5;&#x5DF2;&#x521B;&#x5EFA;&#x7684; AMI&#x3002;</p>
+</li>
+</ul>
+<h4 id="&#x6B65;&#x9AA4;&#x4E8C;-&#x5C06;-ami-&#x90E8;&#x7F72;&#x5728;&#x60A8;&#x5E0C;&#x671B;&#x8F6C;&#x79FB;&#x7684;&#x5730;&#x533A;">&#x6B65;&#x9AA4;&#x4E8C; &#x5C06; AMI &#x90E8;&#x7F72;&#x5728;&#x60A8;&#x5E0C;&#x671B;&#x8F6C;&#x79FB;&#x7684;&#x5730;&#x533A;</h4>
+<ul>
+<li>&#x5728; EC2 &#x63A7;&#x5236;&#x53F0;&#x4E2D;&#xFF0C;&#x53F3;&#x51FB;&#x521A;&#x521B;&#x5EFA;&#x7684; AMI&#xFF0C;&#x9009;&#x62E9; Copy AMI&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/02.png" alt="image 01"></p>
+<ul>
+<li>&#x5728; Destination region &#x90E8;&#x5206;&#x9009;&#x62E9;&#x60A8;&#x5E0C;&#x671B;&#x8FC1;&#x79FB;&#x7684;&#x76EE;&#x6807;&#x53EF;&#x7528;&#x533A;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/03.png" alt="image 01"></p>
+<ul>
+<li><p>&#x60A8;&#x4E5F;&#x53EF;&#x9009;&#x62E9;&#x4F7F;&#x7528; AWS CLI &#x547D;&#x4EE4;&#x884C;&#x521B;&#x5EFA; AMI&#x3002;</p>
+<p> aws --region cn-northwest-1 ec2 copy-image --source-region cn-north-1 --source-image-id [your image id] --name [your AMI name]</p>
+</li>
+<li><p>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x5DE6;&#x4FA7;&#x9009;&#x62E9;&#x680F;&#xFF0C;&#x9009;&#x62E9; Images-&gt; AMIs &#x67E5;&#x770B;&#x521A;&#x521A;&#x521B;&#x5EFA;&#x7684; AMI,&#x53F3;&#x952E;&#x70B9;&#x51FB; Launch &#x90E8;&#x7F72;&#x60A8;&#x7684; EC2 &#x670D;&#x52A1;&#x3002;</p>
+</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/04.png" alt="image 01"></p>
+<h2 id="2-&#x5C06;ebs&#x670D;&#x52A1;&#x4ECE;bjs&#x8FC1;&#x79FB;&#x81F3;zhy">2. &#x5C06;EBS&#x670D;&#x52A1;&#x4ECE;BJS&#x8FC1;&#x79FB;&#x81F3;ZHY</h2>
+<p>&#x672C;&#x90E8;&#x5206;&#x5C06;&#x9010;&#x6B65;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5C06; EBS &#x5377;&#x4ECE;&#x5317;&#x4EAC;&#x8FC1;&#x79FB;&#x5230;&#x5B81;&#x590F;&#x533A;&#x3002;</p>
+<h4 id="&#x6B65;&#x9AA4;&#x4E00;-&#x521B;&#x5EFA;&#x5FEB;&#x7167;">&#x6B65;&#x9AA4;&#x4E00; &#x521B;&#x5EFA;&#x5FEB;&#x7167;</h4>
+<ul>
+<li>&#x4E3A;&#x5BF9;&#x5E94; EBS &#x5377;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x3002;&#x53F3;&#x51FB;&#x5377;&#x540D;&#x79F0;&#xFF0C;&#x9009;&#x62E9; Create Snapshot&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/05.png" alt="image 01"></p>
+<h4 id="&#x6B65;&#x9AA4;&#x4E8C;-&#x8FC1;&#x79FB;&#x5230;&#x5176;&#x4ED6;&#x53EF;&#x7528;&#x533A;">&#x6B65;&#x9AA4;&#x4E8C; &#x8FC1;&#x79FB;&#x5230;&#x5176;&#x4ED6;&#x53EF;&#x7528;&#x533A;</h4>
+<ul>
+<li>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x5DE6;&#x4FA7;&#x9009;&#x62E9;&#x680F;&#x70B9;&#x51FB; Snapshots, &#x9009;&#x4E2D;&#x60A8;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x70B9;&#x51FB; Action -&gt; Copy &#x590D;&#x5236;&#x5FEB;&#x7167;&#x5230;&#x5176;&#x4ED6;&#x53EF;&#x7528;&#x533A;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/06.png" alt="image 01"></p>
+<ul>
+<li>&#x5728;&#x76EE;&#x6807;&#x533A;&#x57DF;&#x4E2D;&#x9009;&#x62E9;&#x5B81;&#x590F;&#xFF0C;&#x70B9;&#x51FB; Copy&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/07.png" alt="image 01"></p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8BF7;&#x5C06;&#x63A7;&#x5236;&#x53F0;&#x5207;&#x6362;&#x5230;&#x5B81;&#x590F;&#x533A;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E0A;&#x4E00;&#x6B65;&#x9AA4;&#x4E2D;&#x590D;&#x5236;&#x7684;&#x5FEB;&#x7167;&#xFF0C;&#x53F3;&#x51FB;&#x5FEB;&#x7167;&#x9009;&#x62E9; Create Volume &#x90E8;&#x7F72; EBS&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/08.png" alt="image 01"></p>
+<h2 id="3-&#x5C06;-rds-&#x670D;&#x52A1;&#x4ECE;-bjs-&#x8FC1;&#x79FB;&#x81F3;zhy">3. &#x5C06; RDS &#x670D;&#x52A1;&#x4ECE; BJS &#x8FC1;&#x79FB;&#x81F3;ZHY</h2>
+<p>&#x672C;&#x5B9E;&#x4F8B;&#x4F7F;&#x7528; RDS &#x7684; MySQL &#x4F5C;&#x4E3A;&#x6848;&#x4F8B;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x8FC1;&#x79FB; RDS &#x4E2D;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#xFF08;1&#xFF09;&#x65B9;&#x6848;&#x4E00; &#x521B;&#x5EFA;&#x5FEB;&#x7167;&#x90E8;&#x7F72;&#x5230;&#x5176;&#x4ED6;&#x533A;&#x57DF;</p>
+<p>&#x8BE5;&#x65B9;&#x6CD5;&#x4F7F;&#x7528; RDS &#x6570;&#x636E;&#x5E93;&#x5728;&#x5B81;&#x590F;&#x533A;&#x521B;&#x5EFA;&#x5FEB;&#x7167;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;&#x90E8;&#x7F72;&#x5FEB;&#x7167;&#xFF0C;&#x5B9E;&#x4F8B;&#x4E0E;&#x5FEB;&#x7167;&#x4E4B;&#x95F4;&#x8F6C;&#x6362;&#x65F6;&#x95F4;&#x8F83;&#x957F;&#xFF0C;&#x82E5;&#x60A8;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8F83;&#x5C0F;&#xFF0C;&#x53EF;&#x9009;&#x7528;&#x8BE5;&#x65B9;&#x6848;&#x3002;</p>
+<ul>
+<li>&#x5728;RDS&#x63A7;&#x5236;&#x53F0;&#x9009;&#x4E2D;&#x60A8;&#x5E0C;&#x671B;&#x8F6C;&#x79FB;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F9D;&#x6B21;&#x9009;&#x62E9; Action -&gt; Take a DB snapshot&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/09.png" alt="image 01"></p>
+<ul>
+<li>&#x586B;&#x5199;&#x5FEB;&#x7167;&#x540D;&#x79F0;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/10.png" alt="image 01"></p>
+<ul>
+<li>&#x5728;&#x5DE6;&#x4FA7;&#x5BFC;&#x822A;&#x680F;&#x4E2D;&#x9009;&#x62E9; Snapshot&#xFF0C;&#x53F3;&#x51FB;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x5FEB;&#x7167;&#xFF0C;&#x9009;&#x62E9; copy snapshot &#x590D;&#x5236; RDS &#x670D;&#x52A1;&#x5FEB;&#x7167;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/11.png" alt="image 01"></p>
+<ul>
+<li>&#x9009;&#x62E9;&#x5B81;&#x590F;&#x533A;&#x4F5C;&#x4E3A;&#x60A8;&#x590D;&#x5236;&#x5FEB;&#x7167;&#x7684;&#x76EE;&#x6807;&#x533A;&#x57DF;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/12.png" alt="image 01"></p>
+<ul>
+<li>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5B81;&#x590F;&#x533A;&#x7684; snapshot &#x4E2D;&#x67E5;&#x770B;&#x4E0A;&#x4E00;&#x6B65;&#x590D;&#x5236;&#x7684;&#x5FEB;&#x7167;&#xFF0C;&#x5E76;&#x5728;&#x5B81;&#x590F;&#x533A;&#x91CD;&#x65B0;&#x90E8;&#x7F72;&#x8BE5;&#x670D;&#x52A1;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/13.png" alt="image 01"></p>
+<p>&#xFF08;2&#xFF09;&#x65B9;&#x6848;&#x4E8C; &#x57FA;&#x4E8E; BJS Master Node &#x8FC1;&#x79FB;&#x6570;&#x636E;</p>
+<p>&#x4F7F;&#x7528; RDS &#x5E73;&#x53F0;&#x4E2D; Read Replica &#x529F;&#x80FD;&#x5C06;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x5230;&#x5B81;&#x590F;&#x533A;&#xFF0C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x5317;&#x4EAC;&#x533A;&#x70B9;&#x51FB;&#x60A8;&#x5E0C;&#x671B;&#x8FC1;&#x79FB;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x8FDB;&#x5165;&#x9875;&#x9762;&#x540E;&#xFF0C;&#x9009;&#x62E9; Instance actions -&gt; Create read replica&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/22.png" alt="image 01"></p>
+<ul>
+<li>&#x9009;&#x62E9;&#x5C06;&#x590D;&#x5236;&#x5B9E;&#x4F8B;&#x653E;&#x5728;&#x5B81;&#x590F;&#x533A;&#xFF0C;Multi-AZ deployment &#x9009;&#x62E9; Yes&#x3002; </li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/23.png" alt="image 01">    </p>
+<ul>
+<li><p>&#x6309;&#x9700;&#x6C42;&#x914D;&#x7F6E;&#x590D;&#x5236;&#x5B9E;&#x4F8B;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x3002;</p>
+</li>
+<li><p>&#x9009;&#x62E9; Create read replica&#xFF0C;&#x7B49;&#x5F85;&#x6570;&#x636E;&#x5E93;&#x90E8;&#x7F72;&#x5B8C;&#x6BD5;&#x3002;</p>
+</li>
+<li><p>&#x76D1;&#x63A7;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;&#x7684; Replication &#x72B6;&#x6001;&#xFF0C;&#x7B49;&#x5F85;&#x6EDE;&#x540E;&#x65F6;&#x95F4; Lag &#x53D8;&#x4E3A; 0&#x3002;</p>
+</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/26.png" alt="image 01"></p>
+<ul>
+<li><p>&#x9009;&#x62E9; Instance actions -&gt; Promote Read Replica&#x3002;&#x5C06;&#x5176;&#x5347;&#x4E3A;&#x4E3B;&#x5E93;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x5B81;&#x590F;&#x533A; MySQL &#x6700;&#x4F4E;&#x7248;&#x672C;&#x4E3A; 5.6.29&#xFF0C;&#x82E5;&#x60A8;&#x5317;&#x4EAC;&#x533A;&#x7684; MySQL &#x7248;&#x672C;&#x4F4E;&#x4E8E;&#x5B81;&#x590F;&#x533A;&#xFF0C;&#x9700;&#x8981;&#x9009;&#x62E9; Modify &#x5347;&#x7EA7;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p>&#x82E5;&#x60A8;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6709;&#x5176;&#x4ED6; Read Replica, &#x9700;&#x5148;&#x5347;&#x7EA7;&#x590D;&#x5236;&#x9879;&#x3002;</p>
+</li>
+</ul>
+<h2 id="4-&#x5C06;-s3-&#x670D;&#x52A1;&#x4ECE;-bjs-&#x8FC1;&#x79FB;&#x81F3;-zhy">4. &#x5C06; S3 &#x670D;&#x52A1;&#x4ECE; BJS &#x8FC1;&#x79FB;&#x81F3; ZHY</h2>
+<p>&#x672C;&#x90E8;&#x5206;&#x5C06;&#x9010;&#x6B65;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5C06; S3 &#x670D;&#x52A1;&#x8FC1;&#x79FB;&#x5230;&#x65B0;&#x7684;&#x53EF;&#x7528;&#x533A;&#xFF0C;&#x60A8;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x8FC1;&#x79FB;&#x65B9;&#x6848;&#xFF1A;</p>
+<ol>
+<li>&#x5728;&#x5B81;&#x590F;&#x533A;&#xFF08;&#x76EE;&#x6807;&#x533A;&#xFF09;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; S3 &#x6876;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x5230;&#x8BE5;&#x6876;&#x4E2D;&#x3002;</li>
+<li><p>&#x5220;&#x9664;&#x539F;&#x6570;&#x636E;&#x6876;&#x5E76;&#x5728;&#x5B81;&#x590F;&#x533A;&#xFF08;&#x76EE;&#x6807;&#x533A;&#xFF09;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x540C;&#x540D; S3 &#x6876;&#xFF0C;&#x8BE5;&#x65B9;&#x6848;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6876;&#x4F5C;&#x4E3A;&#x8F6C;&#x79FB;&#x5A92;&#x4ECB;&#x3002;</p>
+<p> &#x6CE8;&#x610F;:&#x8BE5;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x5728;&#x5220;&#x9664;&#x65E7; S3 &#x6876;&#x540E;&#x7B49;&#x5F85;24&#x5C0F;&#x65F6;&#x81F3;&#x540D;&#x79F0;&#x518D;&#x6B21;&#x6709;&#x6548;&#x3002;</p>
+</li>
+</ol>
+<h5 id="&#xFF08;1&#xFF09;&#x521B;&#x5EFA;&#x65B0;&#x7684;s3&#x6876;">&#xFF08;1&#xFF09;&#x521B;&#x5EFA;&#x65B0;&#x7684;S3&#x6876;</h5>
+<ul>
+<li>&#x5728; S3 &#x63A7;&#x5236;&#x53F0;&#x4E2D;&#xFF0C;&#x70B9;&#x51FB; Create Bucket&#xFF0C;&#x9009;&#x62E9;&#x5B81;&#x590F;&#x4F5C;&#x4E3A;&#x6876;&#x7684;&#x53EF;&#x7528;&#x533A;&#xFF0C;&#x5728; Copy settings from an existing bucket &#x9009;&#x9879;&#x4E2D;&#xFF0C;&#x9009;&#x62E9;&#x60A8;&#x6B32;&#x505A;&#x8FC1;&#x79FB;&#x7684; S3 &#x6876;&#xFF0C;&#x53EF;&#x540C;&#x6B65;&#x4E24;&#x4E2A;&#x6876;&#x7684;&#x914D;&#x7F6E;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/14.png" alt="image 01"></p>
+<ul>
+<li><p>&#x5728; CLI &#x7AEF;&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x5F00;&#x59CB;&#x590D;&#x5236;&#x6876;&#x5185;&#x6587;&#x4EF6;&#x3002;</p>
+<p> aws s3 sync s3://SOURCE_BUCKET_NAME s3://NEW_BUCKET_NAME</p>
+</li>
+</ul>
+<h5 id="&#xFF08;2&#xFF09;&#x91CD;&#x65B0;&#x521B;&#x5EFA;s3&#x6876;">&#xFF08;2&#xFF09;&#x91CD;&#x65B0;&#x521B;&#x5EFA;S3&#x6876;</h5>
+<ul>
+<li>&#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x6876;&#xFF0C;&#x6B65;&#x9AA4;&#x53C2;&#x89C1;&#xFF08;1&#xFF09;&#x3002;</li>
+<li><p>&#x5728; CLI &#x7AEF;&#x9010;&#x6B65;&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x5C06;&#x65E7; S3 &#x6876;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x5B58;&#x5165;&#x4E34;&#x65F6;&#x6876;&#x3002;</p>
+<p> aws s3 sync s3://foobucket s3://tmpbucket</p>
+</li>
+<li><p>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x4E2D;&#x65E7; S3 &#x6876;&#x5220;&#x9664;&#xFF0C;&#x7B49;&#x5F85;24&#x5C0F;&#x65F6;&#x540E;&#x8BE5;&#x547D;&#x540D;&#x91CD;&#x65B0;&#x751F;&#x6548;&#x3002;</p>
+</li>
+<li>&#x91CD;&#x65B0;&#x5728;&#x5B81;&#x590F;&#x533A;&#x6CE8;&#x518C;&#x540C;&#x540D; S3 &#x6876;&#x3002;</li>
+<li><p>&#x5728; CLI &#x7AEF;&#x9010;&#x6B65;&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x5C06;&#x4E34;&#x65F6;&#x6876;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x5B58;&#x5165;&#x76EE;&#x6807;&#x6876;&#x3002;</p>
+<p> aws s3 sync s3://tmpbucket s3://foobucket</p>
+</li>
+</ul>
+<h2 id="5-&#x5C06;-elasticache-&#x670D;&#x52A1;&#x4ECE;-bjs-&#x8FC1;&#x79FB;&#x81F3;-zhy">5. &#x5C06; ElastiCache &#x670D;&#x52A1;&#x4ECE; BJS &#x8FC1;&#x79FB;&#x81F3; ZHY</h2>
+<p>&#x672C;&#x4F8B;&#x4E2D;&#x5C06;&#x9010;&#x6B65;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5C06; ElastiCache &#x670D;&#x52A1;&#x8FC1;&#x79FB;&#x5230;&#x53E6;&#x4E00;&#x53EF;&#x7528;&#x533A;&#xFF0C;&#x672C;&#x5B9E;&#x4F8B;&#x4F7F;&#x7528; Redis &#x4F5C;&#x4E3A;&#x6848;&#x4F8B;&#x3002;</p>
+<h4 id="&#x6B65;&#x9AA4;&#x4E00;-&#x5907;&#x4EFD;-redis-&#x670D;&#x52A1;&#x5230;s3">&#x6B65;&#x9AA4;&#x4E00; &#x5907;&#x4EFD; Redis &#x670D;&#x52A1;&#x5230;S3</h4>
+<ul>
+<li><p>&#x521B;&#x5EFA;&#x5907;&#x4EFD;&#x524D;&#x8BF7;&#x505C;&#x6B62;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x9009;&#x4E2D;&#x5E0C;&#x671B;&#x8FC1;&#x79FB;&#x7684; Redis &#x670D;&#x52A1;&#xFF0C;&#x70B9;&#x51FB;&#x4E0A;&#x65B9;&#x7684; Backup &#x6309;&#x94AE;&#x521B;&#x5EFA;&#x5907;&#x4EFD;&#x3002;</p>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/15.png" alt="image 01"></p>
+<ul>
+<li>&#x5728;&#x63A7;&#x5236;&#x53F0;&#x5DE6;&#x4FA7;&#x9009;&#x62E9;&#x680F;&#x4E2D;&#x70B9;&#x51FB; Backups &#x9009;&#x9879;&#xFF0C;&#x67E5;&#x770B;&#x60A8;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x5907;&#x4EFD;&#x3002;</li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/16.png" alt="image 01"></p>
+<ul>
+<li><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; S3 &#x6876;&#x7528;&#x6765;&#x5B58;&#x50A8; ElastiCache &#x5907;&#x4EFD;&#x3002;
+&#x6CE8;&#x610F;&#xFF1A;&#x6876;&#x7684;<strong>&#x53EF;&#x7528;&#x533A;</strong>&#x9700;&#x8981;&#x548C; ElastiCache &#x76F8;&#x540C;&#x3002;</p>
+</li>
+<li><p>&#x767B;&#x5F55; AWS <a href="https://console.aws.amazon.com/s3" target="_blank">S3 &#x63A7;&#x5236;&#x53F0;</a>&#xFF0C;&#x5E76;&#x521B;&#x5EFA;&#x65B0;&#x7684; S3 &#x6876;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x672C;&#x6307;&#x5357; 4 &#x521B;&#x5EFA;&#x6876;&#x3002;</p>
+</li>
+<li>&#x4F9D;&#x6B21;&#x9009;&#x62E9; Permissions -&gt; Access Control List&#x3002;</li>
+<li>&#x5728; Access for other AWS accounts &#x4E0B;, &#x9009;&#x62E9; + Add account&#x3002;</li>
+<li>&#x5728;&#x7A97;&#x53E3;&#x5185;&#x6DFB;&#x52A0;&#x5730;&#x533A;&#x7684; canonical id&#x3002;</li>
+</ul>
+<p>BJD (Beijing) &#x548C; ZHY (Ningxia) :<br>b14d6a125bdf69854ed8ef2e71d8a20b7c490f252229b806e514966e490b8d83</p>
+<ul>
+<li>&#x4E0B;&#x8FF0;&#x9009;&#x9879;&#x52FE;&#x9009;Yes:
+<em>List objects
+Write objects
+Read bucket permissions</em></li>
+</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/17.png" alt="image 01"></p>
+<ul>
+<li>&#x9009;&#x62E9; Save&#xFF0C;&#x6388;&#x6743; ElastiCache &#x8BFB;&#x5199; S3 &#x6876;&#x5185;&#x6587;&#x4EF6;.</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x6B65;&#x9AA4;&#x4E8C;-&#x5C06;&#x5907;&#x4EFD;&#x90E8;&#x7F72;&#x5230;&#x5B81;&#x590F;&#x533A;">&#x6B65;&#x9AA4;&#x4E8C; &#x5C06;&#x5907;&#x4EFD;&#x90E8;&#x7F72;&#x5230;&#x5B81;&#x590F;&#x533A;</h4>
+<ul>
+<li><p>&#x53C2;&#x8003; 4 &#x5C06;&#x4F4D;&#x4E8E;&#x5317;&#x4EAC;&#x533A;&#x7684; S3 &#x6876;&#x4E2D;&#x6587;&#x4EF6;&#x8FC1;&#x79FB;&#x81F3;&#x5B81;&#x590F;&#x533A;&#xFF0C;&#x6216;&#x4E0B;&#x8F7D;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF0C;&#x4E0A;&#x4F20;&#x5230;&#x60A8;&#x4F4D;&#x4E8E;&#x5B81;&#x590F;&#x7684; S3 &#x6876;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x53C2;&#x8003;&#x6B65;&#x9AA4;&#x4E00;&#xFF0C;&#x5728;&#x5B81;&#x590F;&#x533A; S3 &#x6876;&#x6DFB;&#x52A0; ElastiCache &#x8BFB;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x5B81;&#x590F;&#x533A;&#x5EFA;&#x7ACB;&#x65B0;&#x7684; Redis &#x670D;&#x52A1;&#x3002;</p>
+</li>
+<li><p>&#x5728; Import data to cluster &#x9879;&#x4E2D;&#x586B;&#x5165;&#x4F4D;&#x4E8E;&#x5B81;&#x590F; S3 &#x6876;&#x4E2D;&#x7684;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>  <img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/18.png" alt="image 01"></p>
+</li>
+</ul>
+<h2 id="6-&#x5C06;-dynamodb-&#x670D;&#x52A1;&#x4ECE;-bjs-&#x8FC1;&#x79FB;&#x81F3;-zhy">6. &#x5C06; DynamoDB &#x670D;&#x52A1;&#x4ECE; BJS &#x8FC1;&#x79FB;&#x81F3; ZHY</h2>
+<p>&#x5C06;&#x60A8;&#x7684; DynamoDB &#x670D;&#x52A1;&#x8FC1;&#x79FB;&#x5230;&#x5B81;&#x590F;&#x533A;&#x3002;</p>
+<p>&#xFF08;1&#xFF09;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49; API</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; API &#x5C06; BJS &#x7684;&#x6570;&#x636E;&#x8F6C;&#x79FB;&#x5230; ZHY&#xFF0C;&#x60A8;&#x53EF;&#x6839;&#x636E;&#x9700;&#x8981;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#xFF0C;&#x793A;&#x4F8B;&#x7A0B;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>from __future__ import print_function
+import boto3
+import argparse
+
+def replicate(table_name, existing_region, new_region, new_table_name):
+&quot;&quot;&quot;
+Replicate table in new region.
+Creates a new table with existing KeySchema and AttributeDefinitions
+default read and write capacity units are set to 5. Change it as required.
+Parameters
+----------
+table_name: string
+    Name of the existing table to be replicated.
+existing_region: string
+    Region in which the table is present.
+new_region: string
+    Region in which the table needs to be replicated.
+new_table_name: string
+    Name for the new table to be created, if not given
+    existing table name is used.
+&quot;&quot;&quot;
+
+    existing_table = boto3.resource(
+        &apos;dynamodb&apos;, region_name=existing_region).Table(table_name)
+       items = existing_table.scan()[&apos;Items&apos;]
+
+    dynamodb = boto3.resource(&apos;dynamodb&apos;, region_name=new_region)
+
+    print(&quot;Creating table &apos;{0}&apos; in region &apos;{1}&apos;&quot;.format(
+    new_table_name, new_region))
+
+    table = dynamodb.create_table(
+        TableName=new_table_name,
+            KeySchema=existing_table.key_schema,
+        AttributeDefinitions=existing_table.attribute_definitions,
+        ProvisionedThroughput={
+            &apos;ReadCapacityUnits&apos;: 5,
+            &apos;WriteCapacityUnits&apos;: 5
+        })
+    print(&quot;Table status:&quot;, table.table_status)
+
+    table.wait_until_exists()
+    table.reload()
+
+    print(&quot;Table status:&quot;, table.table_status)
+    print(&quot;Updating table with data...&quot;)
+    if table.table_status == &apos;ACTIVE&apos;:
+        for item in items:
+                response = table.put_item(Item=item)
+            print(&quot;PutItem status:&quot;,
+                  response[&apos;ResponseMetadata&apos;][&apos;HTTPStatusCode&apos;])
+
+    print(&quot;Total items created:&quot;, table.scan()[&apos;Count&apos;])
+
+if __name__ == &quot;__main__&quot;:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        &apos;-t&apos;,
+        &apos;--table_name&apos;,
+            type=str,
+        required=True,
+        help=&quot;Name of the table to be replicated in new region&quot;)
+    parser.add_argument(
+        &apos;-r&apos;,
+        &apos;--region&apos;,
+           type=str,
+        required=True,
+        help=&quot;Region in which the table is present&quot;)
+    parser.add_argument(
+        &apos;-nr&apos;,
+        &apos;--new_region&apos;,
+        type=str,
+        required=True,
+        help=&quot;Region in which the table needs to be replicated&quot;)
+    parser.add_argument(
+        &apos;-nt&apos;,
+        &apos;--new_table_name&apos;,
+            type=str,
+        help=&quot;Name for the new table [Optional], Old table name will be used&quot;)
+    args = parser.parse_args()
+    if args.new_table_name is None:
+        args.new_table_name = args.table_name
+
+    replicate(args.table_name, args.region, args.new_region,
+          args.new_table_name)
+</code></pre><p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x7EC8;&#x7AEF;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>python transferDynamoDB.py -t [source table] -r [source region] -nr [destination region]
+</code></pre><p>&#xFF08;2&#xFF09;&#x4F7F;&#x7528; EMR Hive &#x4E2D;&#x8F6C;&#x8FC1;&#x79FB;&#x6570;&#x636E;&#x5230;&#x5B81;&#x590F;</p>
+<p>&#x4F7F;&#x7528; Amazon EMR &#x670D;&#x52A1;&#x521B;&#x5EFA;&#x96C6;&#x7FA4;&#xFF0C;&#x4F7F;&#x7528; EMR Hive &#x5C06; BJS &#x6570;&#x636E;&#x8FC1;&#x79FB;&#x5230; ZHY&#x3002;</p>
+<ul>
+<li><p>&#x5728; <a href="https://console.amazonaws.cn/elasticmapreduce/home?region=cn-north-1" target="_blank">EMR &#x63A7;&#x5236;&#x53F0;</a>&#x521B;&#x5EFA;&#x96C6;&#x7FA4;&#x3002;</p>
+</li>
+<li><p>&#x4F7F;&#x7528; SSH &#x8FDE;&#x63A5;&#x4E3B;&#x673A;&#x3002;</p>
+<p> <img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/24.png" alt="image 01"></p>
+</li>
+<li><p>&#x767B;&#x5165; Hive</p>
+<p> <img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/25.png" alt="image 01"></p>
+</li>
+<li><p>&#x5728; Hive &#x521B;&#x5EFA;2&#x4E2A; External table&#xFF0C;location &#x5206;&#x522B;&#x6307;&#x5411; BJS &#x548C; ZHY&#x3002;</p>
+<p> CREATE EXTERNAL TABLE hive_table </p>
+<pre><code> (hive_column1_name hive_column1_datatype, hive_column2_name hive_column2_datatype...)
+</code></pre><p> STORED BY &apos;org.apache.hadoop.hive.dynamodb.DynamoDBStorageHandler&apos; </p>
+<p> TBLPROPERTIES (</p>
+<pre><code> &quot;dynamodb.table.name&quot; = &quot;dynamodb_table&quot;, 
+ &quot;dynamodb.column.mapping&quot; = &quot;hive_column1_name:dynamodb_attribute1_name,hive_column2_name:dynamodb_attribute2_name...&quot;
+</code></pre><p> );</p>
+</li>
+<li><p>&#x4F7F;&#x7528; query &#x5C06; BJS &#x6570;&#x636E;&#x590D;&#x5236;&#x5230; ZHY&#x3002;</p>
+<p> &#x6CE8;&#x610F;&#xFF1A;&#x53EF;&#x4F7F;&#x7528; insert into &#x8FDB;&#x884C;&#x590D;&#x5236;&#xFF0C;&#x4EE5;&#x514D;&#x8986;&#x76D6;&#x539F;&#x6570;&#x636E;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6570;&#x636E;&#x5E93;&#x8FC1;&#x79FB;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x8BF7;&#x53CA;&#x65F6;&#x66F4;&#x6539;&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../dms-mongo-to-s3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 数据库迁移：使用AWS DMS迁移MongoDB到S3">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"中国区服务迁移：从北京区到宁夏区","level":"1.5.4","depth":2,"next":{"title":"物联网 IoT","level":"1.6","depth":1,"ref":"","articles":[{"title":"HandsOn: IOT系列动手实验","level":"1.6.1","depth":2,"url":"https://chinalabs.github.io/aws-iot-labs/","ref":"https://chinalabs.github.io/aws-iot-labs/","articles":[]},{"title":"环境配置：在 Windows 中配置 Docker 镜像","level":"1.6.2","depth":2,"path":"DockerGuide.md","ref":"DockerGuide.md","articles":[]}]},"previous":{"title":"数据库迁移：使用AWS DMS迁移MongoDB到S3","level":"1.5.3","depth":2,"path":"dms-mongo-to-s3.md","ref":"dms-mongo-to-s3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus","expandable-chapters","page-toc"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"migration/BJStoZHY.md","mtime":"2018-10-18T07:33:20.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T07:34:07.976Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
