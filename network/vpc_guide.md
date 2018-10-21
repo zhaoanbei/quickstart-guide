@@ -15,7 +15,7 @@
 - **私有子网**( private subnet): 子网的**关联路由表** **不包含** 指向 **Internet 网关(Internet Gateways)**的路由的子网
   - **仅限 VPN 的子网**: 特别的,一个子网没有通向 **Internet 网关(Internet Gateways)**的路由, 但**其流量会被路由到虚拟专用网关以进行 VPN 连接**, 则这个子网就是**仅限 VPN 的子网**
 
-![image-20180821103147315](assets/vpc_guide/image-20180821103147315.png)
+![image-20180821103147315](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821103147315.png)
 
 如上图, 
 
@@ -50,25 +50,25 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
   - 打开 Amazon VPC 控制台 <https://console.aws.amazon.com/vpc/>。
 
-  - 在导航窗格中，选择 **Internet Gateways (Internet 网关)**，然后选择 **Create internet gateway (创建 Internet 网关)**。![image-20180821114813780](assets/vpc_guide/image-20180821114813780.png)
+  - 在导航窗格中，选择 **Internet Gateways (Internet 网关)**，然后选择 **Create internet gateway (创建 Internet 网关)**。![image-20180821114813780](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821114813780.png)
 
   - (可选) 为 Internet 网关命名，然后选择 **Create (创建)**
 
-  - 选择刚刚创建的 Internet 网关，然后选择 **Actions, Attach to VPC (操作，附加到 VPC)**。![image-20180821114052114](assets/vpc_guide/image-20180821114609079.png)
+  - 选择刚刚创建的 Internet 网关，然后选择 **Actions, Attach to VPC (操作，附加到 VPC)**。![image-20180821114052114](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821114609079.png)
 
   - 从列表中选择 VPC，然后选择 **Attach (附加)**。
 
-    ![image-20180821114448728](assets/vpc_guide/image-20180821114448728.png)
+    ![image-20180821114448728](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821114448728.png)
 
 - **创建自定义路由表**
 
   - 打开 Amazon VPC 控制台 <https://console.aws.amazon.com/vpc/>。
 
-  - 在导航窗格中，选择 **Route Tables**，然后选择 **Create Route Table**。![image-20180821115416967](assets/vpc_guide/image-20180821115416967.png)
+  - 在导航窗格中，选择 **Route Tables**，然后选择 **Create Route Table**。![image-20180821115416967](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821115416967.png)
 
   - 在 **Create Route Table** 对话框中，可以选择命名您的路由表，选择您的 VPC，然后选择 **Yes, Create**。
 
-    ![image-20180821135611911](assets/vpc_guide/image-20180821135611911.png)
+    ![image-20180821135611911](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821135611911.png)
 
   - 选择您刚刚创建的自定义路由表。详细信息窗格中会显示选项卡，以供您使用其路径、关联和路线传播。
 
@@ -77,7 +77,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
     - 对于 IPv4 流量，在 **Destination (目的地)** 框中指定 `0.0.0.0/0`，然后在 **Target (目标)** 列表中选择 Internet 网关 ID。
     - 对于 IPv6 流量，在 **Destination (目的地)** 框中指定 `::/0`，然后在 **Target (目标)** 列表中选择 Internet 网关 ID。
 
-    ![image-20180821140205194](assets/vpc_guide/image-20180821140205194.png)
+    ![image-20180821140205194](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821140205194.png)
 
     > **关于这一步路由表配置的解释**
     >
@@ -97,7 +97,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
   - 在 **Subnet Associations** 选项卡上，选择 **Edit**，选中子网的 **Associate** 复选框，然后选择 **Save**。
 
-    ![image-20180821140326210](assets/vpc_guide/image-20180821140326210.png)
+    ![image-20180821140326210](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821140326210.png)
 
 有关路由表的更多信息，请参见[路由表](https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html)。
 
@@ -115,11 +115,11 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
   - 在导航窗格中，依次选择 **NAT Gateways**、**Create NAT Gateway**。
 
-    ![image-20180821152642033](assets/vpc_guide/image-20180821152642033.png)
+    ![image-20180821152642033](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821152642033.png)
 
   - 指定要在其中创建 NAT 网关的子网，并选择要与该 NAT 网关关联的弹性 IP 地址的分配 ID。完成后，选择 **Create a NAT Gateway**。
 
-    ![image-20180821160503177](assets/vpc_guide/image-20180821160503177.png)
+    ![image-20180821160503177](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821160503177.png)
 
     > **注意**
     >
@@ -127,7 +127,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
   - NAT 网关会显示在控制台中。片刻之后，其状态会更改为 `Available`，此后它即准备好供您使用。
 
-    ![image-20180821160905824](assets/vpc_guide/image-20180821160905824.png)
+    ![image-20180821160905824](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821160905824.png)
 
   如果 NAT 网关变为 `Failed` 状态，则表示在创建过程中发生了错误。有关更多信息，请参阅 [NAT 网关变为 Failed 状态](https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html#nat-gateway-troubleshooting-failed)。
 
@@ -141,11 +141,11 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
   - 选择 **Add another route**。对于 **Destination**，键入 `0.0.0.0/0`。对于 **Target**，选择 NAT 网关的 ID。
 
-    ![image-20180821162613752](assets/vpc_guide/image-20180821162613752.png)
+    ![image-20180821162613752](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821162613752.png)
 
   - 在 **Subnet Associations** 选项卡上，选择 **Edit**，选中子网的 **Associate** 复选框，然后选择 **Save**
 
-    ![image-20180821171757732](assets/vpc_guide/image-20180821171757732.png)
+    ![image-20180821171757732](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180821171757732.png)
 
   - 选择 **Save**。
 
@@ -153,7 +153,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
 ## 合理的 web hosting 的网络拓扑
 
-![image-20180821171757732](assets/vpc_guide/Web_Hosting.png)
+![image-20180821171757732](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/Web_Hosting.png)
 
 一个合理的 Web Hosting 应该包含有以下几部分:
 
@@ -208,7 +208,7 @@ Internet 网关在配置时需要具有对应的**子网**, 在配置之前请�
 
 VPC 控制台中提供了四种 VPC 向导用于创建常用场景下的 VPC 的创建
 
-![image-20180822135511214](assets/vpc_guide/image-20180822135511214.png)
+![image-20180822135511214](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/vpc-start-guide/image-20180822135511214.png)
 
 - [带单个公有子网的 VPC](https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Scenario1.html#VPC_Scenario1_Implementation): 
 
