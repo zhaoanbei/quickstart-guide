@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MongoDB: MongoDB快速部署 · GitBook</title>
+        <title>MongoDB自动部署 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../S3fs.html" />
+    <link rel="next" href="redis_benchmark.html" />
     
     
-    <link rel="prev" href="../EC2_Auto_Tag.html" />
+    <link rel="prev" href="Aurora-vs-MySQL.html" />
     
 
     </head>
@@ -120,9 +120,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../RedShift_MySQL.html">
+        <li class="chapter " data-level="1.2.1" data-path="RedShift_MySQL.html">
             
-                <a href="../RedShift_MySQL.html">
+                <a href="RedShift_MySQL.html">
             
                     
                     RedShift vs. MySQL对比实验
@@ -138,7 +138,7 @@
                 <a href="Aurora-vs-MySQL.html">
             
                     
-                    Aurora & MySQL 性能对比试验
+                    Aurora vs. MySQL性能对比试验
             
                 </a>
             
@@ -146,12 +146,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../redis_benchmark.html">
+        <li class="chapter active" data-level="1.2.3" data-path="MangoDB.html">
             
-                <a href="../redis_benchmark.html">
+                <a href="MangoDB.html">
             
                     
-                    Amazon ElastiCache for Redis 基准测试
+                    MongoDB自动部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="redis_benchmark.html">
+            
+                <a href="redis_benchmark.html">
+            
+                    
+                    ElastiCache:Redis基准测试
             
                 </a>
             
@@ -169,7 +182,7 @@
                 <span>
             
                     
-                    自动部署
+                    存储
             
                 </span>
             
@@ -178,35 +191,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../EC2_Auto_Tag.html">
+        <li class="chapter " data-level="1.3.1" data-path="../storage/S3fs.html">
             
-                <a href="../EC2_Auto_Tag.html">
-            
-                    
-                    EC2,EBS,AMI,Snapshot自动打Tag
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.3.2" data-path="MangoDB.html">
-            
-                <a href="MangoDB.html">
-            
-                    
-                    MongoDB: MongoDB快速部署
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="../S3fs.html">
-            
-                <a href="../S3fs.html">
+                <a href="../storage/S3fs.html">
             
                     
                     NFS: 利用S3FS自建NFS
@@ -249,9 +236,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../vpc_guide.html">
+        <li class="chapter " data-level="1.4.2" data-path="../network/vpc_guide.html">
             
-                <a href="../vpc_guide.html">
+                <a href="../network/vpc_guide.html">
             
                     
                     VPC 配置指南
@@ -272,7 +259,7 @@
                 <span>
             
                     
-                    迁移服务
+                    运维
             
                 </span>
             
@@ -281,51 +268,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../migration/SMS_vm-import.html">
+        <li class="chapter " data-level="1.5.1" data-path="../EC2_Auto_Tag.html">
             
-                <a href="../migration/SMS_vm-import.html">
-            
-                    
-                    镜像迁移：本地镜像导入AWS
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="../migration/TransferDomainRoute53.html">
-            
-                <a href="../migration/TransferDomainRoute53.html">
+                <a href="../EC2_Auto_Tag.html">
             
                     
-                    域名迁移：从GoDaddy到Route 53
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="../dms-mongo-to-s3.html">
-            
-                <a href="../dms-mongo-to-s3.html">
-            
-                    
-                    数据库迁移：使用AWS DMS迁移MongoDB到S3
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.4" data-path="../migration/BJStoZHY.html">
-            
-                <a href="../migration/BJStoZHY.html">
-            
-                    
-                    中国区服务迁移：从北京区到宁夏区
+                    EC2,EBS,AMI,Snapshot自动打Tag
             
                 </a>
             
@@ -343,6 +291,77 @@
                 <span>
             
                     
+                    迁移服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../migration/SMS_vm-import.html">
+            
+                <a href="../migration/SMS_vm-import.html">
+            
+                    
+                    镜像迁移：本地镜像导入AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../migration/TransferDomainRoute53.html">
+            
+                <a href="../migration/TransferDomainRoute53.html">
+            
+                    
+                    域名迁移：从GoDaddy到Route 53
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../migration/dms-mongo-to-s3.html">
+            
+                <a href="../migration/dms-mongo-to-s3.html">
+            
+                    
+                    数据库迁移：使用AWS DMS迁移MongoDB到S3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../migration/BJStoZHY.html">
+            
+                <a href="../migration/BJStoZHY.html">
+            
+                    
+                    中国区服务迁移：从北京区到宁夏区
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
                     物联网 IoT
             
                 </span>
@@ -352,7 +371,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" >
+        <li class="chapter " data-level="1.7.1" >
             
                 <a target="_blank" href="https://chinalabs.github.io/aws-iot-labs/">
             
@@ -365,7 +384,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../DockerGuide.html">
+        <li class="chapter " data-level="1.7.2" data-path="../DockerGuide.html">
             
                 <a href="../DockerGuide.html">
             
@@ -413,7 +432,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MongoDB: MongoDB快速部署</a>
+        <a href=".." >MongoDB自动部署</a>
     </h1>
 </div>
 
@@ -430,7 +449,7 @@
                                 
                                 <h1 id="&#x5C06;mongodb&#x90E8;&#x7F72;&#x5230;&#x73B0;&#x6709;vpc">&#x5C06;MongoDB&#x90E8;&#x7F72;&#x5230;&#x73B0;&#x6709;VPC</h1>
 <p>&#x60A8;&#x53EF;&#x4EE5;&#x542F;&#x52A8;Quick Start&#xFF0C;&#x5C06; MongoDB &#x90E8;&#x7F72;&#x5230; AWS &#x8D26;&#x6237;&#x4E2D;&#x73B0;&#x6709;&#x7684; Virtual Private Cloud (VPC) &#x4E2D;&#x3002;&#x5B8C;&#x6210;&#x90E8;&#x7F72;&#x9700;&#x8981;&#x7EA6; 15 &#x5206;&#x949F;&#x3002;&#x8BF7;&#x67E5;&#x770B;&#x4E0B;&#x8FF0;&#x5B9E;&#x65BD;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x6309;&#x7167;&#x6B64;&#x6307;&#x5357;&#x540E;&#x9762;&#x90E8;&#x5206;&#x63D0;&#x4F9B;&#x7684;&#x5206;&#x6B65;&#x8BF4;&#x660E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002; </p>
-<p><a href="https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=MongoDB&amp;templateURL=https://s3.cn-north-1.amazonaws.com.cn/chinalabs/templates/MongoDB/templates/mongodb.template" target="_blank"><img src="../assets/mongodb/ChinaRegion.png" alt="Image link china"></a> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=MongoDB&amp;templateURL=https://s3.amazonaws.com/quickstart-reference/mongodb/latest/templates/mongodb.template" target="_blank"><img src="../assets/mongodb/GlobalRegion.png" alt="Image link global"></a></p>
+<p><a href="https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=MongoDB&amp;templateURL=https://s3.cn-north-1.amazonaws.com.cn/chinalabs/templates/MongoDB/templates/mongodb.template" target="_blank"><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ChinaRegion.png" alt="Image link china"></a> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=MongoDB&amp;templateURL=https://s3.amazonaws.com/quickstart-reference/mongodb/latest/templates/mongodb.template" target="_blank"><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png" alt="Image link global"></a></p>
 <h2 id="&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x52A0;&#x8F7D;quick-start">&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x52A0;&#x8F7D;Quick Start</h2>
 <ol>
 <li>&#x5728;&#x60A8;&#x7684; AWS &#x63A7;&#x5236;&#x53F0;&#x4E2D;&#x9009;&#x62E9; AWS CloudFormation &#xFF0C;&#x5F00;&#x59CB;&#x90E8;&#x7F72; MangoDB &#x96C6;&#x7FA4;&#x3002;</li>
@@ -646,12 +665,12 @@
 
             
                 
-                <a href="../EC2_Auto_Tag.html" class="navigation navigation-prev " aria-label="Previous page: EC2,EBS,AMI,Snapshot自动打Tag">
+                <a href="Aurora-vs-MySQL.html" class="navigation navigation-prev " aria-label="Previous page: Aurora vs. MySQL性能对比试验">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../S3fs.html" class="navigation navigation-next " aria-label="Next page: NFS: 利用S3FS自建NFS">
+                <a href="redis_benchmark.html" class="navigation navigation-next " aria-label="Next page: ElastiCache:Redis基准测试">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -662,7 +681,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MongoDB: MongoDB快速部署","level":"1.3.2","depth":2,"next":{"title":"NFS: 利用S3FS自建NFS","level":"1.3.3","depth":2,"path":"S3fs.md","ref":"S3fs.md","articles":[]},"previous":{"title":"EC2,EBS,AMI,Snapshot自动打Tag","level":"1.3.1","depth":2,"path":"EC2_Auto_Tag.md","ref":"EC2_Auto_Tag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus","expandable-chapters","page-toc"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"database/MangoDB.md","mtime":"2018-10-18T07:33:20.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T07:34:07.976Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MongoDB自动部署","level":"1.2.3","depth":2,"next":{"title":"ElastiCache:Redis基准测试","level":"1.2.4","depth":2,"path":"database/redis_benchmark.md","ref":"database/redis_benchmark.md","articles":[]},"previous":{"title":"Aurora vs. MySQL性能对比试验","level":"1.2.2","depth":2,"path":"database/Aurora-vs-MySQL.md","ref":"database/Aurora-vs-MySQL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus","expandable-chapters","page-toc"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"database/MangoDB.md","mtime":"2018-10-21T16:02:12.485Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-21T16:03:06.806Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
