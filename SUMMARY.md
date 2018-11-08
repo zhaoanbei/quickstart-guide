@@ -19,7 +19,11 @@
   * [数据库迁移：使用AWS DMS迁移MongoDB到S3](migration/dms-mongo-to-s3.md)
   * [中国区服务迁移：从北京区到宁夏区](migration/BJStoZHY.md)
 * 物联网 IoT
-  * <a href="https://chinalabs.github.io/aws-iot-labs/" target="_blank">HandsOn: IOT系列动手实验</a>
+  * [IoT系列动手实验](IoT/README.md)
+    * [IoT Core 实验1](IoT/lab1.IoTCore.1.md)
+    * [IoT Core 实验2](IoT/lab2.IoTCore.2.md)
+    * [IoT Greengrass实验](IoT/lab3.greengrass.md)
+    * [Alexa与AWS IoT的集成](IoT/lab4.Alexa.md)
   * [环境配置：在 Windows 中配置 Docker 镜像](DockerGuide.md)
 * Alexa
   * [Cognito User Pool实现账户关联](alexa/account-linking-cognito.md)
