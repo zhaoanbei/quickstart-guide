@@ -36,8 +36,9 @@
 * [中国区服务迁移：从北京区到宁夏区](migration/BJStoZHY.md)
 
 ### 物联网 IoT
-* <a href="https://chinalabs.github.io/aws-iot-labs/" target="_blank">HandsOn: IOT系列动手实验</a>
+* [IOT系列动手实验](IoT/README.md)
 * [环境配置：在 Windows 中配置 Docker 镜像](DockerGuide.md)
+
 
 ### Alexa
 * [Cognito User Pool实现账户关联](alexa/account-linking-cognito.md)
