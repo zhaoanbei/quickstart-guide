@@ -35,8 +35,8 @@
 * [数据库迁移：MongoDB到S3](migration/dms-mongo-to-s3.md)
 * [中国区服务迁移：从北京区到宁夏区](migration/BJStoZHY.md)
 
-### [物联网 IoT](IoT/README.md)
-* <a href="https://chinalabs.github.io/aws-iot-labs/" target="_blank">HandsOn: IOT系列动手实验</a>
+### 物联网 IoT
+* [IOT系列动手实验](IoT/README.md)
 * [环境配置：在 Windows 中配置 Docker 镜像](DockerGuide.md)
 
 
