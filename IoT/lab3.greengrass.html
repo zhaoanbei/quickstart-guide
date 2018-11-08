@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>NFS: 利用S3FS自建NFS · GitBook</title>
+        <title>IoT Greengrass实验 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,6 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="lab4.Alexa.html" />
+    
+    
+    <link rel="prev" href="lab2.IoTCore.2.html" />
     
 
     </head>
@@ -187,9 +191,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="S3fs.html">
+        <li class="chapter " data-level="1.3.1" data-path="../storage/S3fs.html">
             
-                <a href="S3fs.html">
+                <a href="../storage/S3fs.html">
             
                     
                     NFS: 利用S3FS自建NFS
@@ -367,9 +371,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../IoT/">
+        <li class="chapter " data-level="1.7.1" data-path="./">
             
-                <a href="../IoT/">
+                <a href="./">
             
                     
                     IoT系列动手实验
@@ -381,9 +385,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1.1" data-path="../IoT/lab1.IoTCore.1.html">
+        <li class="chapter " data-level="1.7.1.1" data-path="lab1.IoTCore.1.html">
             
-                <a href="../IoT/lab1.IoTCore.1.html">
+                <a href="lab1.IoTCore.1.html">
             
                     
                     IoT Core 实验1
@@ -394,9 +398,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.1.2" data-path="../IoT/lab2.IoTCore.2.html">
+        <li class="chapter " data-level="1.7.1.2" data-path="lab2.IoTCore.2.html">
             
-                <a href="../IoT/lab2.IoTCore.2.html">
+                <a href="lab2.IoTCore.2.html">
             
                     
                     IoT Core 实验2
@@ -407,9 +411,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.1.3" data-path="../IoT/lab3.greengrass.html">
+        <li class="chapter active" data-level="1.7.1.3" data-path="lab3.greengrass.html">
             
-                <a href="../IoT/lab3.greengrass.html">
+                <a href="lab3.greengrass.html">
             
                     
                     IoT Greengrass实验
@@ -420,9 +424,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.1.4" data-path="../IoT/lab4.Alexa.html">
+        <li class="chapter " data-level="1.7.1.4" data-path="lab4.Alexa.html">
             
-                <a href="../IoT/lab4.Alexa.html">
+                <a href="lab4.Alexa.html">
             
                     
                     Alexa与AWS IoT的集成
@@ -518,7 +522,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >NFS: 利用S3FS自建NFS</a>
+        <a href=".." >IoT Greengrass实验</a>
     </h1>
 </div>
 
@@ -533,102 +537,83 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="guide-s3fs&#x5FEB;&#x901F;&#x90E8;&#x7F72;">Guide: S3FS&#x5FEB;&#x901F;&#x90E8;&#x7F72;</h1>
-<p>&#x60A8;&#x53EF;&#x4EE5;&#x542F;&#x52A8;Quick Start&#xFF0C;&#x5C06; S3fs &#x90E8;&#x7F72;&#x5230; AWS &#x8D26;&#x6237;&#x4E2D;&#x3002;&#x5B8C;&#x6210;&#x90E8;&#x7F72;&#x9700;&#x8981;&#x7EA6; 5 &#x5206;&#x949F;&#x3002;&#x8BF7;&#x67E5;&#x770B;&#x4E0B;&#x8FF0;&#x5B9E;&#x65BD;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x6309;&#x7167;&#x6B64;&#x6307;&#x5357;&#x540E;&#x9762;&#x90E8;&#x5206;&#x63D0;&#x4F9B;&#x7684;&#x5206;&#x6B65;&#x8BF4;&#x660E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
-<p><a href="https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=S3FS&amp;templateURL=https://s3.cn-north-1.amazonaws.com.cn/chinalabs/s3fs.template" target="_blank"><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ChinaRegion.png" alt="Image link china"></a> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=S3FS&amp;templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/s3fs.template" target="_blank"><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png" alt="Image link global"></a></p>
-<p><strong>&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x52A0;&#x8F7D;Quick Start</strong></p>
+                                <h1 id="iot-greengrass&#x5B9E;&#x9A8C;">IoT Greengrass&#x5B9E;&#x9A8C;</h1>
+<h2 id="&#x5B9E;&#x9A8C;&#x76EE;&#x7684;">&#x5B9E;&#x9A8C;&#x76EE;&#x7684;</h2>
+<p>&#x4E86;&#x89E3;Greengrass&#x5728;IoT&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x7F51;&#x5173;&#x4F5C;&#x7528;&#xFF0C;&#x4E86;&#x89E3;Greengrass&#x5982;&#x4F55;&#x8BBF;&#x95EE;&#x672C;&#x5730;&#x8D44;&#x6E90;&#xFF08;e.g. &#x4E32;&#x53E3;&#xFF09;&#x53CA;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x56FA;&#x4EF6;&#x5347;&#x7EA7;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x6B21;&#x5B9E;&#x9A8C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x642D;&#x5EFA;&#x5982;&#x4E0B;&#x8BBE;&#x5907;&#xFF1A;</p>
 <ul>
-<li>&#x5728;&#x60A8;&#x7684; AWS &#x8D26;&#x6237;&#x4E2D;&#x542F;&#x52A8; AWS CloudFormation &#x6A21;&#x677F;&#x3002;</li>
+<li>&#x571F;&#x58E4;&#x6E7F;&#x5EA6;&#x68C0;&#x6D4B;&#x4EEA;&#xFF1A;&#x4F7F;&#x7528;Zigbee&#x4E0A;&#x62A5;&#x571F;&#x58E4;&#x6E7F;&#x5EA6;</li>
+<li>&#x7F51;&#x5173;&#x8BBE;&#x5907;&#xFF1A;Zigbee&#x534F;&#x8BAE;&#x8F6C;&#x5316;&#x6210;MQTT, &#x5E76;&#x4E14;&#x5C06;&#x571F;&#x58E4;&#x6E7F;&#x5EA6;&#x5B9E;&#x65F6;&#x4E0A;&#x62A5;&#x81F3;&#x4E91;&#x7AEF;</li>
 </ul>
-<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/s3fs/01.png" alt=""></p>
+<h2 id="&#x5B9E;&#x9A8C;&#x8BBE;&#x5907;">&#x5B9E;&#x9A8C;&#x8BBE;&#x5907;</h2>
 <ul>
-<li>&#x8BF7;&#x786E;&#x4FDD;&#x60A8;&#x7684;&#x8D26;&#x6237;&#x6709;&#x4E00;&#x4E2A;VPC&#x548C;&#x79C1;&#x7F51;&#xFF0C;&#x5982; <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" target="_blank">Amazon VPC</a>&#x4E2D;&#x6240;&#x8FF0;&#x3002;</li>
-<li>&#x68C0;&#x67E5;&#x5BFC;&#x822A;&#x680F;&#x53F3;&#x4E0A;&#x89D2;&#x663E;&#x793A;&#x7684;&#x6240;&#x5728;&#x533A;&#x57DF;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#x3002;</li>
-<li>&#x5728; <strong>Select Template</strong> &#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x4FDD;&#x7559;&#x6A21;&#x677F; URL &#x7684;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; <strong>Next</strong> &#x3002;</li>
+<li>Raspberry Pi 3B+</li>
+<li><a href="http://www.waveshare.net/wiki/UNO_PLUS" target="_blank">WaveShare UNO PLUS/Arduino UNO</a></li>
+<li><a href="http://www.waveshare.net/shop/IO-Expansion-Shield.htm" target="_blank">WaveShare IO Expansion Shield</a></li>
+<li><a href="http://www.waveshare.net/shop/CC2530-Eval-Kit5.htm" target="_blank">WaveShare CC2530-Eval-Kit5</a> x 2</li>
+<li><a href="http://www.waveshare.net/shop/Moisture-Sensor.htm" target="_blank">WaveShare Moisture Sensor</a></li>
 </ul>
-<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/s3fs/02.png" alt=""></p>
-<ul>
-<li>&#x5728; <strong>Specify Details</strong> &#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x586B;&#x5199;&#x5806;&#x6808;&#x540D;&#x79F0;&#x53CA;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#xFF08;&#x89C1;&#x4E0B;&#x8868;&#xFF09;&#x3002;&#x5B8C;&#x6210;&#x540E;&#x9009;&#x62E9; <strong>Next</strong> &#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x6B65;&#x3002;
-<strong>&#x90E8;&#x7F72;S3FS&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;</strong></li>
-</ul>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/device.jpg" alt="&#x8BBE;&#x5907;&#x603B;&#x89C8;"></p>
+<p><strong>&#x8BBE;&#x5907;&#x63A5;&#x7EBF;&#x5982;&#x4E0B;</strong>&#xFF1A;</p>
+<p>&#x6811;&#x8393;&#x6D3E;&#x4E0E;Zigbee Coordinator&#x76F4;&#x63A5;&#x901A;&#x8FC7;USB&#x8FDE;&#x63A5;&#x6811;&#x8393;&#x6D3E;&#xFF1B;Zigbee&#x6A21;&#x5757;&#x4E0E;&#x6811;&#x8393;&#x6D3E;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x4E32;&#x53E3;&#x8FDB;&#x884C;&#x901A;&#x4FE1;</p>
+<p>&#x6E7F;&#x5EA6;&#x4F20;&#x611F;&#x5668;&#xFF0C;Zigbee&#x6A21;&#x5757;&#x4E0E;UNO&#x4E4B;&#x95F4;&#x5F15;&#x811A;&#x8FDE;&#x7EBF;&#x5982;&#x4E0B;&#xFF1A;</p>
 <table>
 <thead>
 <tr>
-<th>&#x53C2;&#x6570;&#x6807;&#x7B7E;</th>
-<th>&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x8BF4;&#x660E;</th>
+<th>UNO Plus/Arduino UNO</th>
+<th style="text-align:center">PIN</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>VPC</td>
-<td>VpcId</td>
-<td><em>&#x9700;&#x8981;&#x8F93;&#x5165;</em></td>
-<td>&#x5C06;&#x90E8;&#x7F72;S3FS&#x5B9E;&#x4F8B;&#x7684; VPC&#x7684;ID (&#x4F8B;&#x5982;&#xFF0C;vpc-0343606e)&#x3002;</td>
+<td>A0</td>
+<td style="text-align:center">&#x6E7F;&#x5EA6;&#x4F20;&#x611F;&#x5668; A0</td>
 </tr>
 <tr>
-<td>&#x5B50;&#x7F51;</td>
-<td>SubnetId</td>
-<td><em>&#x9700;&#x8981;&#x8F93;&#x5165;</em></td>
-<td>&#x8981;&#x90E8;&#x7F72;S3FS&#x5B9E;&#x4F8B;&#x7684; VPC &#x4E2D;&#x73B0;&#x6709;&#x5B50;&#x7F51;&#x7684; ID (&#x4F8B;&#x5982;&#xFF0C;subnet-a0246dcd)&#x3002;</td>
+<td>D11</td>
+<td style="text-align:center">Zigbee&#x6A21;&#x5757; TXD</td>
 </tr>
 <tr>
-<td>&#x5BC6;&#x94A5;&#x540D;&#x79F0;</td>
-<td>KeyName</td>
-<td><em>&#x9700;&#x8981;&#x8F93;&#x5165;</em></td>
-<td>&#x516C;&#x6709;/&#x79C1;&#x6709;&#x5BC6;&#x94A5;&#x5BF9;&#xFF0C;&#x4F7F;&#x60A8;&#x80FD;&#x591F;&#x5728;&#x5B9E;&#x4F8B;&#x542F;&#x52A8;&#x540E;&#x5B89;&#x5168;&#x5730;&#x4E0E;&#x5B83;&#x8FDE;&#x63A5;&#x3002;</td>
-</tr>
-<tr>
-<td>S3 &#x5B58;&#x50A8;&#x6876;&#x540D;&#x79F0;</td>
-<td>BucketName</td>
-<td><em>&#x9700;&#x8981;&#x8F93;&#x5165;</em></td>
-<td>&#x5C06;&#x90E8;&#x7F72;&#x7684;S3FS&#x5B9E;&#x4F8B;&#x6240;&#x4F7F;&#x7528;&#x7684;S3 &#x5B58;&#x50A8;&#x6876;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x5B9E;&#x4F8B;&#x7C7B;&#x578B;</td>
-<td>InstanceType</td>
-<td><em>&#x53EF;&#x9009;</em></td>
-<td>&#x9009;&#x62E9;&#x60A8;S3FS&#x5B9E;&#x4F8B;&#x7684;&#x5B9E;&#x4F8B;&#x7C7B;&#x578B;&#x3002;</td>
-</tr>
-<tr>
-<td>EBS&#x5377;&#x5BB9;&#x91CF;</td>
-<td>VolumeSize</td>
-<td><em>&#x9700;&#x8981;&#x8F93;&#x5165;</em></td>
-<td>&#x9009;&#x62E9;&#x60A8;&#x5B9E;&#x4F8B;EBS&#x5377;&#x7684;&#x5BB9;&#x91CF;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x5B89;&#x5168;&#x7EC4;</td>
-<td>S3FSSecurityGroup</td>
-<td><em>&#x9700;&#x8981;&#x8F93;&#x5165;</em></td>
-<td>&#x9009;&#x62E9;&#x60A8;&#x7684;&#x5B89;&#x5168;&#x5B9E;&#x4F8B;&#x3002;</td>
-</tr>
-<tr>
-<td>&#x76EE;&#x5F55;</td>
-<td>S3FSDirectory</td>
-<td><em>&#x9700;&#x8981;&#x8F93;&#x5165;</em></td>
-<td>&#x8F93;&#x5165;&#x9700;&#x8981;&#x4E0E;&#x60A8;S3&#x76F8;&#x8FDE;&#x7684;&#x5B9E;&#x4F8B;&#x7684;&#x76EE;&#x5F55;&#x3002;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;/mnt/s3&#xFF09;</td>
+<td>D10</td>
+<td style="text-align:center">Zigbee&#x6A21;&#x5757; RXD</td>
 </tr>
 </tbody>
 </table>
-<p>&#x622A;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/s3fs/03.png" alt=""></p>
+<h2 id="&#x5B9E;&#x9A8C;&#x8F6F;&#x4EF6;">&#x5B9E;&#x9A8C;&#x8F6F;&#x4EF6;</h2>
+<p><a href="https://github.com/serverless/serverless" target="_blank">Serverless</a>: &#x53EF;&#x7528;&#x6237;&#x5FEB;&#x901F;&#x7F16;&#x5199;&#xFF0C;&#x6D4B;&#x8BD5;&#xFF0C;&#x90E8;&#x7F72;&#x5FAE;&#x670D;&#x52A1;&#x3002;&#x5728;&#x8BE5;&#x5B9E;&#x9A8C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8BE5;&#x6846;&#x67B6;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x5F00;&#x53D1;&#x3002;</p>
+<p>&#x8BF7;&#x53C2;&#x8003;Serverless&#x6587;&#x6863;&#xFF0C;&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;&#x3002;</p>
+<p><a href="https://www.arduino.cc/en/Main/Software?#" target="_blank">Arduino IDE</a>: &#x7528;&#x4E8E;&#x7F16;&#x5199;Arduino&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x70E7;&#x5F55;&#x3002;</p>
+<h2 id="&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;">&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;</h2>
+<p><strong>&#x6B65;&#x9AA4;1:</strong> <a href="https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/module1.html" target="_blank">Greengrass&#x7684;&#x73AF;&#x5883;&#x8BBE;&#x7F6E;</a></p>
+<p><strong>&#x6B65;&#x9AA4;2:</strong> <a href="https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/module1.html" target="_blank">&#x5B89;&#x88C5;Greengrass&#x6838;&#x5FC3;&#x8F6F;&#x4EF6;</a></p>
+<p><strong>&#x6B65;&#x9AA4;3:</strong> &#x7F16;&#x5199;Lambda&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x5229;&#x7528;Serverless&#x90E8;&#x7F72;&#x5230;AWS Console</p>
+<p><a href="https://cdn.joeshi.im/blog/iot-series-greengrass-1/aws-smarthome-greengrass.zip" target="_blank">&#x4E0B;&#x8F7D;&#x4EE3;&#x7801;</a></p>
+<p>&#x6253;&#x5F00;<code>serial.js</code>, &#x5C06;<code>home_Core</code>&#x4FEE;&#x6539;&#x4E3A;&#x521A;&#x624D;&#x521B;&#x5EFA;&#x7684;&#x8BBE;&#x5907;&#x540D;&#x79F0;</p>
+<p>&#x90E8;&#x7F72;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-shell">cd aws-smarthome-greengrass
+
+serverless deploy --region us-west-2  # deploy to Oregon region
+</code></pre>
+<p>&#x6253;&#x5F00;Lambda&#xFF0C;&#x627E;&#x5230;<code>aws-smarthome-greengrass-dev-getMoistureValue</code>&#x786E;&#x8BA4;Lambda&#x90E8;&#x7F72;&#x6210;&#x529F;</p>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/moisture-lambda.png" alt="Mosisture Lambda"></p>
+<p>&#x5728;&#x521B;&#x5EFA;&#x90E8;&#x7F72;lambda&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x539F;&#x751F;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x90E8;&#x7F72;Lambda, &#x8BF7;&#x53C2;&#x8003;<a href="https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/create-lambda.html" target="_blank">&#x6559;&#x7A0B;</a></p>
+<p><strong>&#x6B65;&#x9AA4;4:</strong> &#x4E3A;AWS Greengrass&#x914D;&#x7F6E;Lambda&#x51FD;&#x6570;</p>
+<p>&#x6309;&#x7167;<a href="https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/config-lambda.html" target="_blank">&#x6559;&#x7A0B;</a> &#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5C06;&#x4E32;&#x53E3;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9001;&#x5230;&#x4E91;&#x7AEF;&#x3002;</p>
+<p><strong>&#x6B65;&#x9AA4;5:</strong> &#x90E8;&#x7F72;Greengrass</p>
+<p>&#x8BF7;&#x53C2;&#x8003;<a href="https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/configs-core.html" target="_blank">&#x6559;&#x7A0B;</a>&#xFF0C;&#x5C06;Greengrass&#x90E8;&#x7F72;&#x5230;Core&#x8BBE;&#x5907;</p>
+<p>&#x5728;&#x90E8;&#x7F72;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4E0D;&#x6210;&#x529F;&#x7684;&#x60C5;&#x51B5;&#xFF08;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x672A;&#x6EE1;&#x8DB3;Greengrass&#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x8981;&#x6C42;&#xFF0C;&#x7A0B;&#x5E8F;&#x6709;Bug&#x6216;&#x8005;&#x5185;&#x5B58;&#x5206;&#x914D;&#x8FC7;&#x5C0F;&#xFF09;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;Greengrass&#x4E2D;&#x7684;runtime.log, crash.log&#x8FDB;&#x884C;trouble shooting. &#x66F4;&#x591A;&#x5185;&#x5BB9;&#x8BF7;&#x53C2;&#x8003;<a href="https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/gg-troubleshooting.html" target="_blank">GGC&#x95EE;&#x9898;&#x6392;&#x67E5;</a></p>
+<p><strong>&#x6B65;&#x9AA4;6:</strong> &#x5C06;&#x6E7F;&#x5EA6;&#x68C0;&#x6D4B;&#x4EEA;&#x4EE3;&#x7801;&#x70E7;&#x5F55;&#x5230;UNO</p>
 <ul>
-<li>&#x5728; <strong>Options</strong> &#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4E3A;&#x5806;&#x6808;&#x4E2D;&#x7684;&#x8D44;&#x6E90; <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank">&#x6307;&#x5B9A;&#x6807;&#x7B7E;</a> (&#x952E;/&#x503C;&#x5BF9;) &#x5E76; <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank">&#x8BBE;&#x7F6E;&#x9AD8;&#x7EA7;&#x9009;&#x9879;</a>&#x3002;&#x5728;&#x5B8C;&#x6210;&#x6B64;&#x64CD;&#x4F5C;&#x540E;&#xFF0C;&#x9009;&#x62E9; <strong>Next</strong> &#x3002;</li>
-<li>&#x5728; <strong>Review</strong> &#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x67E5;&#x770B;&#x5E76;&#x786E;&#x8BA4;&#x6A21;&#x677F;&#x8BBE;&#x7F6E;&#x3002;&#x9009;&#x62E9; <strong>Capabilities</strong> &#x4E0B;&#x7684;&#x590D;&#x9009;&#x6846;&#xFF0C;&#x4EE5;&#x786E;&#x8BA4;&#x6A21;&#x677F;&#x5C06;&#x521B;&#x5EFA; IAM &#x8D44;&#x6E90;&#x3002;</li>
+<li><a href="https://cdn.joeshi.im/blog/iot-series-greengrass-1/aws-smarthome-moisture.zip" target="_blank">&#x70B9;&#x51FB;&#x4E0B;&#x8F7D;&#x4EE3;&#x7801;</a></li>
+<li>&#x5C06;UNO&#x7684;USB&#x8FDE;&#x63A5;&#x81F3;&#x7535;&#x8111;&#xFF0C;&#x5E76;&#x6253;&#x5F00;&#x5DE5;&#x7A0B;&#x6587;&#x4EF6;</li>
+<li>&#x9009;&#x62E9;Board&#x4E3A;Arduino UNO, &#x5982;&#x4E0B;&#x56FE;
+<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/arduino_board.png" alt="Board"></li>
+<li>&#x9009;&#x62E9;&#x6B63;&#x786E;&#x7684;&#x4E32;&#x53E3;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;
+<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/arduino_port.png" alt="Board"></li>
+<li>&#x70B9;&#x51FB;&#x3010;Sketch&#x3011;, &#x9009;&#x62E9;&#x3010;Upload&#x3011;&#x5C06;&#x7A0B;&#x5E8F;&#x70E7;&#x5F55;&#x81F3;UNO</li>
 </ul>
-<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/s3fs/04.png" alt=""></p>
-<ul>
-<li>&#x9009;&#x62E9; <strong>Create</strong> &#x4EE5;&#x90E8;&#x7F72;&#x5806;&#x6808;&#x3002;</li>
-<li>&#x76D1;&#x63A7;&#x5806;&#x6808;&#x7684;&#x72B6;&#x6001;&#x3002;&#x5F53;&#x72B6;&#x6001;&#x4E3A; <strong>CREATE_COMPLETE</strong> &#x65F6; (&#x5982;&#x56FE;4&#x6240;&#x793A;)&#xFF0C;&#x8868;&#x793A; MongoDB &#x7FA4;&#x96C6;&#x5DF2;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x3002;</li>
-</ul>
-<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/s3fs/05.png" alt=""></p>
-<p><strong><strong>&#x6B65;&#x9AA4;&#x4E8C; &#x8FDE;&#x63A5;&#x5230;&#x5B9E;&#x4F8B;</strong></strong></p>
-<ul>
-<li>&#x5F53; AWS CloudFormation &#x6A21;&#x677F;&#x6210;&#x529F;&#x521B;&#x5EFA;&#x5806;&#x6808;&#x540E;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x901A;&#x8FC7;SSH&#x8FDE;&#x63A5;AWS&#x8D26;&#x6237;&#x4E2D;&#x5DF2;&#x5B89;&#x88C5;&#x7684;S3fs&#x5B9E;&#x4F8B;&#x3002;</li>
-<li>&#x8FDB;&#x5165;&#x76EE;&#x5F55;(&#x4F8B;&#xFF1A; <strong>/mnt/s3mnt</strong> )&#xFF0C;&#x53EF;&#x53D1;&#x73B0;&#x5B9E;&#x4F8B;&#x5DF2;&#x7ECF;&#x4E0E;&#x60A8;&#x7684;S3&#x6876;&#x76F8;&#x8FDE;&#x3002;</li>
-</ul>
-<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/s3fs/06.png" alt=""></p>
+<p><strong>&#x6B65;&#x9AA4;7:</strong> &#x6253;&#x5F00;AWS IoT&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;&#xFF0C;&#x9A8C;&#x8BC1;&#x6570;&#x636E;&#x662F;&#x5426;&#x6B63;&#x786E;&#x4E0A;&#x4F20;</p>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/moisture_data.png" alt="&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;"></p>
 
                                 
                                 </section>
@@ -656,6 +641,14 @@
 
             
                 
+                <a href="lab2.IoTCore.2.html" class="navigation navigation-prev " aria-label="Previous page: IoT Core 实验2">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lab4.Alexa.html" class="navigation navigation-next " aria-label="Next page: Alexa与AWS IoT的集成">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -664,7 +657,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NFS: 利用S3FS自建NFS","level":"1.3.1","depth":2,"next":{"title":"网络 & 加速","level":"1.4","depth":1,"ref":"","articles":[{"title":"海外域名部署方案：海外域名向国内用户提供服务","level":"1.4.1","depth":2,"path":"ByPassICP.md","ref":"ByPassICP.md","articles":[]},{"title":"VPC 配置指南","level":"1.4.2","depth":2,"path":"network/vpc_guide.md","ref":"network/vpc_guide.md","articles":[]}]},"previous":{"title":"存储","level":"1.3","depth":1,"ref":"","articles":[{"title":"NFS: 利用S3FS自建NFS","level":"1.3.1","depth":2,"path":"storage/S3fs.md","ref":"storage/S3fs.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus","expandable-chapters","page-toc"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"storage/S3fs.md","mtime":"2018-11-08T16:08:39.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-08T16:09:27.391Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"IoT Greengrass实验","level":"1.7.1.3","depth":3,"next":{"title":"Alexa与AWS IoT的集成","level":"1.7.1.4","depth":3,"path":"IoT/lab4.Alexa.md","ref":"IoT/lab4.Alexa.md","articles":[]},"previous":{"title":"IoT Core 实验2","level":"1.7.1.2","depth":3,"path":"IoT/lab2.IoTCore.2.md","ref":"IoT/lab2.IoTCore.2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga","disqus","expandable-chapters","page-toc"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"IoT/lab3.greengrass.md","mtime":"2018-11-08T16:08:39.234Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-08T16:09:27.391Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
