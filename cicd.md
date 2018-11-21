@@ -13,7 +13,7 @@
 
 # 步骤
   
-   ![图片1](./assets/CICD/overview.png)
+   ![图片1](./assets/CICD/flowchart.png)
    
 ## 流程
 1.	开发者将一个新版本的代码工程提交到CodeCommit
