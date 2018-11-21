@@ -1,40 +1,43 @@
-##### 1. ´´½¨×ÔÓÉ·ç¸ñµÄÏîÄ¿
-##### 2. ÊäÈëgithubÏîÄ¿µÄµØÖ·
-  ![Í¼Æ¬1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-1.png)
-##### 3. ÊäÈëgithubÏîÄ¿µÄgitµØÖ·ºÍ·ÖÖ§
-  ![Í¼Æ¬1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-2.png)
-##### 4. ¹´Ñ¡Github hook trigger for GITScm polling  ÊµÏÖgithub´úÂë¸üĞÂµÄ×Ô¶¯´¥·¢
-  ![Í¼Æ¬1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-3.png)
-##### 5. µã»÷¡°Ìí¼Ó¹¹½¨²½Öè¡±  Ñ¡Ôñ¡°AWS cloud build¡±²å¼ş
-##### 6. ÊäÈëawsµÄaccessId ºÍaccessKey
-##### 7. ÊäÈëcode buildÏîÄ¿µÄÏîÄ¿Ãû³ÆºÍ¿ÉÓÃÇø
-  ![Í¼Æ¬1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-4.png)
-##### 8. µã»÷¡°Ìí¼Ó¹¹½¨²½Öè¡±  Ñ¡Ôñ¡°AWS cloud build¡±²å¼ş
-##### 9. ÊäÈëawsµÄaccessId ºÍaccessKey
-##### 10. ÊäÈëcode buildÏîÄ¿µÄÏîÄ¿Ãû³ÆºÍ¿ÉÓÃÇø
-##### 11. ´ËÏîÄ¿Ä¿µÄÎª°ÑÔ´Âë´ò°üÎªjar°ü²¢ÉÏ´«µ½S3Í°ÖĞ
-  ![Í¼Æ¬1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-5.png)
-##### 12. Ñ¡Ôñ¡°Ìí¼Ó¹¹½¨²½Öè¡°
-##### 13. Ñ¡Ôñ¡°Ö´ĞĞ shell¡°
-  ![Í¼Æ¬1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-6.png)
+##### 1. åˆ›å»ºè‡ªç”±é£æ ¼çš„é¡¹ç›®
+##### 2. è¾“å…¥githubé¡¹ç›®çš„åœ°å€
+  ![å›¾ç‰‡1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-1.png)
+##### 3. è¾“å…¥githubé¡¹ç›®çš„gitåœ°å€å’Œåˆ†æ”¯
+  ![å›¾ç‰‡1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-2.png)
+##### 4. å‹¾é€‰Github hook trigger for GITScm polling  å®ç°githubä»£ç æ›´æ–°çš„è‡ªåŠ¨è§¦å‘
+  ![å›¾ç‰‡1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-3.png)
+##### 5. ç‚¹å‡»â€œæ·»åŠ æ„å»ºæ­¥éª¤â€  é€‰æ‹©â€œAWS cloud buildâ€æ’ä»¶
+##### 6. è¾“å…¥awsçš„accessId å’ŒaccessKey
+##### 7. è¾“å…¥code buildé¡¹ç›®çš„é¡¹ç›®åç§°å’Œå¯ç”¨åŒº
+  ![å›¾ç‰‡1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-4.png)
+##### 8. ç‚¹å‡»â€œæ·»åŠ æ„å»ºæ­¥éª¤â€  é€‰æ‹©â€œAWS cloud buildâ€æ’ä»¶
+##### 9. è¾“å…¥awsçš„accessId å’ŒaccessKey
+##### 10. è¾“å…¥code buildé¡¹ç›®çš„é¡¹ç›®åç§°å’Œå¯ç”¨åŒº
+##### 11. æ­¤é¡¹ç›®ç›®çš„ä¸ºæŠŠæºç æ‰“åŒ…ä¸ºjaråŒ…å¹¶ä¸Šä¼ åˆ°S3æ¡¶ä¸­
+  ![å›¾ç‰‡1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-5.png)
+##### 12. é€‰æ‹©â€œæ·»åŠ æ„å»ºæ­¥éª¤â€œ
+##### 13. é€‰æ‹©â€œæ‰§è¡Œ shellâ€œ
+  ![å›¾ç‰‡1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-6.png)
   
-  ±¾¶Î´úÂëµÄÂß¼­ÊÇ£º
-1.	¸ù¾İbuild_numberÒ²¾ÍÊÇÃ¿´ÎbuildµÄ»·¾³±äÁ¿Öµ£¬ÎÒÃÇÅĞ¶ÏÊ¹ÓÃÄÄ¸öÈÎÎñ¶¨ÒåÄ£°å  Çø±ğÔÚÓÚ²»Í¬µÄÄ£°åÖĞÈİÆ÷ÓëÊµÀıµÄ¶Ë¿ÚºÅ¶ÔÓ¦²»Í¬
-2.	¸ù¾İĞÂµÄ²ÎÊı´´½¨ĞÂµÄÈÎÎñ¶¨Òå£¬
-3.	¸üĞÂ·şÎñÖĞÔËĞĞµÄÈÎÎñÎªĞÂÈÎÎñ
+  æœ¬æ®µä»£ç çš„é€»è¾‘æ˜¯ï¼š
+1.	æ ¹æ®build_numberä¹Ÿå°±æ˜¯æ¯æ¬¡buildçš„ç¯å¢ƒå˜é‡å€¼ï¼Œæˆ‘ä»¬åˆ¤æ–­ä½¿ç”¨å“ªä¸ªä»»åŠ¡å®šä¹‰æ¨¡æ¿  åŒºåˆ«åœ¨äºä¸åŒçš„æ¨¡æ¿ä¸­å®¹å™¨ä¸å®ä¾‹çš„ç«¯å£å·å¯¹åº”ä¸åŒ
+2.	æ ¹æ®æ–°çš„å‚æ•°åˆ›å»ºæ–°çš„ä»»åŠ¡å®šä¹‰ï¼Œ
+3.	æ›´æ–°æœåŠ¡ä¸­è¿è¡Œçš„ä»»åŠ¡ä¸ºæ–°ä»»åŠ¡
 
-##### 14. µã»÷¡°Ìí¼Ó¹¹½¨ºó²Ù×÷¡±
-##### 15.Ñ¡Ôñ lambda invocation
-1. ÌîĞ´acces IdºÍaccess Key
-2. ÌîĞ´lambdaËùÔÚµÄ¿ÉÓÃÇøºÍ¼´½«µ÷ÓÃµÄlambdaÃû³Æ
-  ![Í¼Æ¬1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-7.png)
+##### 14. ç‚¹å‡»â€œæ·»åŠ æ„å»ºåæ“ä½œâ€
+##### 15.é€‰æ‹© lambda invocation
+1. å¡«å†™acces Idå’Œaccess Key
+2. å¡«å†™lambdaæ‰€åœ¨çš„å¯ç”¨åŒºå’Œå³å°†è°ƒç”¨çš„lambdaåç§°
+  ![å›¾ç‰‡1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-7.png)
 
-LambdaÂß¼­Îª£º
+Lambdaé€»è¾‘ä¸ºï¼š
 
-1. Elb½ÓÁËÈı¸ö¼àÌıÆ÷  80 8080 1234 ·Ö±ğ¶ÔÓ¦Á½¸öÄ¿±ê×é tg1 tg2
-2. Ä¿±ê×éÓĞÒ»¸ötag: isProduction:Boolean  ´ú±í´ËÄ¿±ê×éÄ¿Ç°ÊÇ²»ÊÇÉú²ú»·¾³ËùÓÃÄ¿±ê×é
-3. ÎÒÃÇ½«¸üĞÂ¹ıµÄ·ÇÉú²ú»·¾³µÄÄ¿±ê×é ×÷Îª80¶Ë¿ÚµÄ¼àÌıÄ¿±ê×é  ½øĞĞ·şÎñ¸üĞÂ
-²¢ÇÒ¸üĞÂÄ¿±ê×éµÄtag
+1. Elbæ¥äº†ä¸‰ä¸ªç›‘å¬å™¨  80 8080 1234 åˆ†åˆ«å¯¹åº”ä¸¤ä¸ªç›®æ ‡ç»„ tg1 tg2
+2. ç›®æ ‡ç»„æœ‰ä¸€ä¸ªtag: isProduction:Boolean  ä»£è¡¨æ­¤ç›®æ ‡ç»„ç›®å‰æ˜¯ä¸æ˜¯ç”Ÿäº§ç¯å¢ƒæ‰€ç”¨ç›®æ ‡ç»„
+3. æˆ‘ä»¬å°†æ›´æ–°è¿‡çš„éç”Ÿäº§ç¯å¢ƒçš„ç›®æ ‡ç»„ ä½œä¸º80ç«¯å£çš„ç›‘å¬ç›®æ ‡ç»„  è¿›è¡ŒæœåŠ¡æ›´æ–°
+å¹¶ä¸”æ›´æ–°ç›®æ ‡ç»„çš„tag
 
-##### 16. µã»÷¡°Ó¦ÓÃ¡°¡±±£´æ¡°
-##### 17. µã»÷¡°Á¢¼´¹¹½¨¡°
+Lambdaä»£ç ä¸ºï¼š
+ 	https://s3-us-west-2.amazonaws.com/westcode/blue_lambda.py
+  
+##### 16. ç‚¹å‡»â€œåº”ç”¨â€œâ€ä¿å­˜â€œ
+##### 17. ç‚¹å‡»â€œç«‹å³æ„å»ºâ€œ
