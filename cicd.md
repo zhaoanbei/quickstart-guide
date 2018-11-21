@@ -16,11 +16,17 @@
    ![图片1](./assets/CICD/flowchart.png)
    
 ## 流程
-1.	开发者将一个新版本的代码工程提交到CodeCommit
-2.	Pipeline的Source阶段，检测到指定CodeCommit的repo有新版本的更新，从CodeCommit上拉取代码工程，开启已设定好的CICD Pipeline
-3.	Pipeline的Build阶段，AWS CodeBuild将新版本的代码工程打包为jar包并上传至S3。
-4.	Pipeline的Build阶段，AWS CodeBuild将下载对应的jar包并做成Docker镜像，最后将打包好的镜像推送到Amazon ECR
-5.	Pipeline的Deploy阶段，AWS CodePipeline触发AWS CloudFormation，其定义了Amazon ECS的Task definition和service，AWS CloudFormation创建新版本的Task definition关联到新版本的Docker镜像，并更新Service。Amazon ECS从Amazon ECR中取到新版本的Docker镜像，创建新的 Task definition和服务，完成服务的更新
+1.	开发者将一个新版本的代码工程提交到CodeCommit或者github  触发codepipeline 流程
+2.      Pipeline的Source阶段，检测到指定CodeCommit的repo/ github 有新版本的更新 
+3.      从CodeCommit / github 上拉取工程代码
+4.	Pipeline的Build阶段，AWS CodeBuild将新版本的代码按照 buildspec 文件打包为jar包
+5.      将打包好的jar包上传到S3
+6.      上传到s3的jar包会作为下一步build的source
+7.      Pipeline的Build阶段，上一部build结束之后会触发第二个构建步骤，本步骤将jar包打包成Docker镜像
+8.      将Docker镜像上传到ECR镜像仓库
+9.      ECR中的镜像会在下一步中作为容器镜像
+10.	Pipeline的Deploy阶段，AWS CodePipeline触发AWS CloudFormation，其定义了Amazon ECS的Task definition和service
+11.     AWS CloudFormation创建新版本的Task definition关联到新版本的Docker镜像，并更新Service。Amazon ECS从Amazon ECR中取到新版本的Docker镜像，创建新的 Task definition和服务，完成服务的更新
 	
 ## 搭建
 ### 基础设施
