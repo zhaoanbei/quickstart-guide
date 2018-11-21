@@ -34,10 +34,10 @@ phases:
       - aws s3 cp s3://<输出构建的s3桶地址> /test_springboot.jar ./
   build:
     commands:
-      - docker build -t 859407660328.dkr.ecr.us-east-1.amazonaws.com/codevpcregis:$TAG .
+      - docker build -t <账号>.dkr.ecr.us-east-1.amazonaws.com/codevpcregis:$TAG .
   post_build:
     commands:
-      - docker push "859407660328.dkr.ecr.us-east-1.amazonaws.com/codevpcregis:$TAG"
+      - docker push "<账号>.dkr.ecr.us-east-1.amazonaws.com/codevpcregis:$TAG"
       - printf '{"tag":"%s"}' $TAG > build.json
 artifacts:
   files: build.json
