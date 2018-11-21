@@ -1,5 +1,5 @@
 ##### 概述：
-本文讲述的是容器蓝绿部署所需jenkins相关配置
+本文讲述的是用jenkins做容器蓝绿部署所需相关配置， 其中涉及到的codeBuild相关的配置同文章： cicd docker bule codePipe
 ##### 步骤：
 1. 创建jenkins项目
 2. 定义源码地址和代码更新触发
