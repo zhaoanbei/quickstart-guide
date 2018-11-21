@@ -1,25 +1,27 @@
-- ### ´´½¨codebuildÏîÄ¿
-1. ´ËÏîÄ¿¹¹½¨µÄÄ¿±êÎª°Ñjava³ÌĞò´ò°ü³Éjar°ü
-2. ÊäÈëÏîÄ¿Ãû³ÆºÍÔ´Âë´æ´¢µÄµØ·½  Èçgithub  githubÏîÄ¿url
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-1.png)
-3. Ñ¡ÔñubuntuÎª»ù±¾¾µÏñ
-4. Ñ¡ÔñJava»·¾³ºÍopenjdk-java9µÄ°æ±¾
-5. Ñ¡Ôñ¡°buildspex.yml¡±×÷Îª¹¹½¨½Å±¾
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-2.png)
-6. Ñ¡ÔñS3×÷Îª¹¹½¨µÄÊä³ö
-7. ÊäÈë×÷ÎªÊä³öµÄS3Í°µÄÃû³Æ
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-3.png)
-8. Ñ¡ÔñcodebuildµÄÖ´ĞĞ½ÇÉ«
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-4.png)
-- ###  ´´½¨ĞÂµÄcodeBuildÏîÄ¿  
-1. ´ËÏîÄ¿µÄÄ¿±êÎª½«jar°ü¹¹½¨Îªdockers¾µÏñ
-2. ÊäÈëÏîÄ¿Ãû³ÆºÍÔ´Âë´æ´¢µÄµØ·½  Èçgithub  githubÏîÄ¿url
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-5.png)
-3. Ñ¡ÔñubuntuÎª²Ù×÷ÏµÍ³
-4. ÓïÑÔÎªdockers
-5. ÔËĞĞ°æ±¾Îªaws codebuild docker
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-6.png)
-6.ÊäÈë¹¹½¨ÃüÁî
+- ### æ¦‚è¿°
+æœ¬æ–‡æè¿°äº†åšå®¹å™¨è“ç»¿éƒ¨ç½²çš„codeBuildç›¸å…³é…ç½®ï¼Œ å’Œå®¹å™¨è“ç»¿éƒ¨ç½² jenkinsç›¸å…³é…ç½®ä¸€èµ·ï¼Œå¯ä»¥å®Œæˆå®¹å™¨è“ç»¿éƒ¨ç½²çš„é…ç½®
+- ### åˆ›å»ºcodebuildé¡¹ç›®ï¼š æºç ä»£ç ->jaråŒ…
+1. æ­¤é¡¹ç›®æ„å»ºçš„ç›®æ ‡ä¸ºæŠŠjavaç¨‹åºæ‰“åŒ…æˆjaråŒ…
+2. è¾“å…¥é¡¹ç›®åç§°å’Œæºç å­˜å‚¨çš„åœ°æ–¹  å¦‚github  githubé¡¹ç›®url
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-1.png)
+3. é€‰æ‹©ubuntuä¸ºåŸºæœ¬é•œåƒ
+4. é€‰æ‹©Javaç¯å¢ƒå’Œopenjdk-java9çš„ç‰ˆæœ¬
+5. é€‰æ‹©â€œbuildspex.ymlâ€ä½œä¸ºæ„å»ºè„šæœ¬
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-2.png)
+6. é€‰æ‹©S3ä½œä¸ºæ„å»ºçš„è¾“å‡º
+7. è¾“å…¥ä½œä¸ºè¾“å‡ºçš„S3æ¡¶çš„åç§°
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-3.png)
+8. é€‰æ‹©codebuildçš„æ‰§è¡Œè§’è‰²
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-4.png)
+- ###  åˆ›å»ºæ–°çš„codeBuildé¡¹ç›®ï¼š jaråŒ…->dockeré•œåƒ
+1. æ­¤é¡¹ç›®çš„ç›®æ ‡ä¸ºå°†jaråŒ…æ„å»ºä¸ºdockersé•œåƒ
+2. è¾“å…¥é¡¹ç›®åç§°å’Œæºç å­˜å‚¨çš„åœ°æ–¹  å¦‚github  githubé¡¹ç›®url
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-5.png)
+3. é€‰æ‹©ubuntuä¸ºæ“ä½œç³»ç»Ÿ
+4. è¯­è¨€ä¸ºdockers
+5. è¿è¡Œç‰ˆæœ¬ä¸ºaws codebuild docker
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-6.png)
+6.è¾“å…¥æ„å»ºå‘½ä»¤
 
 ```
 version: 0.2
@@ -29,7 +31,7 @@ phases:
       - $(aws ecr get-login --no-include-email)
       - TAG=v_${BUILD_NUMBER}
       - echo $TAG
-      - aws s3 cp s3://<Êä³ö¹¹½¨µÄs3Í°µØÖ·> /test_springboot.jar ./
+      - aws s3 cp s3://<è¾“å‡ºæ„å»ºçš„s3æ¡¶åœ°å€> /test_springboot.jar ./
   build:
     commands:
       - docker build -t 859407660328.dkr.ecr.us-east-1.amazonaws.com/codevpcregis:$TAG .
@@ -41,8 +43,8 @@ artifacts:
   files: build.json
 
 ```
-7. Ñ¡ÔñÎŞ¹¹½¨   ÎŞ»º´æ
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-7.png)
-8.Ñ¡ÔñcodeBuildµÄ½ÇÉ«
-  ![Í¼Æ¬1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-8.png)
-9. µã»÷¼ÌĞø
+7. é€‰æ‹©æ— æ„å»º   æ— ç¼“å­˜
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-7.png)
+8.é€‰æ‹©codeBuildçš„è§’è‰²
+  ![å›¾ç‰‡1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-8.png)
+9. ç‚¹å‡»ç»§ç»­
