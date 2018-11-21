@@ -1,3 +1,11 @@
+##### 概述：
+本文讲述的是容器蓝绿部署所需jenkins相关配置
+##### 步骤：
+1. 创建jenkins项目
+2. 定义源码地址和代码更新触发
+3. 增加构建步骤： 源码->jar包
+4. 增加构建步骤： jar包-> docker镜像
+5. 增加构建后操作： 切换生产端口
 ##### 1. 创建自由风格的项目
 ##### 2. 输入github项目的地址
   ![图片1](./assets/cicd-docker-jenkins/cicd-docker-jenkins-1.png)
