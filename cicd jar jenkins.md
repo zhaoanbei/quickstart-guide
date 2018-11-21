@@ -76,13 +76,20 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 11. 配置Github项目的地址，源代码管理选择Git方式。
      ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-18.png)
 12. 触发构建，选择Github hook trigger for GITScm polling
+
      ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-19.png)
+     
 13. 选择“添加构建步骤”
+
     选择“AWS cloud build”插件
+    
      ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-20.png)
 14. 其余保持空白
+
     点击“添加构建步骤”
+    
     选择执行 shell
+    
      ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-21.png)
 15. 
 ```
