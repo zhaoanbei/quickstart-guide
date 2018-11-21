@@ -1,9 +1,9 @@
-- ### 概述
+- ## 概述
 本文描述了用jenkins做容器蓝绿部署的codeBuild的相关配置
-- ### 组成
+- ## 组成
 1. codebuild项目： 源码代码->jar包
 2. codeBuild项目： jar包->docker镜像
-- ## 创建codebuild项目： 源码代码->jar包
+- ### 创建codebuild项目： 源码代码->jar包
 1. 此项目构建的目标为把java程序打包成jar包
 2. 输入项目名称和源码存储的地方  如github  github项目url
   ![图片1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-1.png)
@@ -16,7 +16,7 @@
   ![图片1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-3.png)
 8. 选择codebuild的执行角色
   ![图片1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-4.png)
-- ##  创建新的codeBuild项目： jar包->docker镜像
+- ###  创建新的codeBuild项目： jar包->docker镜像
 1. 此项目的目标为将jar包构建为dockers镜像
 2. 输入项目名称和源码存储的地方  如github  github项目url
   ![图片1](./assets/cicd-docker-codepipe/cicd-docker-codepipe-5.png)
