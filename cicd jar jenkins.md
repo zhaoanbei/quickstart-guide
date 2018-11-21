@@ -99,8 +99,11 @@ mv test_springboot.jar target/
 ```
 
    这三行脚本的意思是把上一步骤生成的jar包添加到环境中，方便后续的部署工作。
+   
+    ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-22.png)
+    
 16. 选择“Post-build Actions”，输入CodeDeploy相关信息，区域选择您所在的code deploy的region
-     ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-22.png)
-17. 认证方式可以输入AWS Access Key和Security Key，如果是生产环境建议使用临时的credentials。
+认证方式可以输入AWS Access Key和Security Key，如果是生产环境建议使用临时的credentials。
      ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-23.png)
+     
 18. 点击“应用” “保存”
