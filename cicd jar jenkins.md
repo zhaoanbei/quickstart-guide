@@ -1,3 +1,12 @@
+- ## 概述
+本文概述了用jenkins完成java项目的CICD流程的所需步骤，其中涉及到codeBuild和codeDeploy的相关配置在 [cicd jar codepipe](https://github.com/yuan00yuan/quickstart-guide/blob/master/cicd%20jar%20codepipe.md)中详细说明
+- ## 步骤
+1. 创建jenkins服务器
+2. 创建jenkins项目
+3. 配置source
+4. 配置codeBuild
+5. 配置codeDeploy
+
 - ### 创建jenkins
 1. 创建Amazon EC2实例，选择实例类型和添加存储。
    ![图片1](./assets/cicd-jar-jenkins/jar-jenkins-1.png)
