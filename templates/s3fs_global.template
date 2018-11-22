@@ -1,0 +1,355 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "S3FS Cloudformation template.",
+    "Parameters": {
+        "InstanceType": {
+            "Default": "t2.micro",
+            "Description": "EC2 instance type",
+            "Type": "String",
+            "AllowedValues": [
+                "t2.micro", "t2.small", "t2.medium", "t2.large", "t2.xlarge",
+                "m4.large", "m4.xlarge", "m4.2xlarge", "m4.4xlarge","m4.10xlarge","m4.16xlarge",
+                "c4.large", "c4.xlarge", "c4.2xlarge","c4.4xlarge","c4.8xlarge"
+            ],
+            "ConstraintDescription": "must be a valid EC2 instance type."
+        },
+        "KeyName": {
+            "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instances.",
+            "Type": "AWS::EC2::KeyPair::KeyName"
+        },
+        "VpcId": {
+            "Type": "AWS::EC2::VPC::Id",
+            "Description": "ID of an existing Virtual Private Cloud (VPC)"
+        },
+        "SubnetId": {
+            "Type": "AWS::EC2::Subnet::Id",
+            "Description": "ID of an existing subnet of your Virtual Private Cloud (VPC)"
+        },
+        "S3FSSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup::Id",
+            "Description": "ID of an existing security group"
+        },
+        "S3FSDirectory": {
+            "Type": "String",
+            "Description": "Your local directory"
+        },
+        "BucketName": {
+            "Type": "String",
+            "Description": "Name of an existing S3 bucketname"
+        },
+        "VolumeSize": {
+            "Type": "String",
+            "Description": "Size of your EBS Volume. Volume size must be greater than zero or the size of the snapshot used."
+        }
+    },
+    "Mappings": {
+        "AWSAmazonLinuxAMI": {
+            "us-east-1": {
+                "201309": "ami-b70554c8", "name": "Virginia"
+            },
+            "us-east-2":{
+                "201309": "ami-8c122be9", "name": "Ohio"
+            },
+            "us-west-1": {
+                "201309": "ami-e0ba5c83", "name": "California"
+            },
+            "us-west-2": {
+                "201309": "ami-a9d09ed1", "name": "Oregon"
+            },
+            "ca-central-1": {
+                "201309": "ami-0ee86a6a", "name": "Central"
+            },
+            "eu-central-1":{
+                "201309": "ami-7c4f7097", "name": "Frankfurt"
+            },
+            "eu-west-1": {
+                "201309": "ami-466768ac", "name": "Ireland"
+            },
+            "eu-west-2": {
+                "201309": "ami-b8b45ddf", "name": "London"
+            },
+            "eu-west-3": {
+                "201309": "ami-2cf54551", "name": "Paris"
+            },
+            "ap-southeast-1": {
+                "201309": "ami-05868579", "name": "Singapole"
+            },
+            "ap-southeast-2": {
+                "201309": "ami-39f8215b", "name": "Sydney"
+            },
+            "ap-northeast-1": {
+                "201309": "ami-e99f4896", "name": "Tokyo"
+            },
+            "ap-northeast-2": {
+                "201309": "ami-afd86dc1", "name": "Seoul"
+            },
+            "ap-northeast-3": {
+                "201309": "ami-32b8b64f", "name": "Osaka-Local"
+            },
+            "ap-south-1":{
+                "201309": "ami-d783a9b8", "name": "Mumbai"
+            },
+            "sa-east-1": {
+                "201309": "ami-6dca9001", "name": "SaoPaulo"
+            },
+            "cn-north-1": {
+                "201309": "ami-ffd00992", "name": "Beijing"
+            },
+            "cn-northwest-1": {
+                "201309": "ami-965d4af4", "name": "Ningxia"
+            }
+        }
+    },
+    "Resources": {
+        "S3FSRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": [
+                                    "ec2.amazonaws.com"
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                },
+                "Path": "/",
+                "Policies": [
+                    {
+                        "PolicyName": "s3fspolicy",
+                        "PolicyDocument": {
+                            "Statement": [
+                                {
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "s3:*"
+                                    ],
+                                    "Resource": { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "BucketName" } , "/*" ]]}
+                                },
+                                {
+                                    "Effect": "Allow",
+                                    "Action": ["s3:*"],
+                                    "Resource": { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "BucketName" }]]}
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "S3FSProfile": {
+            "Type": "AWS::IAM::InstanceProfile",
+            "Properties": {
+                "Roles": [
+                    {
+                        "Ref": "S3FSRole"
+                    }
+                ]
+            }
+        },
+        "S3FSInstance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "BlockDeviceMappings" : [
+                    {
+                        "DeviceName": "/dev/xvda",
+                        "Ebs": {
+                            "VolumeType": "io1",
+                            "Iops": "300",
+                            "VolumeSize": {"Ref": "VolumeSize"}
+                            }
+                    }
+                ],
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "AWSAmazonLinuxAMI",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        "201309"
+                    ]
+                },
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "IamInstanceProfile": {
+                    "Ref": "S3FSProfile"
+                },
+                "NetworkInterfaces": [
+                    {
+                        "DeviceIndex": "0",
+                        "AssociatePublicIpAddress": true,
+                        "DeleteOnTermination": true,
+                        "SubnetId": {
+                            "Ref": "SubnetId"
+                        },
+                        "GroupSet": [
+                            {
+                                "Ref": "S3FSSecurityGroup"
+                            }
+                        ]
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "S3FS"
+                    },
+                    {
+                        "Key": "Network",
+                        "Value": "Public"
+                    }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "#! /bin/bash -v\n",
+                                "yum update -y aws-cfn-bootstrap aws-cli\n",
+                                "# Helper function\n",
+                                "function error_exit\n",
+                                "{\n",
+                                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
+                                {
+                                    "Ref": "S3FSInstanceWaitHandle"
+                                },
+                                "'\n",
+                                "  exit 1\n",
+                                "}\n",
+                                "# Install packages\n",
+                                "/opt/aws/bin/cfn-init -s ",
+                                {
+                                    "Ref": "AWS::StackId"
+                                },
+                                " -r S3FSInstance ",
+                                "    --region ",
+                                {
+                                    "Ref": "AWS::Region"
+                                },
+                                " || error_exit 'Failed to run cfn-init'\n",
+                                "# All is well so signal success\n",
+                                "/opt/aws/bin/cfn-signal -e $? -r \"S3FSInstance setup complete\" '",
+                                {
+                                    "Ref": "S3FSInstanceWaitHandle"
+                                },
+                                "'\n"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Init": {
+                    "config": {
+                        "packages": {
+                            "yum": {
+                                "gcc": [],
+                                "gcc-c++": [],
+                                "fuse": [],
+                                "fuse-devel": [],
+                                "libcurl-devel": [],
+                                "libxml2-devel": [],
+                                "openssl-devel": [],
+                                "git": [],
+                                "mailcap": [],
+                                "automake": []
+                            }
+                        },
+                        "files": {
+                            "/tmp/s3fs_install.sh": {
+                                "content": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "cd /tmp\n",
+                                            "git clone https://github.com/s3fs-fuse/s3fs-fuse\n",
+                                            "echo \"just test if it work\" > file.txt \n",
+                                            "cd s3fs-fuse/ \n",
+                                            "./autogen.sh \n",
+                                            "./configure --prefix=/usr --with-openssl \n",
+                                            "make \n",
+                                            "make install \n",
+                                            "mkdir ", { "Ref" : "S3FSDirectory" }," \n",
+                                            "sudo chmod 0777 " , { "Ref" : "S3FSDirectory" }," \n",
+                                            "IAMROLE=`curl http://169.254.169.254/latest/meta-data/iam/security-credentials/`\n",
+                                            "s3fs ", { "Ref" : "BucketName" }," ", { "Ref" : "S3FSDirectory" } ," -o iam_role=$IAMROLE,rw,allow_other,use_cache=/tmp,uid=222,gid=500\n"
+                                        ]
+                                    ]
+                                },
+                                "mode": "000744",
+                                "owner": "root",
+                                "group": "root"
+                            },
+                            "/etc/fuse.conf": {
+                                "content": {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "user_allow_other\n"
+                                        ]
+                                    ]
+                                },
+                                "mode": "000744",
+                                "owner": "root",
+                                "group": "root"
+                            }
+                        },
+                        "commands": {
+                            "s3fs install": {
+                                "command": "/tmp/s3fs_install.sh",
+                                "cwd": "/tmp",
+                                "ignoreErrors": "false"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "S3FSInstanceWaitHandle": {
+            "Type": "AWS::CloudFormation::WaitConditionHandle"
+        },
+        "S3FSInstanceWaitCondition": {
+            "Type": "AWS::CloudFormation::WaitCondition",
+            "DependsOn": "S3FSInstance",
+            "Properties": {
+                "Handle": {
+                    "Ref": "S3FSInstanceWaitHandle"
+                },
+                "Timeout": "1200"
+            }
+        }
+    },
+    "Outputs": {
+        "SSHToS3FS": {
+            "Description": "SSH command to connect S3FSServer",
+            "Value": {
+                "Fn::Join": [
+                    "",
+                    [
+                        "ssh -i /path/to/",
+                        {
+                            "Ref": "KeyName"
+                        },
+                        ".pem ec2-user@",
+                        {
+                            "Fn::GetAtt": [
+                                "S3FSInstance",
+                                "PublicDnsName"
+                            ]
+                        }
+                    ]
+                ]
+            }
+        }
+    }
+}
