@@ -2,7 +2,7 @@
 
 您可以启动Quick Start，将 S3fs 部署到 AWS 账户中。完成部署需要约 5 分钟。请查看下述实施详细信息，按照此指南后面部分提供的分步说明进行操作。
 
-[![Image link china](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=S3FS&templateURL=https://s3.cn-north-1.amazonaws.com.cn/chinalabs/s3fs.template) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=S3FS&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/s3fs.template)
+[![Image link china](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=S3FS&templateURL=https://s3.cn-north-1.amazonaws.com.cn/chinalabs/s3fs.template) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=S3FS&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/s3fs-fixed.template)
 
 **步骤一：加载Quick Start**
 
