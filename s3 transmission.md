@@ -13,7 +13,7 @@
 7. 具有相应的权限的角色。
 
 [![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ecsStack&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/ecs.yaml)
-[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=lamStackS&templateURL= https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/lambda.yaml)
+[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=lamStackS&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/lambda.yaml)
 
 **在运行cloudformation之前需要您准备好：**
 国内：一个S3桶，用户的访问密钥 AccessId 和AccessKey
