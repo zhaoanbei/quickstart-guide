@@ -29,4 +29,4 @@
 * Alexa
   * [Cognito User Pool实现账户关联](alexa/account-linking-cognito.md)
 * Cognito
-  * [Cognito实现微信用户第三方登陆]（cognito android.md)
+  * [Cognito实现微信用户第三方登陆](cognito_android.md)
