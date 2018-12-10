@@ -1,32 +1,38 @@
-### - CodeBuild¹¹½¨
-1. .µã»÷¡°´´½¨ÏîÄ¿¡±
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-1.png)
-2. ½øÈëÈçÏÂÒ³Ãæ£¬ÊäÈëÏîÄ¿Ãû³Æ²¢Á¬½Óµ½GitHub²Ö¿â
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-2.png)
-3. µã»÷½øĞĞÊÚÈ¨Ğí¿É ²¢ÌîĞ´Ô´ÂëËùÔÚµÄGitHub²Ö¿â
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-3.png)
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-4.png)
-4. Ñ¡Ôñ¹¹½¨»·¾³£¬²Ù×÷ÏµÍ³ºÍÓïÑÔ£¬±¾ÀıÏîÄ¿Ê¹ÓÃjava±àĞ´
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-5.png)
-5. ¹¹½¨ÊÇ°Ñ¹¹½¨µÄ½á¹ûÊä³öµ½Ö¸¶¨µÄÎ»ÖÃ£¬ÈçS3Í°ÖĞ£¬±¾ÀıÊ¹ÓÃS3Í°´æ´¢¹¹½¨µÄ½á¹û
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-6.png)
-6. ´´½¨Ò»¸öĞÂµÄ½ÇÉ« ÓÃÓÚ´ËcodeBuildÏîÄ¿
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-7.png)
-7. ÆäËûÏîÄ¿±£³ÖÄ¬ÈÏ  µã»÷¼ÌĞø, ÔÚreviewÒ³ÃæÖĞµã»÷±£´æ
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-8.png)
-8. µã»÷Æô¶¯¹¹½¨
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-9.png)
-9. µã»÷ ¡°×ó²à¹¹½¨ÀúÊ·¼ÍÂ¼¡± ¿ÉÒÔ¿´µ½¹¹½¨³É¹¦ÊÇ¡°success¡±
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-10.png)
-10. ÔÚÊä³ö¹¹½¨µÄs3Í°ÖĞ ¿ÉÒÔ¿´µ½¹¹½¨µÄ½á¹û
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-11.png)
-### - CodeDeploy¹¹½¨
-1. µã»÷¡°´´½¨Ó¦ÓÃ³ÌĞò¡°
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-12.png)
-2. ÊäÈë¡°Ó¦ÓÃ³ÌĞòÃû³Æ¡°ºÍ¡±²¿Êğ×éÃû³Æ¡°
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-13.png)
-3. Ñ¡ÔñÏàÓ¦µÄec2ÊµÀı£¬ÎÒÃÇµÄÓ¦ÓÃ³ÌĞò½«²¿ÊğÔÚÕâĞ©ec2ÊµÀıÖĞ
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-14.png)
-4. µã»÷²¿ÊğÅäÖÃ  ±¾ÀıÖĞÑ¡Ôñ¡±oneAtATime¡±
-5. ÔÚIAMÖĞ´´½¨½ÇÉ«¸³Óècode deployµÄ·ÃÎÊÈ¨ÏŞ£¬Ñ¡Ôñ·şÎñµÄarn£¬µã»÷¡°´´½¨Ó¦ÓÃ³ÌĞò¡±
-  ![Í¼Æ¬1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-15.png)
+- ## æ¦‚è¿°
+æœ¬æ–‡æè¿°äº†ç”¨jenkinså®Œæˆjavaé¡¹ç›®çš„CICDæµç¨‹çš„CodeBuild,CodeDeployæ‰€éœ€æ­¥éª¤
+- ## ç»„æˆ
+1. codebuildé¡¹ç›®ï¼š æºç ä»£ç ->jaråŒ…
+2. CodeDeployæ„å»º
+
+-### - CodeBuildæ„å»º
+1. .ç‚¹å‡»â€œåˆ›å»ºé¡¹ç›®â€
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-1.png)
+2. è¿›å…¥å¦‚ä¸‹é¡µé¢ï¼Œè¾“å…¥é¡¹ç›®åç§°å¹¶è¿æ¥åˆ°GitHubä»“åº“
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-2.png)
+3. ç‚¹å‡»è¿›è¡Œæˆæƒè®¸å¯ å¹¶å¡«å†™æºç æ‰€åœ¨çš„GitHubä»“åº“
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-3.png)
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-4.png)
+4. é€‰æ‹©æ„å»ºç¯å¢ƒï¼Œæ“ä½œç³»ç»Ÿå’Œè¯­è¨€ï¼Œæœ¬ä¾‹é¡¹ç›®ä½¿ç”¨javaç¼–å†™
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-5.png)
+5. æ„å»ºæ˜¯æŠŠæ„å»ºçš„ç»“æœè¾“å‡ºåˆ°æŒ‡å®šçš„ä½ç½®ï¼Œå¦‚S3æ¡¶ä¸­ï¼Œæœ¬ä¾‹ä½¿ç”¨S3æ¡¶å­˜å‚¨æ„å»ºçš„ç»“æœ
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-6.png)
+6. åˆ›å»ºä¸€ä¸ªæ–°çš„è§’è‰² ç”¨äºæ­¤codeBuildé¡¹ç›®
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-7.png)
+7. å…¶ä»–é¡¹ç›®ä¿æŒé»˜è®¤  ç‚¹å‡»ç»§ç»­, åœ¨reviewé¡µé¢ä¸­ç‚¹å‡»ä¿å­˜
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-8.png)
+8. ç‚¹å‡»å¯åŠ¨æ„å»º
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-9.png)
+9. ç‚¹å‡» â€œå·¦ä¾§æ„å»ºå†å²çºªå½•â€ å¯ä»¥çœ‹åˆ°æ„å»ºæˆåŠŸæ˜¯â€œsuccessâ€
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-10.png)
+10. åœ¨è¾“å‡ºæ„å»ºçš„s3æ¡¶ä¸­ å¯ä»¥çœ‹åˆ°æ„å»ºçš„ç»“æœ
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-11.png)
+### - CodeDeployæ„å»º
+1. ç‚¹å‡»â€œåˆ›å»ºåº”ç”¨ç¨‹åºâ€œ
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-12.png)
+2. è¾“å…¥â€œåº”ç”¨ç¨‹åºåç§°â€œå’Œâ€éƒ¨ç½²ç»„åç§°â€œ
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-13.png)
+3. é€‰æ‹©ç›¸åº”çš„ec2å®ä¾‹ï¼Œæˆ‘ä»¬çš„åº”ç”¨ç¨‹åºå°†éƒ¨ç½²åœ¨è¿™äº›ec2å®ä¾‹ä¸­
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-14.png)
+4. ç‚¹å‡»éƒ¨ç½²é…ç½®  æœ¬ä¾‹ä¸­é€‰æ‹©â€oneAtATimeâ€
+5. åœ¨IAMä¸­åˆ›å»ºè§’è‰²èµ‹äºˆcode deployçš„è®¿é—®æƒé™ï¼Œé€‰æ‹©æœåŠ¡çš„arnï¼Œç‚¹å‡»â€œåˆ›å»ºåº”ç”¨ç¨‹åºâ€
+  ![å›¾ç‰‡1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-15.png)
