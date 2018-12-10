@@ -32,3 +32,7 @@
   * [Cognito User Pool实现账户关联](alexa/account-linking-cognito.md)
 * Cognito
   * [Cognito实现微信用户第三方登陆](cognito_android.md)
+* CICD
+  * [基于CodePipeline, ECS的cicd解决方案](cicd.md)
+  * [基于jenkins的容器蓝绿部署解决方案](cicd docker bule jenkins.md)
+  * [基于jenkins的java应用程序CICD解决方案](cicd jar jenkins.md)
