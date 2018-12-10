@@ -11,6 +11,8 @@
 * 网络 & 加速
   * [海外域名部署方案：海外域名向国内用户提供服务](ByPassICP.md)
   * [VPC 配置指南](network/vpc_guide.md)
+  * [ALB](ALB.md)
+  * [NLB](NLB.md)
 * 运维 
   * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
 * 迁移服务
