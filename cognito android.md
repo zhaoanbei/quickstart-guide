@@ -35,8 +35,7 @@ API gateway:微信接只能由后台访问所以用lambda实现，
 8.	IOS兼容性
 AWS提供兼容IOS的开发工具包
 
-####code:
-
+#### code:
 https://github.com/xfsnow/android/tree/master/CognitoWX
 
 https://github.com/xfsnow/serverless/tree/master/cognitowx
