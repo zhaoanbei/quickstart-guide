@@ -18,6 +18,7 @@
   * [域名迁移：从GoDaddy到Route 53](migration/TransferDomainRoute53.md)
   * [数据库迁移：使用AWS DMS迁移MongoDB到S3](migration/dms-mongo-to-s3.md)
   * [中国区服务迁移：从北京区到宁夏区](migration/BJStoZHY.md)
+  * [海内外数据同步：从global到GCR](s3 transmission.md)
 * 物联网 IoT
   * [IoT系列动手实验](IoT/README.md)
     * [IoT Core 实验1](IoT/lab1.IoTCore.1.md)
