@@ -12,7 +12,8 @@
 6. 两个dynamoDB 表： T 和C。表T用于记录传输的uplaodID和分段，传输情况，表C用于记录每个片段的唯一标记值-etag。
 7. 具有相应的权限的角色。
 
-[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=RedshiftvsRDS&templateURL=https://s3.amazonaws.com/redshift-rds/RDSvsRedshift.yaml)
+[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ecsStack&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/ecs.yaml)
+[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=lamStackS&templateURL= https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/lambda.yaml)
 
 **在运行cloudformation之前需要您准备好：**
 国内：一个S3桶，用户的访问密钥 AccessId 和AccessKey
