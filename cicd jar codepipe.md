@@ -4,7 +4,7 @@
 1. codebuild项目： 源码代码->jar包
 2. CodeDeploy构建
 
--### - CodeBuild构建
+- ### - CodeBuild构建
 1. .点击“创建项目”
   ![图片1](./assets/cicd-jar-codepipe/cicd-jar-codepipe-1.png)
 2. 进入如下页面，输入项目名称并连接到GitHub仓库
