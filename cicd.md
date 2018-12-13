@@ -1,5 +1,5 @@
 # 综述：
-通过本文章，您可以通过AWS CodePipeline，AWS CodeBuild，AWS CodeCommit, AWS CloudFormation 来实现基于Amazon ECS的CICD方案。开发人员在AWS CodeCommit中提交的新版本代码，会自动触发代码获取，打包镜像，上传镜像仓库，更新新版本容器服务，注册到负载均衡器等操作。
+通过本文章，您可以通过AWS CodePipeline，AWS CodeBuild，AWS CodeCommit, AWS CloudFormation 来实现基于Amazon ECS的CICD方案。开发人员在AWS CodeCommit中提交的新版本代码，会自动触发代码获取，打包镜像，上传镜像仓库，创建新版本的任务定义和服务。
 # 所需组件
 - [Code Commit](https://docs.aws.amazon.com/zh_cn/codecommit/latest/userguide/welcome.html)：AWS CodeCommit 是由 Amazon Web Services 托管的版本控制服务，可让您在云中私下存储和管理资产（如文档、源代码和二进制文件）。
 - Docker：CodeBuild使用Docker container 运行构建过程中需要的应用程序。
