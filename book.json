@@ -1,8 +1,13 @@
 {
+  "title": "AWS Quick Start",
+  "description": "AWS快速上手实验，自动化部署CloudFormation, 常用工具集",
   "styles": {
     "website": "styles/website.css"
   },
   "plugins": ["ga", "disqus", "expandable-chapters", "page-toc"],
+  "structure": {
+    "readme": "INTRO.md"
+  },
   "pluginsConfig": {
     "ga": {
       "token": "UA-123322271-1"
