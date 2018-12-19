@@ -1,6 +1,5 @@
 # Summary
-
-* [简介](README.md)
+* [简介](INTRO.md)
 * 数据库
   * [RedShift vs. MySQL对比实验](database/RedShift_MySQL.md)
   * [Aurora vs. MySQL性能对比试验](database/Aurora-vs-MySQL.md)
@@ -11,8 +10,7 @@
 * 网络 & 加速
   * [海外域名部署方案：海外域名向国内用户提供服务](ByPassICP.md)
   * [VPC 配置指南](network/vpc_guide.md)
-  * [ALB 配置指南](ALB.md)
-  * [NLB 配置指南](NLB.md)
+  * <a href="https://github.com/iceflow/easyvpn" target="_blank">快速自建VPN</a>
 * 运维 
   * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
 * 迁移服务
