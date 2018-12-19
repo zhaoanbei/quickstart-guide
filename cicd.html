@@ -1,0 +1,994 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基于CodePipeline, ECS的cicd解决方案 · AWS Quick Start</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc/page-toc.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="cicd_docker_bule_jenkins.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    数据库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="database/RedShift_MySQL.html">
+            
+                <a href="database/RedShift_MySQL.html">
+            
+                    
+                    RedShift vs. MySQL对比实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="database/Aurora-vs-MySQL.html">
+            
+                <a href="database/Aurora-vs-MySQL.html">
+            
+                    
+                    Aurora vs. MySQL性能对比试验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="database/MangoDB.html">
+            
+                <a href="database/MangoDB.html">
+            
+                    
+                    MongoDB自动部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="database/redis_benchmark.html">
+            
+                <a href="database/redis_benchmark.html">
+            
+                    
+                    ElastiCache:Redis基准测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    存储
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="storage/S3fs.html">
+            
+                <a href="storage/S3fs.html">
+            
+                    
+                    NFS: 利用S3FS自建NFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    网络 & 加速
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="ByPassICP.html">
+            
+                <a href="ByPassICP.html">
+            
+                    
+                    海外域名部署方案：海外域名向国内用户提供服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="network/vpc_guide.html">
+            
+                <a href="network/vpc_guide.html">
+            
+                    
+                    VPC 配置指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <a target="_blank" href="https://github.com/iceflow/easyvpn">
+            
+                    
+                    快速自建VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    运维
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="EC2_Auto_Tag.html">
+            
+                <a href="EC2_Auto_Tag.html">
+            
+                    
+                    EC2,EBS,AMI,Snapshot自动打Tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    迁移服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="migration/SMS_vm-import.html">
+            
+                <a href="migration/SMS_vm-import.html">
+            
+                    
+                    镜像迁移：本地镜像导入AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="migration/TransferDomainRoute53.html">
+            
+                <a href="migration/TransferDomainRoute53.html">
+            
+                    
+                    域名迁移：从GoDaddy到Route 53
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="migration/dms-mongo-to-s3.html">
+            
+                <a href="migration/dms-mongo-to-s3.html">
+            
+                    
+                    数据库迁移：使用AWS DMS迁移MongoDB到S3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="migration/BJStoZHY.html">
+            
+                <a href="migration/BJStoZHY.html">
+            
+                    
+                    中国区服务迁移：从北京区到宁夏区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="s3_transmission.html">
+            
+                <a href="s3_transmission.html">
+            
+                    
+                    海内外数据同步：从global到GCR
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    物联网 IoT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="IoT/">
+            
+                <a href="IoT/">
+            
+                    
+                    IoT系列动手实验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="IoT/lab1.IoTCore.1.html">
+            
+                <a href="IoT/lab1.IoTCore.1.html">
+            
+                    
+                    IoT Core 实验1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="IoT/lab2.IoTCore.2.html">
+            
+                <a href="IoT/lab2.IoTCore.2.html">
+            
+                    
+                    IoT Core 实验2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="IoT/lab3.greengrass.html">
+            
+                <a href="IoT/lab3.greengrass.html">
+            
+                    
+                    IoT Greengrass实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="IoT/lab4.Alexa.html">
+            
+                <a href="IoT/lab4.Alexa.html">
+            
+                    
+                    Alexa与AWS IoT的集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="DockerGuide.html">
+            
+                <a href="DockerGuide.html">
+            
+                    
+                    环境配置：在 Windows 中配置 Docker 镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Alexa
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="alexa/account-linking-cognito.html">
+            
+                <a href="alexa/account-linking-cognito.html">
+            
+                    
+                    Cognito User Pool实现账户关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Cognito
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="cognito_android.html">
+            
+                <a href="cognito_android.html">
+            
+                    
+                    Cognito实现微信用户第三方登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    CICD
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.10.1" data-path="cicd.html">
+            
+                <a href="cicd.html">
+            
+                    
+                    基于CodePipeline, ECS的cicd解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="cicd_docker_bule_jenkins.html">
+            
+                <a href="cicd_docker_bule_jenkins.html">
+            
+                    
+                    基于jenkins的容器蓝绿部署解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="cicd_jar_jenkins.html">
+            
+                <a href="cicd_jar_jenkins.html">
+            
+                    
+                    基于jenkins的java应用程序CICD解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >基于CodePipeline, ECS的cicd解决方案</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7EFC;&#x8FF0;&#xFF1A;">&#x7EFC;&#x8FF0;&#xFF1A;</h1>
+<p>&#x901A;&#x8FC7;&#x672C;&#x6587;&#x7AE0;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;AWS CodePipeline&#xFF0C;AWS CodeBuild&#xFF0C;AWS CodeCommit, AWS CloudFormation &#x6765;&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;Amazon ECS&#x7684;CICD&#x65B9;&#x6848;&#x3002;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5728;AWS CodeCommit&#x4E2D;&#x63D0;&#x4EA4;&#x7684;&#x65B0;&#x7248;&#x672C;&#x4EE3;&#x7801;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x89E6;&#x53D1;&#x4EE3;&#x7801;&#x83B7;&#x53D6;&#xFF0C;&#x6253;&#x5305;&#x955C;&#x50CF;&#xFF0C;&#x4E0A;&#x4F20;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x65B0;&#x7248;&#x672C;&#x7684;&#x4EFB;&#x52A1;&#x5B9A;&#x4E49;&#x548C;&#x670D;&#x52A1;&#x3002;</p>
+<h1 id="&#x6240;&#x9700;&#x7EC4;&#x4EF6;">&#x6240;&#x9700;&#x7EC4;&#x4EF6;</h1>
+<ul>
+<li><a href="https://docs.aws.amazon.com/zh_cn/codecommit/latest/userguide/welcome.html" target="_blank">Code Commit</a>&#xFF1A;AWS CodeCommit &#x662F;&#x7531; Amazon Web Services &#x6258;&#x7BA1;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x8BA9;&#x60A8;&#x5728;&#x4E91;&#x4E2D;&#x79C1;&#x4E0B;&#x5B58;&#x50A8;&#x548C;&#x7BA1;&#x7406;&#x8D44;&#x4EA7;&#xFF08;&#x5982;&#x6587;&#x6863;&#x3001;&#x6E90;&#x4EE3;&#x7801;&#x548C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF09;&#x3002;</li>
+<li>Docker&#xFF1A;CodeBuild&#x4F7F;&#x7528;Docker container &#x8FD0;&#x884C;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</li>
+<li>Amazon EC2&#xFF1A;&#x4F5C;&#x4E3A;ECS&#x7684;&#x5BB9;&#x5668;&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;&#x3002;</li>
+<li>Amazon VPC&#xFF1A;&#x670D;&#x52A1;&#x6240;&#x5728;&#x7684;&#x7F51;&#x7EDC;&#x3002;</li>
+<li><a href="http://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/Welcome.html" target="_blank">Amazon ECS</a>&#xFF1A;AWS&#x6258;&#x7BA1;&#x7684;&#x5BB9;&#x5668;&#x7F16;&#x6392;&#x670D;&#x52A1;&#x3002;</li>
+<li><a href="http://docs.aws.amazon.com/zh_cn/AmazonECR/latest/userguide/what-is-ecr.html" target="_blank">Amazon ECR</a>&#xFF1A;AWS &#x6258;&#x7BA1;&#x7684;&#x5BB9;&#x5668;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x3002;</li>
+<li><a href="http://docs.aws.amazon.com/zh_cn/codepipeline/latest/userguide/welcome.html" target="_blank">AWS CodePipeline</a>&#xFF1A;AWS &#x6258;&#x7BA1;&#x7684;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x6301;&#x7EED;&#x4EA4;&#x4ED8;&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x53EF;&#x9760;&#x7684;&#x66F4;&#x65B0;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x548C;&#x670D;&#x52A1;&#xFF0C;&#x96C6;&#x6210;&#x652F;&#x6301;GitHub&#xFF0C;Jenkins&#x7B49;&#x4E3B;&#x6D41;&#x5F00;&#x6E90;&#x5DE5;&#x5177;&#x3002;</li>
+<li><a href="http://docs.aws.amazon.com/zh_cn/codebuild/latest/userguide/welcome.html" target="_blank">AWS CodeBuild</a>&#xFF1A;AWS &#x6258;&#x7BA1;&#x7684;&#x6784;&#x5EFA;&#x670D;&#x52A1;&#xFF0C;&#x7528;&#x4E8E;&#x6253;&#x5305;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x53EF;&#x90E8;&#x7F72;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;</li>
+<li><a href="http://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/Welcome.html" target="_blank">AWS CloudFormation</a>&#xFF1A;&#x6279;&#x91CF;&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;AWS&#x8D44;&#x6E90;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x811A;&#x672C;&#x3002;</li>
+</ul>
+<h1 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h1>
+<p>   <img src="assets/CICD/flowchart.png" alt="&#x56FE;&#x7247;1"></p>
+<h2 id="&#x6D41;&#x7A0B;">&#x6D41;&#x7A0B;</h2>
+<ol>
+<li>&#x5F00;&#x53D1;&#x8005;&#x5C06;&#x4E00;&#x4E2A;&#x65B0;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;&#x5DE5;&#x7A0B;&#x63D0;&#x4EA4;&#x5230;CodeCommit&#x6216;&#x8005;github  &#x89E6;&#x53D1;codepipeline &#x6D41;&#x7A0B;</li>
+<li>Pipeline&#x7684;Source&#x9636;&#x6BB5;&#xFF0C;&#x68C0;&#x6D4B;&#x5230;&#x6307;&#x5B9A;CodeCommit&#x7684;repo/ github &#x6709;&#x65B0;&#x7248;&#x672C;&#x7684;&#x66F4;&#x65B0; </li>
+<li>&#x4ECE;CodeCommit / github &#x4E0A;&#x62C9;&#x53D6;&#x5DE5;&#x7A0B;&#x4EE3;&#x7801;</li>
+<li>Pipeline&#x7684;Build&#x9636;&#x6BB5;&#xFF0C;AWS CodeBuild&#x5C06;&#x65B0;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;&#x6309;&#x7167; buildspec &#x6587;&#x4EF6;&#x6253;&#x5305;&#x4E3A;jar&#x5305;</li>
+<li>&#x5C06;&#x6253;&#x5305;&#x597D;&#x7684;jar&#x5305;&#x4E0A;&#x4F20;&#x5230;S3</li>
+<li>&#x4E0A;&#x4F20;&#x5230;s3&#x7684;jar&#x5305;&#x4F1A;&#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x6B65;build&#x7684;source</li>
+<li>Pipeline&#x7684;Build&#x9636;&#x6BB5;&#xFF0C;&#x4E0A;&#x4E00;&#x90E8;build&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x4F1A;&#x89E6;&#x53D1;&#x7B2C;&#x4E8C;&#x4E2A;&#x6784;&#x5EFA;&#x6B65;&#x9AA4;&#xFF0C;&#x672C;&#x6B65;&#x9AA4;&#x5C06;jar&#x5305;&#x6253;&#x5305;&#x6210;Docker&#x955C;&#x50CF;</li>
+<li>&#x5C06;Docker&#x955C;&#x50CF;&#x4E0A;&#x4F20;&#x5230;ECR&#x955C;&#x50CF;&#x4ED3;&#x5E93;</li>
+<li>ECR&#x4E2D;&#x7684;&#x955C;&#x50CF;&#x4F1A;&#x5728;&#x4E0B;&#x4E00;&#x6B65;&#x4E2D;&#x4F5C;&#x4E3A;&#x5BB9;&#x5668;&#x955C;&#x50CF;</li>
+<li>Pipeline&#x7684;Deploy&#x9636;&#x6BB5;&#xFF0C;AWS CodePipeline&#x89E6;&#x53D1;AWS CloudFormation&#xFF0C;&#x5176;&#x5B9A;&#x4E49;&#x4E86;Amazon ECS&#x7684;Task definition&#x548C;service</li>
+<li>AWS CloudFormation&#x521B;&#x5EFA;&#x65B0;&#x7248;&#x672C;&#x7684;Task definition&#x5173;&#x8054;&#x5230;&#x65B0;&#x7248;&#x672C;&#x7684;Docker&#x955C;&#x50CF;&#xFF0C;&#x5E76;&#x66F4;&#x65B0;Service&#x3002;Amazon ECS&#x4ECE;Amazon ECR&#x4E2D;&#x53D6;&#x5230;&#x65B0;&#x7248;&#x672C;&#x7684;Docker&#x955C;&#x50CF;&#xFF0C;&#x521B;&#x5EFA;&#x65B0;&#x7684; Task definition&#x548C;&#x670D;&#x52A1;&#xFF0C;&#x5B8C;&#x6210;&#x670D;&#x52A1;&#x7684;&#x66F4;&#x65B0;</li>
+</ol>
+<h2 id="&#x642D;&#x5EFA;">&#x642D;&#x5EFA;</h2>
+<h3 id="&#x57FA;&#x7840;&#x8BBE;&#x65BD;">&#x57FA;&#x7840;&#x8BBE;&#x65BD;</h3>
+<h4 id="&#x521B;&#x5EFA;vpc&#xFF0C;&#x5B50;&#x7F51;">&#x521B;&#x5EFA;VPC&#xFF0C;&#x5B50;&#x7F51;</h4>
+<ol>
+<li>&#x6253;&#x5F00; Amazon VPC &#x63A7;&#x5236;&#x53F0; <a href="https://console.aws.amazon.com/vpc/&#x3002;" target="_blank">https://console.aws.amazon.com/vpc/&#x3002;</a> </li>
+<li>&#x5728;&#x63A7;&#x5236;&#x9762;&#x677F;&#x4E0A;&#xFF0C;&#x9009;&#x62E9; Create VPC (&#x521B;&#x5EFA; VPC)&#x3002; 
+<img src="assets/CICD/vpc-1.png" alt="&#x56FE;&#x7247;2"></li>
+<li>&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x5373; VPC with a Single Public Subnet&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x2018;&#x9009;&#x62E9;&#x2019;&#x3002; 
+<img src="assets/CICD/vpc-2.png" alt="&#x56FE;&#x7247;3"></li>
+<li>&#x4FDD;&#x7559;&#x5176;&#x4F59;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; Create VPC (&#x521B;&#x5EFA; VPC)&#x3002; <h4 id="&#x5B89;&#x5168;&#x7EC4;">&#x5B89;&#x5168;&#x7EC4;</h4>
+&#x521B;&#x5EFA; WebServerSG &#x5B89;&#x5168;&#x7EC4;</li>
+<li>&#x6253;&#x5F00; Amazon VPC &#x63A7;&#x5236;&#x53F0; <a href="https://console.aws.amazon.com/vpc/&#x3002;" target="_blank">https://console.aws.amazon.com/vpc/&#x3002;</a> </li>
+<li>&#x5728;&#x5BFC;&#x822A;&#x7A97;&#x683C;&#x4E2D;&#xFF0C;&#x9009;&#x62E9; Security Groups&#x3002; </li>
+<li>&#x9009;&#x62E9; Create Security Group&#x3002; </li>
+<li>&#x63D0;&#x4F9B;&#x5B89;&#x5168;&#x7EC4;&#x7684;&#x540D;&#x79F0;&#x548C;&#x63CF;&#x8FF0;&#x3002;&#x5728;&#x672C;&#x4E3B;&#x9898;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x540D;&#x79F0; WebServerSG &#x4F5C;&#x4E3A;&#x793A;&#x4F8B;&#x3002;&#x4ECE; VPC &#x83DC;&#x5355;&#x4E2D;&#x9009;&#x62E9;&#x60A8; VPC &#x7684; ID&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; Yes, Create&#x3002; </li>
+<li>&#x9009;&#x62E9;&#x60A8;&#x521A;&#x521A;&#x521B;&#x5EFA;&#x7684; WebServerSG &#x5B89;&#x5168;&#x7EC4;&#x3002;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x7A97;&#x683C;&#x5185;&#x4F1A;&#x663E;&#x793A;&#x6B64;&#x5B89;&#x5168;&#x7EC4;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x53CA;&#x53EF;&#x4F9B;&#x60A8;&#x4F7F;&#x7528;&#x5165;&#x7AD9;&#x89C4;&#x5219;&#x548C;&#x51FA;&#x7AD9;&#x89C4;&#x5219;&#x7684;&#x9009;&#x9879;&#x5361;&#x3002;</li>
+<li>&#x5728; Inbound Rules &#x9009;&#x9879;&#x5361;&#x4E0A;&#xFF0C;&#x9009;&#x62E9; Edit&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;<ul>
+<li>&#x4ECE; Type (&#x7C7B;&#x578B;) &#x5217;&#x8868;&#x4E2D;&#x9009;&#x62E9; HTTP&#xFF0C;&#x7136;&#x540E;&#x5728; 0.0.0.0/0Source (&#x6E90;) &#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165; &#x3002; </li>
+<li>&#x9009;&#x62E9; Add another rule&#xFF0C;&#x4ECE; Type &#x5217;&#x8868;&#x4E2D;&#x9009;&#x62E9; HTTPS&#xFF0C;&#x7136;&#x540E;&#x5728; Source &#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165; 0.0.0.0/0&#x3002;     </li>
+<li>&#x9009;&#x62E9; Add another rule&#xFF0C;&#x7136;&#x540E;&#x4ECE; Type &#x5217;&#x8868;&#x4E2D;&#x9009;&#x62E9; SSH (&#x5BF9;&#x4E8E; Linux) &#x6216; RDP (&#x5BF9;&#x4E8E; Windows)&#x3002;&#x5728; Source (&#x6E90;) &#x5B57;&#x6BB5;&#x4E2D;&#x8F93;&#x5165;&#x60A8;&#x7F51;&#x7EDC;&#x7684;&#x516C;&#x6709; IP &#x5730;&#x5740;&#x8303;&#x56F4;&#x3002;(&#x5982;&#x679C;&#x4E0D;&#x77E5;&#x9053;&#x6B64;&#x5730;&#x5740;&#x8303;&#x56F4;&#xFF0C;&#x5219;&#x53EF;&#x4F7F;&#x7528; 0.0.0.0/0 &#x4F5C;&#x6D4B;&#x8BD5;&#x7528;&#x9014;&#xFF1B;&#x5728;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x60A8;&#x5C06;&#x4EC5;&#x6388;&#x6743;&#x7279;&#x5B9A; IP &#x5730;&#x5740;&#x6216;&#x5730;&#x5740;&#x8303;&#x56F4;&#x8BBF;&#x95EE;&#x60A8;&#x7684;&#x5B9E;&#x4F8B;&#x3002;) </li>
+<li>&#x9009;&#x62E9; Add another rule&#xFF0C;&#x7136;&#x540E;&#x4ECE; Type &#x5217;&#x8868;&#x4E2D;&#x9009;&#x62E9; ALL traffic&#x3002;&#x5728; Source &#x5B57;&#x6BB5;&#x4E2D;&#xFF0C;&#x8F93;&#x5165; WebServerSG &#x5B89;&#x5168;&#x7EC4;&#x7684; ID&#x3002; </li>
+</ul>
+</li>
+<li>&#x9009;&#x62E9; Save</li>
+</ol>
+<h4 id="internet-gateway">Internet Gateway</h4>
+<p>&#x521B;&#x5EFA; Internet &#x7F51;&#x5173;&#x5E76;&#x5C06;&#x5176;&#x9644;&#x52A0;&#x5230; VPC</p>
+<ol>
+<li>&#x6253;&#x5F00; Amazon VPC &#x63A7;&#x5236;&#x53F0; <a href="https://console.aws.amazon.com/vpc/&#x3002;" target="_blank">https://console.aws.amazon.com/vpc/&#x3002;</a> </li>
+<li>&#x5728;&#x5BFC;&#x822A;&#x7A97;&#x683C;&#x4E2D;&#xFF0C;&#x9009;&#x62E9; Internet Gateways (Internet &#x7F51;&#x5173;)&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; Create internet gateway (&#x521B;&#x5EFA; Internet &#x7F51;&#x5173;)&#x3002; 
+<img src="assets/CICD/ing-1.png" alt="&#x56FE;&#x7247;4"></li>
+<li>&#x9009;&#x62E9;&#x521A;&#x521A;&#x521B;&#x5EFA;&#x7684; Internet &#x7F51;&#x5173;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; Actions, Attach to VPC
+<img src="assets/CICD/ing-2.png" alt="&#x56FE;&#x7247;5"></li>
+<li>&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x9009;&#x62E9; VPC&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; Attach (&#x9644;&#x52A0;)&#x3002; 
+<img src="assets/CICD/ing-3.png" alt="&#x56FE;&#x7247;6"><h4 id="&#x8DEF;&#x7531;&#x8868;">&#x8DEF;&#x7531;&#x8868;</h4>
+&#x5C06;Internet Gateway Attach&#x5230;VPC&#x4E0A;&#xFF0C;&#x8DEF;&#x7531;&#x8868;&#x914D;&#x7F6E;0.0.0.0/0&#x6307;&#x5411;Internet Gateway&#xFF0C;&#x5E76;&#x5173;&#x8054;&#x5B50;&#x7F51;&#x3002;
+<img src="assets/CICD/rtr.png" alt="&#x56FE;&#x7247;7">
+&#x4E4B;&#x540E;&#x7684;EC2&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x7B49;&#x90FD;&#x4F7F;&#x7528;&#x5728;&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;&#x91CC;&#x3002;<h4 id="&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;">&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;</h4>
+</li>
+<li>&#x521B;&#x5EFA;ALB&#x5E94;&#x7528;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#xFF0C;&#x76D1;&#x542C;80&#x7AEF;&#x53E3;
+<img src="assets/CICD/alb-1.png" alt="&#x56FE;&#x7247;8">
+<img src="assets/CICD/alb-2.png" alt="&#x56FE;&#x7247;9"></li>
+<li><p>&#x9009;&#x62E9;&#x5BF9;&#x5E94;&#x7684;&#x5B50;&#x7F51;
+<img src="assets/CICD/alb-3.png" alt="&#x56FE;&#x7247;10"></p>
+<h4 id="&#x65B0;&#x5EFA;&#x5B89;&#x5168;&#x7EC4;&#xFF0C;&#x7AEF;&#x53E3;80&#xFF0C;">&#x65B0;&#x5EFA;&#x5B89;&#x5168;&#x7EC4;&#xFF0C;&#x7AEF;&#x53E3;80&#xFF0C;</h4>
+<p><img src="assets/CICD/sg.png" alt="&#x56FE;&#x7247;11"></p>
+<h4 id="&#x65B0;&#x5EFA;&#x76EE;&#x6807;&#x7EC4;">&#x65B0;&#x5EFA;&#x76EE;&#x6807;&#x7EC4;</h4>
+<p><img src="assets/CICD/tg.png" alt="&#x56FE;&#x7247;12">
+ &#x6CE8;&#x518C;&#x76EE;&#x6807;&#x6B64;&#x65F6;&#x4E0D;&#x9009;&#x62E9;&#xFF0C;ECS&#x521B;&#x5EFA;&#x670D;&#x52A1;&#x65F6;&#x4F1A;&#x6CE8;&#x518C;&#x96C6;&#x7FA4;&#x548C;&#x5BF9;&#x5E94;&#x7AEF;&#x53E3;&#x8FDB;&#x6765;&#x3002;
+&#x4E0B;&#x4E00;&#x6B65;&#x5BA1;&#x6838;&#x540E;&#x521B;&#x5EFA;&#x3002;</p>
+<h4 id="ecs">ECS</h4>
+<h5 id="ecs&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;">ECS&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;</h5>
+<p>&#x5728;ECS&#x7684;&#x754C;&#x9762;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;&#x96C6;&#x7FA4;</p>
+<p><img src="assets/CICD/ecs-1.png" alt="&#x56FE;&#x7247;13">
+<img src="assets/CICD/ecs-2.png" alt="&#x56FE;&#x7247;14">
+&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x4FDD;&#x6301;&#x9ED8;&#x8BA4;&#x6216;&#x6839;&#x636E;&#x60C5;&#x51B5;&#x81EA;&#x884C;&#x9009;&#x62E9;&#x3002;
+&#x8054;&#x7F51;&#x914D;&#x7F6E;&#xFF0C;&#x9009;&#x62E9;&#x521B;&#x5EFA;&#x597D;&#x7684;VPC&#xFF0C;&#x5B50;&#x7F51;&#xFF0C;&#x521B;&#x5EFA;Role&#x5141;&#x8BB8;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x7684;ECS&#x4EE3;&#x7406;&#x8C03;&#x7528;ECS&#x670D;&#x52A1;&#x7684;API&#x3002;
+<img src="assets/CICD/ecs-3.png" alt="&#x56FE;&#x7247;15">
+<img src="assets/CICD/ecs-4.png" alt="&#x56FE;&#x7247;16">
+<img src="assets/CICD/ecs-5.png" alt="&#x56FE;&#x7247;17">
+&#x521B;&#x5EFA;&#x540E;&#x753B;&#x9762;&#x4E0B;&#x9762;&#x4F1A;&#x663E;&#x793A;&#x96C6;&#x7FA4;&#x4FE1;&#x606F;
+<img src="assets/CICD/ecs-6.png" alt="&#x56FE;&#x7247;18">
+&#x96C6;&#x7FA4;&#x4E00;&#x89C8;&#x4F1A;&#x663E;&#x793A;
+<img src="assets/CICD/ecs-7.png" alt="&#x56FE;&#x7247;19">
+&#x4FEE;&#x6539;ECS&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;&#x7684;&#x5B89;&#x5168;&#x7EC4;&#xFF0C;inbound&#x6E90;&#x8BBE;&#x7F6E;&#x4E3A;&#x5EFA;&#x597D;&#x7684;&#x5E94;&#x7528;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x7684;&#x5B89;&#x5168;&#x7EC4;ID
+<img src="assets/CICD/ecs-8.png" alt="&#x56FE;&#x7247;20"></p>
+<h5 id="ecr&#x955C;&#x50CF;&#x4ED3;&#x5E93;">ECR&#x955C;&#x50CF;&#x4ED3;&#x5E93;</h5>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;Build&#x9636;&#x6BB5;&#x4E0A;&#x4F20;&#x5B58;&#x653E;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;Docker&#x955C;&#x50CF;&#x7684;&#x955C;&#x50CF;&#x4ED3;&#x5E93;
+<img src="assets/CICD/ecs-9.png" alt="&#x56FE;&#x7247;21">
+ECS&#x754C;&#x9762;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x597D;&#x540E;&#x5982;&#x4E0B;
+<img src="assets/CICD/ecs-10.png" alt="&#x56FE;&#x7247;22"></p>
+<h4 id="s3&#x6876;&#x521B;&#x5EFA;">S3&#x6876;&#x521B;&#x5EFA;</h4>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;S3&#x6876;&#x7528;&#x6765;&#x5B58;&#x653E;Deploy&#x9636;&#x6BB5;CloudFormation&#x4F7F;&#x7528;&#x7684;&#x811A;&#x672C;&#x6A21;&#x7248;&#xFF0C;&#x521B;&#x5EFA;&#x6876;&#x65F6;&#x9009;&#x62E9;&#x548C;&#x4EE5;&#x4E0A;&#x670D;&#x52A1;&#x540C;&#x4E00;Region&#xFF0C;&#x5E76;&#x4E14;&#x6253;&#x5F00;&#x6876;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3002;
+<img src="assets/CICD/s3.png" alt="&#x56FE;&#x7247;23">
+&#x5C06;CloudFormation&#x6A21;&#x7248;&#x538B;&#x7F29;zip&#x540E;&#x4E0A;&#x4F20;&#x5230;&#x6876;&#x4E2D;&#x3002;
+&#x5C06;&#x6A21;&#x7248;&#x6587;&#x4EF6;service.yaml&#x653E;&#x5728;templates&#x6587;&#x4EF6;&#x5939;&#x540E;&#x538B;&#x7F29;&#x4E3A;templates.zip&#x3002;
+url</p>
+<h3 id="pipeline&#x7684;&#x642D;&#x5EFA;">Pipeline&#x7684;&#x642D;&#x5EFA;</h3>
+<p>&#x5206;&#x4E3A;Source&#xFF0C;Build&#x4EE5;&#x53CA;Deploy&#x4E09;&#x9636;&#x6BB5;&#xFF1A;</p>
+</li>
+<li>Source&#x9636;&#x6BB5;&#x8BBE;&#x7F6E;CodeCommit&#x4E0A;&#x7684;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;Deploy&#x9636;&#x6BB5;&#x4F1A;&#x4F7F;&#x7528;&#x7684;CloudFormation&#x811A;&#x672C;&#x6A21;&#x7248;&#x6765;&#x66F4;&#x65B0;ECS&#x670D;&#x52A1;&#xFF0C;</li>
+<li>Build&#x9636;&#x6BB5;&#x4F7F;&#x7528;AWS CodeBuild&#x6765;&#x6253;&#x5305;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x4E3A;jar&#x5305;&#x5E76;&#x4E0A;&#x4F20;&#x81F3;S3</li>
+<li>Build&#x9636;&#x6BB5;&#x4F7F;&#x7528;AWS CodeBuild&#x6765;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;jar&#x5305;&#x5E76;&#x6253;&#x5305;&#x6210;Docker&#x955C;&#x50CF;&#x5E76;&#x4E0A;&#x4F20;&#x5230;ECR&#xFF0C;</li>
+<li>Deploy&#x9636;&#x6BB5;&#x4F7F;&#x7528;Source&#x9636;&#x6BB5;&#x5F15;&#x5165;&#x7684;CloudFormation&#x811A;&#x672C;&#xFF0C;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#xFF0C;&#x4EE5;&#x53CA;&#x4E0A;&#x4F20;&#x5230;ECR&#x7684;Docker&#x955C;&#x50CF;&#x7B49;&#x5BF9;&#x8C61;&#xFF0C;&#x66F4;&#x65B0;&#x670D;&#x52A1;&#x3002;</li>
+<li>AWS CodePipeline&#x521B;&#x5EFA;&#x540E;&#x7684;&#x5C55;&#x793A;&#x56FE;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x4E32;&#x8D77;&#x4E86;&#x6574;&#x4E2A;CICD&#x6D41;&#x7A0B;
+<img src="assets/CICD/pipe-1.png" alt="&#x56FE;&#x7247;24">
+&#x5728;AWS CodePipeline&#x754C;&#x9762;&#x70B9;&#x51FB;&#x521B;&#x5EFA;&#x7BA1;&#x9053;Pipeline&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x753B;&#x9762;&#x5DE6;&#x4FA7;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x6D41;&#x7A0B;&#xFF0C;&#x4ECE;&#x6E90;&#xFF0C;&#x5230;build&#x9636;&#x6BB5;&#x751F;&#x6210;jar&#xFF0C;&#x5230;build&#x9636;&#x6BB5;&#x751F;&#x6210;docker&#x5230;&#x90E8;&#x7F72;Deploy&#x3002;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x968F;&#x5B9E;&#x9645;&#x9700;&#x8981;&#xFF0C;&#x6216;&#x968F;&#x7740;CICD&#x6D41;&#x7A0B;&#x7684;&#x7531;&#x7B80;&#x5165;&#x7E41;&#x5728;&#x521B;&#x5EFA;&#x540E;&#x7F16;&#x8F91;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x9636;&#x6BB5;&#x6216;&#x64CD;&#x4F5C;&#x3002;
+<img src="assets/CICD/pipe-2.png" alt="&#x56FE;&#x7247;25"></li>
+</ol>
+<p>&#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;
+  <img src="assets/CICD/pipe-3.png" alt="&#x56FE;&#x7247;26"></p>
+<h4 id="source&#x9636;&#x6BB5;&#x914D;&#x7F6E;">Source&#x9636;&#x6BB5;&#x914D;&#x7F6E;</h4>
+<p>&#x6E90;&#x63D0;&#x4F9B;&#x5546;&#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x9009;&#x62E9;CodeCommit&#xFF0C;&#x9009;&#x62E9;&#x5B58;&#x50A8;&#x5E93;&#x540D;&#x79F0;&#x548C;&#x5206;&#x652F;&#x540D;&#x79F0;&#xFF0C;&#x6765;&#x5141;&#x8BB8;AWS CodePipeline&#x4ECE;CodeCommit&#x4E0A;&#x83B7;&#x53D6;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x6E90;&#x5185;&#x5BB9;&#xFF0C; &#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;</p>
+<p>&#x6B64;&#x6B21;&#x5B9E;&#x4F8B;&#x4F7F;&#x7528;&#x7684;Demo&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x53EF;&#x4EE5;&#x4ECE;&#x4EE5;&#x4E0B;&#x94FE;&#x63A5;Fork&#xFF1A;
+<a href="https://github.com/" target="_blank">https://github.com/</a>.....</p>
+<h4 id="build&#x9636;&#x6BB5;&#x914D;&#x7F6E;">Build&#x9636;&#x6BB5;&#x914D;&#x7F6E;</h4>
+<p>AWS CodePipeline&#x5728;Build&#x9636;&#x6BB5;&#x652F;&#x6301;&#x5305;&#x62EC;AWS CodeBuild&#xFF0C;Jenkins&#x5728;&#x5185;&#x7684;&#x5F15;&#x64CE;&#xFF0C;&#x6B64;&#x65B9;&#x6848;&#x9009;&#x7528;AWS &#x6258;&#x7BA1;&#x7684;CodeBuild&#x670D;&#x52A1;
+   <img src="assets/CICD/pipe-4.png" alt="&#x56FE;&#x7247;27">
+&#x9009;&#x62E9;&#x65B0;&#x5EFA;&#x6784;&#x5EFA;&#x9879;&#x76EE;
+   <img src="assets/CICD/pipe-5.png" alt="&#x56FE;&#x7247;28">
+&#x9009;&#x62E9;AWS CodeBuild&#x6258;&#x7BA1;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x652F;&#x6301;Ubuntu&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x652F;&#x6301;&#x5305;&#x62EC;Java&#xFF0C;Python&#xFF0C;Go&#x8BED;&#x8A00;&#xFF0C;Node.js&#xFF0C;Docker&#x5728;&#x5185;&#x7684;&#x4F17;&#x591A;&#x9009;&#x62E9;&#xFF0C;&#x6B64;&#x6B21;&#x65B9;&#x6848;&#x4F7F;&#x7528;Java&#x3002;
+   <img src="assets/CICD/pipe-6.png" alt="&#x56FE;&#x7247;29">
+&#x6784;&#x5EFA;&#x89C4;&#x8303;&#x8FD9;&#x91CC;&#x9009;&#x62E9;&#x4F7F;&#x7528;buildspec.yml&#xFF0C;&#x91CC;&#x9762;&#x9884;&#x5B9A;&#x4E86;AWS CodeBuild&#x5728;Build&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#x8981;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5982; 
+  <img src="assets/CICD/pipe-7.png" alt="&#x56FE;&#x7247;30">
+Buildspec.yml&#x653E;&#x5728;GitHub&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x6E90;&#x4EE3;&#x7801;&#x76EE;&#x5F55;&#x4E2D;</p>
+<p>&#x9009;&#x62E9;Role
+   <img src="assets/CICD/pipe-8.png" alt="&#x56FE;&#x7247;31">
+&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Role&#xFF0C;&#x8FD9;&#x4E2A;Role&#x5141;&#x8BB8;AWS CodeBuild&#x6765;&#x8C03;&#x7528;&#x76F8;&#x5173;&#x7684;AWS&#x670D;&#x52A1;&#xFF0C;&#x6B64;&#x65B9;&#x6848;&#x4E2D;&#x9700;&#x8981;&#x8C03;&#x7528;&#x5305;&#x62EC;S3&#xFF0C;ECR&#xFF0C;CloudWatch&#x5728;&#x5185;&#x7684;&#x670D;&#x52A1;&#x3002;</p>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x7684;Role&#x4E0D;&#x5177;&#x5907;&#x5BF9;ECR&#x7684;&#x6743;&#x9650;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x4FDD;&#x5B58;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x540E;&#xFF0C;&#x5230;IAM&#x627E;&#x5230;&#x65B0;&#x521B;&#x5EFA;&#x7684;Role&#xFF0C;&#x7F16;&#x8F91;&#x6DFB;&#x52A0;&#x5BF9;ECR&#x7684;&#x6743;&#x9650;&#x5426;&#x5219;&#x540E;&#x9762;Pipeline&#x6267;&#x884C;&#x5230;Build&#x65F6;&#x4F1A;&#x62A5;&#x9519;&#x3002;
+&#x4FDD;&#x5B58;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x3002; 
+  <img src="assets/CICD/pipe-9.png" alt="&#x56FE;&#x7247;32">
+ <img src="assets/CICD/pipe-10.png" alt="&#x56FE;&#x7247;33">
+&#x6253;&#x5F00;codebuild&#x7F16;&#x8F91;&#x5DF2;&#x6709;&#x9879;&#x76EE;
+&#x9009;&#x62E9;&#x6784;&#x5EFA;&#x653E;&#x7F6E;&#x7684;&#x4F4D;&#x7F6E;  &#x7C7B;&#x578B;&#x9009;&#x62E9;S3 &#x586B;&#x5165;&#x76F8;&#x5E94;&#x7684;&#x5B58;&#x50A8;&#x6876;&#x540D;&#x79F0;
+<img src="assets/CICD/adds3.png" alt="&#x56FE;&#x7247;">
+&#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</li>
+</ul>
+<h4 id="deploy">Deploy</h4>
+<p>AWS CodePipeline&#x90E8;&#x7F72;&#x9636;&#x6BB5;&#x652F;&#x6301;&#x5305;&#x62EC;AWS CloudFormation&#xFF0C;AWS CodeDeploy&#xFF0C;AWS Elastic Beanstalk&#x5728;&#x5185;&#x7684;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#xFF0C;&#x6B64;&#x65B9;&#x6848;&#x9009;&#x7528;AWS CloudFormation&#x6765;&#x90E8;&#x7F72;ECS&#x5BB9;&#x5668;&#x670D;&#x52A1;&#x3002;
+    <img src="assets/CICD/pipe-11.png" alt="&#x56FE;&#x7247;34">
+&#x8FD9;&#x91CC;&#x6682;&#x65F6;&#x9009;&#x62E9;&#x65E0;&#x90E8;&#x7F72;&#xFF0C;&#x7B49;Pipeline&#x521B;&#x5EFA;&#x597D;&#x540E;&#xFF0C;&#x7F16;&#x8F91;&#x5F15;&#x5165;Deploy&#x7684;CloudFormation&#x6A21;&#x7248;&#x6E90;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;
+&#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
+<h5 id="&#x89D2;&#x8272;">&#x89D2;&#x8272;</h5>
+<p>&#x914D;&#x7F6E;AWS CodePipeline&#x5BF9;AWS&#x670D;&#x52A1;&#x7684;&#x8C03;&#x7528;&#x6743;&#x9650;&#xFF0C;&#x5305;&#x62EC;S3&#xFF0C;AWS CodeBuild&#xFF0C;AWS CloudFormation&#xFF0C;IAM&#x7B49;&#x3002;&#x70B9;&#x51FB;&#x521B;&#x5EFA;&#x89D2;&#x8272;&#x5230;IAM&#x754C;&#x9762;&#x9009;&#x62E9;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x7B56;&#x7565;&#x521B;&#x5EFA;&#x3002;
+    <img src="assets/CICD/pipe-12.png" alt="&#x56FE;&#x7247;34">
+&#x521B;&#x5EFA;&#x597D;&#x540E;&#x753B;&#x9762;&#x56DE;&#x5230;Pipeline&#xFF0C;IAM&#x521B;&#x5EFA;&#x597D;&#x7684;Role&#x5DF2;&#x7ECF;&#x663E;&#x793A;&#x5728;&#x91CC;&#x9762;&#x3002;
+    <img src="assets/CICD/pipe-13.png" alt="&#x56FE;&#x7247;35">
+&#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
+<h4 id="&#x5BA1;&#x6838;&#x540E;&#x521B;&#x5EFA;&#x7BA1;&#x9053;">&#x5BA1;&#x6838;&#x540E;&#x521B;&#x5EFA;&#x7BA1;&#x9053;</h4>
+<p>&#x7BA1;&#x9053;&#x521B;&#x5EFA;&#x597D;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#xFF0C;&#x73B0;&#x6709;&#x7684;&#x4ECE;GitHub&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x6E90;&#x4EE3;&#x7801;&#x6293;&#x53D6;&#x5DE5;&#x7A0B;&#xFF0C;&#x6253;&#x5305;Docker&#x955C;&#x50CF;&#x5E76;&#x63A8;&#x9001;&#x5230;ECR&#x4E0A;&#x3002;</p>
+<h4 id="&#x6DFB;&#x52A0;deploy&#x9636;&#x6BB5;cloudformation&#x9700;&#x8981;&#x7684;&#x6A21;&#x7248;&#x6E90;">&#x6DFB;&#x52A0;Deploy&#x9636;&#x6BB5;CloudFormation&#x9700;&#x8981;&#x7684;&#x6A21;&#x7248;&#x6E90;</h4>
+<p>&#x70B9;&#x51FB;&#x7F16;&#x8F91;&#xFF0C;&#x70B9;&#x51FB;Source&#x9636;&#x6BB5;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x753B;&#x7B14;&#x56FE;&#x6807;
+    <img src="assets/CICD/pipe-14.png" alt="&#x56FE;&#x7247;36">
+&#x53EF;&#x4EE5;&#x770B;&#x5230;AWS CodePipeline&#x7684;&#x7F16;&#x8F91;&#x754C;&#x9762;&#x5728;&#x5357;&#x5317;&#x7EB5;&#x5411;&#x548C;&#x4E1C;&#x897F;&#x6A2A;&#x5411;&#x90FD;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;
+     <img src="assets/CICD/pipe-15.png" alt="&#x56FE;&#x7247;37">
+&#x5728;GitHub&#x8FD9;&#x4E2A;Source&#x53F3;&#x4FA7;&#xFF0C;&#x70B9;&#x51FB;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#xFF0C;&#x9009;&#x62E9;&#x6E90;&#xFF0C;&#x64CD;&#x4F5C;&#x540D;&#x79F0;Template&#xFF0C;&#x9009;&#x62E9;S3&#xFF0C;&#x8F93;&#x5165;&#x521B;&#x5EFA;&#x597D;&#x7684;S3&#x6876;&#x7684;&#x5730;&#x5740;
+     <img src="assets/CICD/pipe-16.png" alt="&#x56FE;&#x7247;38">
+&#x753B;&#x9762;&#x5F80;&#x4E0B;&#x62C9;&#xFF0C;&#x6CE8;&#x610F;&#x5728;&#x8F93;&#x51FA;&#x9879;&#x76EE;&#x8FD9;&#x91CC;&#xFF0C;&#x8F93;&#x5165;Template&#x3002;
+Pipeline&#x4E2D;&#x5404;&#x9636;&#x6BB5;&#x7684;&#x4F20;&#x9012;&#x9700;&#x8981;&#x5236;&#x5B9A;&#x5357;&#x5317;&#x5411;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#xFF0C;&#x5373;Source&#x9636;&#x6BB5;S3&#x6E90;&#x7684;&#x8F93;&#x51FA;Template&#xFF0C;&#x5728;Deploy&#x9636;&#x6BB5;&#x7528;&#x8F93;&#x5165;Template&#x6765;&#x8854;&#x63A5;&#x3002;
+ <img src="assets/CICD/pipe-17.png" alt="&#x56FE;&#x7247;39">
+&#x70B9;&#x51FB;&#x66F4;&#x65B0;&#x3002;</p>
+<h4 id="build&#x7684;&#x6784;&#x5EFA;dockers">Build&#x7684;&#x6784;&#x5EFA;dockers</h4>
+<p>&#x70B9;&#x51FB;Build&#x9636;&#x6BB5;&#x4E0B;&#x9762;&#x7684;&#x6DFB;&#x52A0;&#x9636;&#x6BB5;&#xFF0C;&#x753B;&#x9762;&#x53F3;&#x4FA7;&#x9009;&#x62E9;&#x6784;&#x5EFA;
+&#x9009;&#x62E9;&#x65B0;&#x5EFA;&#x6784;&#x5EFA;&#x9879;&#x76EE;
+  <img src="assets/CICD/pipe-18.png" alt="&#x56FE;&#x7247;40">
+&#x9009;&#x62E9;AWS CodeBuild&#x6258;&#x7BA1;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x652F;&#x6301;Ubuntu&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x652F;&#x6301;&#x5305;&#x62EC;Java&#xFF0C;Python&#xFF0C;Go&#x8BED;&#x8A00;&#xFF0C;Node.js&#xFF0C;Docker&#x5728;&#x5185;&#x7684;&#x4F17;&#x591A;&#x9009;&#x62E9;&#xFF0C;&#x6B64;&#x6B21;&#x65B9;&#x6848;&#x4F7F;&#x7528;Docker&#x3002;
+   <img src="assets/CICD/pipe-19.png" alt="&#x56FE;&#x7247;41">
+&#x6784;&#x5EFA;&#x89C4;&#x8303;&#x8FD9;&#x91CC;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x6784;&#x5EFA;&#x547D;&#x4EE4;&#xFF0C;&#x91CC;&#x9762;&#x9884;&#x5B9A;&#x4E86;AWS CodeBuild&#x5728;Build&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#x8981;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5982;
+   <img src="assets/CICD/pipe-20.png" alt="&#x56FE;&#x7247;42">
+&#x590D;&#x5236;&#x7C98;&#x8D34;&#x547D;&#x4EE4;&#x5230;&#x6784;&#x5EFA;&#x547D;&#x4EE4;&#x4E2D;&#x5E76;&#x4FEE;&#x6539;&#x76F8;&#x5E94;&#x53C2;&#x6570;</p>
+<pre><code>version: 0.2
+phases:
+  pre_build:
+    commands:
+      - $(aws ecr get-login --no-include-email)
+      - TAG=&quot;$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)&quot;
+      - aws s3 cp s3&#x5730;&#x5740;  ./
+  build:
+    commands:
+      - docker build -t &#x66FF;&#x6362;&#x521B;&#x5EFA;&#x597D;&#x7684;ECR&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x7684;URI:${TAG} .
+  post_build:
+    commands:
+      - docker push &quot;&#x66FF;&#x6362;&#x521B;&#x5EFA;&#x597D;&#x7684;ECR&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x7684;URI:${TAG}&quot;
+      - printf &apos;{&quot;tag&quot;:&quot;%s&quot;}&apos; $TAG &gt; build.json
+artifacts:
+  files: build.json
+</code></pre><p>&#x9009;&#x62E9;Role
+   <img src="assets/CICD/pipe-21.png" alt="&#x56FE;&#x7247;43">
+&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Role&#xFF0C;&#x8FD9;&#x4E2A;Role&#x5141;&#x8BB8;AWS CodeBuild&#x6765;&#x8C03;&#x7528;&#x76F8;&#x5173;&#x7684;AWS&#x670D;&#x52A1;&#xFF0C;&#x6B64;&#x65B9;&#x6848;&#x4E2D;&#x9700;&#x8981;&#x8C03;&#x7528;&#x5305;&#x62EC;S3&#xFF0C;ECR&#xFF0C;CloudWatch&#x5728;&#x5185;&#x7684;&#x670D;&#x52A1;&#x3002;
+*&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x7684;Role&#x4E0D;&#x5177;&#x5907;&#x5BF9;ECR&#x7684;&#x6743;&#x9650;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x4FDD;&#x5B58;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x540E;&#xFF0C;&#x5230;IAM&#x627E;&#x5230;&#x65B0;&#x521B;&#x5EFA;&#x7684;Role&#xFF0C;&#x7F16;&#x8F91;&#x6DFB;&#x52A0;&#x5BF9;ECR&#x7684;&#x6743;&#x9650;&#x5426;&#x5219;&#x540E;&#x9762;Pipeline&#x6267;&#x884C;&#x5230;Build&#x65F6;&#x4F1A;&#x62A5;&#x9519;&#x3002;
+&#x4FDD;&#x5B58;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x3002; 
+    <img src="assets/CICD/pipe-22.png" alt="&#x56FE;&#x7247;44">
+    <img src="assets/CICD/pipe-23.png" alt="&#x56FE;&#x7247;45">
+    <img src="assets/CICD/pipe-24.png" alt="&#x56FE;&#x7247;46">
+&#x70B9;&#x51FB;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
+<h4 id="cloudformation">Cloudformation</h4>
+<p>&#x70B9;&#x51FB;Build&#x9636;&#x6BB5;&#x4E0B;&#x9762;&#x7684;&#x6DFB;&#x52A0;&#x9636;&#x6BB5;&#xFF0C;&#x753B;&#x9762;&#x53F3;&#x4FA7;&#x9009;&#x62E9;&#x90E8;&#x7F72;&#xFF0C;&#x9009;&#x62E9;AWS CloudFormation
+    <img src="assets/CICD/pipe-25.png" alt="&#x56FE;&#x7247;47">
+&#x64CD;&#x4F5C;&#x6A21;&#x5F0F;&#x9009;&#x62E9;&#x521B;&#x5EFA;&#x6216;&#x66F4;&#x65B0;&#x5806;&#x6808;&#xFF0C;&#x8F93;&#x5165;&#x521B;&#x5EFA;&#x7684;&#x5806;&#x6808;&#x540D;&#x79F0;&#xFF0C;&#x6A21;&#x7248;&#x8FD9;&#x91CC;&#x8F93;&#x5165;Template::templates/service.yaml&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#x8F93;&#x5165;&#x662F;S3&#x6E90;&#x6876;&#x4E2D;templates.zip&#x91CC;&#x7684;service.yaml&#x6587;&#x4EF6;&#x3002;&#x529F;&#x80FD;&#x9009;&#x62E9;CAPABILITY_NAMED_IAM&#x3002;
+  <img src="assets/CICD/pipe-26.png" alt="&#x56FE;&#x7247;47">
+&#x540C;&#x6837;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Role&#xFF0C;&#x5141;&#x8BB8;AWS CloudFormation&#x8C03;&#x7528;&#x5305;&#x62EC;IAM&#xFF0C;ECS&#xFF0C;ECR&#x5728;&#x5185;&#x7684;AWS&#x670D;&#x52A1;&#x3002;
+  <img src="assets/CICD/pipe-27.png" alt="&#x56FE;&#x7247;48">
+&#x5728;IAM&#x754C;&#x9762;&#x521B;&#x5EFA;&#x597D;&#x540E;&#x9009;&#x62E9;Role&#x3002;
+&#x9AD8;&#x7EA7;&#x8FD9;&#x91CC;&#x70B9;&#x5F00;
+  <img src="assets/CICD/pipe-28.png" alt="&#x56FE;&#x7247;49">
+&#x5728;&#x53C2;&#x6570;&#x8986;&#x76D6;&#x8FD9;&#x91CC;&#x8F93;&#x5165;CloudFormation&#x9700;&#x8981;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x56FA;&#x5B9A;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;S3&#x7684;service.yaml&#x4E2D;&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code>{
+
+  &quot;Tag&quot; : { &quot;Fn::GetParam&quot; : [ &quot;MyAppBuild&quot;, &quot;build.json&quot;, &quot;tag&quot; ] },
+
+  &quot;DesiredCount&quot;: &quot;2&quot;,
+
+  &quot;Cluster&quot;: &quot;XXXXXXX&quot;,
+
+  &quot;TargetGroup&quot;: &quot;XXXXX&quot;,
+
+  &quot;Repository&quot;: &quot;XXXXX&quot;
+
+}
+</code></pre><ul>
+<li>Tag&#x662F;Build&#x9636;&#x6BB5;&#x4F20;&#x51FA;&#x7684;Docker&#x955C;&#x50CF;Tag&#x4F7F;&#x7528;&#x7684;&#x503C;&#xFF0C;&#x4F20;&#x5165;CloudFormation&#x4E2D;&#x7528;&#x4E8E;&#x5EFA;&#x7ACB;Task Definition&#x7684;Container&#x65F6;&#x4ECE;ECR&#x62C9;&#x53D6;&#x5BF9;&#x5E94;&#x7248;&#x672C;&#x7684;Docker&#x955C;&#x50CF;&#x3002;</li>
+<li>DesiredCount&#xFF0C;&#x5373;&#x60F3;&#x8981;&#x5728;ECS&#x7684;Service&#x4E2D;&#x5EFA;&#x7ACB;&#x7684;Task&#x7684;&#x6570;&#x91CF;&#x3002;</li>
+<li>Cluster&#xFF0C;&#x5373;&#x5EFA;&#x7ACB;&#x597D;&#x7684;&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+<li>TargetGroup&#xFF0C;&#x5373;&#x5EFA;&#x7ACB;&#x597D;&#x7684;&#x5BBF;&#x4E3B;&#x673A;&#x96C6;&#x7FA4;&#x7684;&#x5E94;&#x7528;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x7684;&#x76EE;&#x6807;&#x7EC4;&#x7684;ARN&#x3002;</li>
+<li>Repository&#xFF0C;&#x5373;&#x5EFA;&#x7ACB;&#x597D;&#x7684;ECR&#x7684;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x540D;&#x79F0;&#x3002;</li>
+</ul>
+<p>&#x8F93;&#x5165;&#x9879;&#x76EE;&#x8FD9;&#x91CC;&#x8F93;&#x5165;Build&#x9636;&#x6BB5;&#x548C;S3&#x6A21;&#x7248;&#x6E90;&#x7684;&#x8F93;&#x51FA;&#x3002;
+     <img src="assets/CICD/pipe-29.png" alt="&#x56FE;&#x7247;50">
+&#x70B9;&#x51FB;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#x3002;
+&#x4FDD;&#x5B58;&#x7BA1;&#x9053;&#x66F4;&#x6539;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="cicd_docker_bule_jenkins.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 基于jenkins的容器蓝绿部署解决方案">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基于CodePipeline, ECS的cicd解决方案","level":"1.10.1","depth":2,"next":{"title":"基于jenkins的容器蓝绿部署解决方案","level":"1.10.2","depth":2,"path":"cicd_docker_bule_jenkins.md","ref":"cicd_docker_bule_jenkins.md","articles":[]},"previous":{"title":"CICD","level":"1.10","depth":1,"ref":"","articles":[{"title":"基于CodePipeline, ECS的cicd解决方案","level":"1.10.1","depth":2,"path":"cicd.md","ref":"cicd.md","articles":[]},{"title":"基于jenkins的容器蓝绿部署解决方案","level":"1.10.2","depth":2,"path":"cicd_docker_bule_jenkins.md","ref":"cicd_docker_bule_jenkins.md","articles":[]},{"title":"基于jenkins的java应用程序CICD解决方案","level":"1.10.3","depth":2,"path":"cicd_jar_jenkins.md","ref":"cicd_jar_jenkins.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ga","disqus","expandable-chapters","page-toc"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AWS Quick Start","gitbook":"*","description":"AWS快速上手实验，自动化部署CloudFormation, 常用工具集"},"file":{"path":"cicd.md","mtime":"2018-12-19T17:18:19.246Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-19T17:19:08.755Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
