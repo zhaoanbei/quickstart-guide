@@ -2,7 +2,7 @@
 很多跨国企业都会有数据同步的需求，这些大型文件主要是存储在S3桶上，通过console或者命令行的形式从本地上传至S3中。本文描述了一种基于容器化的，在Amazon ECS平台上搭建的、快速同步的且基于负载进行扩容和收缩的、通用的解决方案。
 ### 解决方案概述
 该方案如下图所示。
- ![图片1](./assets/s3_transmission/archi.png)
+ ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/s3_transmission/archi.png)
 在该方案中，我们会启动以下资源：
 1. 一个global的S3桶：用于global作为数据传输的源
 2. 4个Lambda函数： 分别用于文件分片，容器的扩张与收缩，发送传输完成信号
