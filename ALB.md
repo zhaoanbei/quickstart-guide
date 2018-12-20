@@ -96,7 +96,7 @@
 1. 在导航窗格中的 LOAD BALANCING 下，选择 Load Balancers。
 1. 选择负载均衡器，然后选择 Actions 和 Delete。
 1. 当系统提示进行确认时，选择 Yes, Delete。
-### 相关概念及配置：ttt
+### 相关概念及配置：
 [个负载均衡器](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/application-load-balancers.html)
 
 [侦听器](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/load-balancer-listeners.html)
