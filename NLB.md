@@ -64,4 +64,4 @@
 1. 在导航窗格中的 LOAD BALANCING 下，选择 Load Balancers。
 1. 选择负载均衡器，然后选择 Actions 和 Delete。
 1. 当系统提示进行确认时，选择 Yes, Delete。
-   ![图片1](./assets/NLB/NLB-7.png)
+   ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-7.png)
