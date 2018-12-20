@@ -11,8 +11,11 @@
   * [海外域名部署方案：海外域名向国内用户提供服务](ByPassICP.md)
   * [VPC 配置指南](network/vpc_guide.md)
   * <a href="https://github.com/iceflow/easyvpn" target="_blank">快速自建VPN</a>
-* 运维 
+* 运维 & 持续集成/发布
   * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
+  * [基于CodePipeline, ECS的cicd解决方案](cicd.md)
+  * [基于jenkins的容器蓝绿部署解决方案](cicd_docker_bule_jenkins.md)
+  * [基于jenkins的java应用程序CICD解决方案](cicd_jar_jenkins.md)
 * 迁移服务
   * [镜像迁移：本地镜像导入AWS](migration/SMS_vm-import.md)
   * [域名迁移：从GoDaddy到Route 53](migration/TransferDomainRoute53.md)
@@ -28,9 +31,5 @@
   * [环境配置：在 Windows 中配置 Docker 镜像](DockerGuide.md)
 * Alexa
   * [Cognito User Pool实现账户关联](alexa/account-linking-cognito.md)
-* Cognito
+* 移动开发
   * [Cognito实现微信用户第三方登陆](cognito_android.md)
-* CICD
-  * [基于CodePipeline, ECS的cicd解决方案](cicd.md)
-  * [基于jenkins的容器蓝绿部署解决方案](cicd_docker_bule_jenkins.md)
-  * [基于jenkins的java应用程序CICD解决方案](cicd_jar_jenkins.md)
