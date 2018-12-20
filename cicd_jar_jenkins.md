@@ -114,5 +114,5 @@ mv test_springboot.jar target/
 15. 选择“Post-build Actions”，输入CodeDeploy相关信息，区域选择您所在的code deploy的region
 认证方式可以输入AWS Access Key和Security Key，如果是生产环境建议使用临时的credentials。
      ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-jar-jenkins/jar-jenkins-23.png)
-     
+      ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-jar-jenkins/jar-jenkins-24.png)
 16. 点击“应用” “保存”
