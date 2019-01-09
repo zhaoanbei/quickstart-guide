@@ -1,4 +1,4 @@
-# Serverless Image Handler
+# S3图片处理
 
 如果您使用的是AWS Global Region, 您可以停止阅读本文，转向使用[Serverless Image Hanlder](https://docs.aws.amazon.com/solutions/latest/serverless-image-handler/deployment.html)提供的CloudFormation时间自动部署。
 
