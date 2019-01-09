@@ -49,5 +49,5 @@
   
 ### 移动开发
 * [Cognito实现微信用户第三方登陆](cognito_android.md)
-  
+* [S3图片处理](mobile/serverless-image-handler.md)
 
