@@ -1,5 +1,9 @@
 # AWS 快速上手
 
+如果您想参与到本项目中，请参考[如何提交文档](how_to_contribute.md)。
+
+源项目地址:[https://github.com/chinalabs/quickstart-guide](https://github.com/chinalabs/quickstart-guide)
+
 ### 介绍
 这个项目的目的是为了更加快速地熟悉AWS服务，或者在AWS上快速部署服务。
 

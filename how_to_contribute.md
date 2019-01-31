@@ -1,9 +1,4 @@
-# AWS Quick Start
-此项目的主要目的是帮助中国用户快速了解AWS的服务，并且提供常用的快速部署方案。
-
-[点击此处查看](https://chinalabs.github.io/quickstart-guide/)
-
-## 如何提交文档
+# 如何提交文档
 
 Quick Start 的主页是借助 [GitBook](https://github.com/GitbookIO/gitbook) 项目将 
 Markdown 转化成html展示出来，因此只需要提交可正确显示的Markdown文件即可。
