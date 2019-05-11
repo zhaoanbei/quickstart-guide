@@ -14,6 +14,7 @@
 
 ## 步骤
 
+步骤0:  下载代码 https://github.com/lab798/aws-bi-lab-1
 
 步骤1： 替换terraform变量
 替换variable.tf里面的参数, 包括：VPC，DB subnet,EC2 subnet，EC2 key pair, region & 相应地区的AMI ID。 
@@ -61,17 +62,17 @@ Quicksight security group = sg-xxxx
 因为Aurora和redshift均在私有子网当中，因此首先需要给Quicksight加一个VPC connection。    
    
 
-1. 添加VPC connection   
+*  添加VPC connection   
 
 	右上角选择用户名---下拉tab:manage quicksight --- 左侧tab:manage VPC connections --add VPC connection   
 	选择VPC ID和output当中的Quicksight security group，以创建VPC连接   
 
 	注:   
-	（1）如没有mange VPC connections的选项，需要先开启enterprise版本  
-	（2）这里Quicksight的端口为全开，因此aurora和redshift均可以使用这一安全组做连接。实际生产请开启自己需要的端口。 
+	* 如没有mange VPC connections的选项，需要先开启enterprise版本  
+	* 这里Quicksight的端口为全开，因此aurora和redshift均可以使用这一安全组做连接。实际生产请开启自己需要的端口。 
 
 
-2. 数据可视化   
+*  数据可视化   
 
 	选择Aurora或redshift实例为数据源，选择刚才创建的vpc connection. database name:lab。输入用户名密码（在output当中）  
 
