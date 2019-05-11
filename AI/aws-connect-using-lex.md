@@ -17,11 +17,11 @@
 
 ### 1. 搭建呼叫中心，实现可以人工call in & call out的基本功能   
 
-	(1) 创建实例，设置基本选项   
+(1) 创建实例，设置基本选项   
   
 	打开Amazon Connect，添加实例，设置访问URL，管理用用户密码, 选择功能(call in/ out/both)，通话存储的位置等。   
 
-	(2) 构建呼叫中心   
+(2) 构建呼叫中心   
 
 	点击进入实例（需要管理员密码）。在dashboard当中开始设置。最基本的选项是第一个Claim a phone number，可以选择你的call center number的国家，connect会自动帮你生成一个号码(暂不支持中国+86)。设置完毕后，这个电话就可以使用了，可以进行正常的拨出、拨入，人工对话。   
 
@@ -31,20 +31,20 @@
 ### 2. 使用Lex创建智能语音机器人
 
 (1) 创建并定义Bot   
+    
+    打开Lex，创建bots，Lex提供多个模板可供demo选择。这里我们选择基于模板BookTrip。COPPA设置为no。
 
-打开Lex，创建bots，Lex提供多个模板可供demo选择。这里我们选择基于模板BookTrip。COPPA设置为no。
+    此时testbots上有两个intents（意图）。代表着用户可以利用此bots做两种触发，一种是订车，一种是订住宿。两者只是定义时的逻辑和数据字段不同，因此此例当中，我们只用到car reservation。
 
-此时testbots上有两个intents（意图）。代表着用户可以利用此bots做两种触发，一种是订车，一种是订住宿。两者只是定义时的逻辑和数据字段不同，因此此例当中，我们只用到car reservation。
+    在Interts的设置上，有以下参数：    
 
-在Interts的设置上，有以下参数：    
+    * Sample utterances：唤醒词，可自行定义或添加。        
 
-* Sample utterances：唤醒词，可自行定义或添加。        
+    * SLOTS字段：希望Lex帮你获取的信息。默认情况下Lex会按照顺序询问，也可以自己定义priority。       
 
-* SLOTS字段：希望Lex帮你获取的信息。默认情况下Lex会按照顺序询问，也可以自己定义priority。       
+    * Fulfillment：定义拿到这些参数之后，下一步希望做什么。可以选择直接把这些信息返回给客户端，或者是利用lambda做进一步的存储、处理、分析等。
 
-* Fulfillment：定义拿到这些参数之后，下一步希望做什么。可以选择直接把这些信息返回给客户端，或者是利用lambda做进一步的存储、处理、分析等。
-
-* Response：执行完毕后，可以利用这些response做进一步的唤醒。注意，如果这里的fulfillment是lambda，且lambda有return message，将忽略这里的response的设置。 此lab中，我们将用lambda作为car reservation的实现。
+    * Response：执行完毕后，可以利用这些response做进一步的唤醒。注意，如果这里的fulfillment是lambda，且lambda有return message，将忽略这里的response的设置。 此lab中，我们将用lambda作为car reservation的实现。
 
 ![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/lex.png)
 
