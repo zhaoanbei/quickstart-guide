@@ -1,36 +1,36 @@
 # 利用Amazon Connect + Lex 快速构建自己的呼叫中心 & 智能语音机器人
 
-## demo效果
+## 实验概览
 
-可直接拨打+1 443-692-8678测试，触发词"reserve"  "reserver a car","book a car"等。
+此实验搭建了一个智能电话订车系统，通过语音交互可以获取用户需要订车的城市，取车以及还车时间，对车型的要求，以及驾驶人的年龄，并且将这些信息通过lambda上传到dynamoDB当中. 
 
 ## 架构图
 
 ![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/connect_architecture.png)
 
-## 实验概览
+## demo效果
 
-此实验搭建了一个智能电话订车系统，通过语音交互可以获取用户需要订车的城市，取车以及还车时间，对车型的要求，以及驾驶人的年龄，并且将这些信息通过lambda上传到dynamoDB当中. 
+可直接拨打+1 443-692-8678测试，触发词"reserve"  "reserver a car","book a car"等。
 
 
 ## 实现步骤
 
 ### 1. 搭建呼叫中心，实现可以人工call in & call out的基本功能   
 
-* **（1）** :创建实例，设置基本选项   
+	(1) 创建实例，设置基本选项   
   
-打开Amazon Connect，添加实例，设置访问URL，管理用用户密码, 选择功能(call in/ out/both)，通话存储的位置等。   
+	打开Amazon Connect，添加实例，设置访问URL，管理用用户密码, 选择功能(call in/ out/both)，通话存储的位置等。   
 
-* **（2）**： 构建呼叫中心   
+	(2) 构建呼叫中心   
 
-点击进入实例（需要管理员密码）。在dashboard当中开始设置。最基本的选项是第一个Claim a phone number，可以选择你的call center number的国家，connect会自动帮你生成一个号码(暂不支持中国+86)。设置完毕后，这个电话就可以使用了，可以进行正常的拨出、拨入，人工对话。   
+	点击进入实例（需要管理员密码）。在dashboard当中开始设置。最基本的选项是第一个Claim a phone number，可以选择你的call center number的国家，connect会自动帮你生成一个号码(暂不支持中国+86)。设置完毕后，这个电话就可以使用了，可以进行正常的拨出、拨入，人工对话。   
 
-除此之外，你可以定义你的call center的运营时间（比如周一9:00AM-18:00PM, 周六10:00AM-14:00PM,周末不上班）等。其他信息可以暂时不进行设置。   
+	除此之外，你可以定义你的call center的运营时间（比如周一9:00AM-18:00PM, 周六10:00AM-14:00PM,周末不上班）等。其他信息可以暂时不进行设置。   
 
 
 ### 2. 使用Lex创建智能语音机器人
 
-* **（1）**： 创建并定义Bot   
+(1) 创建并定义Bot   
 
 打开Lex，创建bots，Lex提供多个模板可供demo选择。这里我们选择基于模板BookTrip。COPPA设置为no。
 
@@ -46,17 +46,18 @@
 
 * Response：执行完毕后，可以利用这些response做进一步的唤醒。注意，如果这里的fulfillment是lambda，且lambda有return message，将忽略这里的response的设置。 此lab中，我们将用lambda作为car reservation的实现。
 
+![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/lex.png)
 
 此外左侧tab还包括：   
 
-error handling：当获取语音输入失败时，自定义语音，以及重复最多尝试次数。   
+* error handling：当获取语音输入失败时，自定义语音，以及重复最多尝试次数。   
 
-slot types: 可以给用户提示，一些选择的example。
+* slot types: 可以给用户提示，一些选择的example。
 
    
-* **（2）**： 创建lambda函数：存储进dynamoDB
+（2） 创建lambda函数：存储进dynamoDB
 
-在与Lex同一个region创建lambda函数connect_using_lex。我们将利用这个函数将car reservation环节所得参数存储到dynamoDB当中。请确保lambda的IAM role具有往ddb写入的权限。   
+在与Lex同一个region创建lambda函数connect_using_lex。我们将利用这个函数将car reservation环节所得参数存储到dynamoDB当中。请确保lambda的IAM role具有往ddb写入的权限，且提前在ddb当中创建了表connect_lex_car_rent
 
 基于python 2.7的实例代码如下。   
 
@@ -109,7 +110,7 @@ def lambda_handler(event, context):
    
 ```
 
-* **（3）**： 在lex当中指定lambda函数，完成构建   
+（3） 在lex当中指定lambda函数，完成构建   
 
 BookCar Intent的fufillment为此lambda函数，BookHotel不变。保存此intent的编写并build。在build成功后，即可在右侧界面进行文字或者语音的交互测试。且可以看到下方的return当中，lex可以实时的获取这些参数。当测试没有问题后，Publish the bots。   
    
