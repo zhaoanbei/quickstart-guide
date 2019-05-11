@@ -36,5 +36,11 @@
 * 移动开发
   * [Cognito实现微信用户第三方登陆](cognito_android.md)
   * [S3图片处理](mobile/serverless-image-handler.md)
+* AI 
+  * [Amazon Connect + Lex 构建智能聊天机器人](AI/amazon-connect-with-lex.md)
+* 数据分析 & BI
+  * [从Aurora迁移到Redshift并利用Quicksight做数据可视化分析](aurora-to-redshift-bi.md)
 * QuickStart项目
   * [如何提交文档](how_to_contribute.md)
+
+
