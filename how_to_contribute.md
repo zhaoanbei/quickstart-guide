@@ -3,11 +3,11 @@
 Quick Start 的主页是借助 [GitBook](https://github.com/GitbookIO/gitbook) 项目将 
 Markdown 转化成html展示出来，因此只需要提交可正确显示的Markdown文件即可。
 
-> 注意：必须在[SUMMARY.md](https://github.com/chinalabs/quickstart-guide/blob/develop/SUMMARY.md)下创建索引，才能在网页中显示出来！
+> 注意：必须在[SUMMARY.md](https://github.com/lab798/quickstart-guide/blob/develop/SUMMARY.md)下创建索引，才能在网页中显示出来！
 
 ### 提交步骤
 
-* **步骤1**: 将[Quick Start CN](https://github.com/chinalabs/quickstart-guide)主页项目, 
+* **步骤1**: 将[Quick Start CN](https://github.com/lab798/quickstart-guide)主页项目, 
 Fork 到您的 GitHub 账号下，如之前已经 Fork, 请直接进入步骤4.
 
 * **步骤2**: 将您 GitHub 账号下的 QuickStart Repo clone 到本地.
@@ -23,7 +23,7 @@ Fork 到您的 GitHub 账号下，如之前已经 Fork, 请直接进入步骤4.
 * **步骤6**: 登录GitHub, 选择Fork出来的Repo, 点击 **New Pull request** 或者 **Compare & pull request**.
   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/HowToContribute/new-pull-request.png)
   
-* **步骤7**: 选择 **base repository** 为 **chinalabs/quickstart-guide** 的 **develop** 
+* **步骤7**: 选择 **base repository** 为 **lab798/quickstart-guide** 的 **develop** 
 分支,选择 **head repository** 为您新创建的分支.
   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/HowToContribute/create-pull-request.png)
     
@@ -39,7 +39,7 @@ Fork 到您的 GitHub 账号下，如之前已经 Fork, 请直接进入步骤4.
 * **步骤1**: 登录GitHub, 选择您Fork出来的Repo, 点击 **New Pull request**
 
 * **步骤2**: 选择 **base repository** 您的 repo 下的 **develop** 分支,
-选择 **head repository** 为 **chinalabs/quickstart-guide** 的 **develop** 分支。
+选择 **head repository** 为 **lab798/quickstart-guide** 的 **develop** 分支。
 您可能需要点击 **compare cross forks** 来选择正确的分支。
   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/HowToContribute/cross-fork.png)
 
