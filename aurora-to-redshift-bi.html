@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Cognito实现微信用户第三方登陆 · AWS Quick Start</title>
+        <title>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析 · AWS Quick Start</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -60,8 +60,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="mobile/serverless-image-handler.html" />
     
     
 
@@ -595,7 +593,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.9.1" data-path="cognito_android.html">
+        <li class="chapter " data-level="1.9.1" data-path="cognito_android.html">
             
                 <a href="cognito_android.html">
             
@@ -672,7 +670,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="aurora-to-redshift-bi.html">
+        <li class="chapter active" data-level="1.11.1" data-path="aurora-to-redshift-bi.html">
             
                 <a href="aurora-to-redshift-bi.html">
             
@@ -752,7 +750,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Cognito实现微信用户第三方登陆</a>
+        <a href="." >从Aurora迁移到Redshift并利用Quicksight做数据可视化分析</a>
     </h1>
 </div>
 
@@ -767,45 +765,63 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x57FA;&#x4E8E;cognito&#x7684;&#x5FAE;&#x4FE1;&#x7B2C;&#x4E09;&#x65B9;&#x767B;&#x9678;&#x7CFB;&#x7D71;">&#x57FA;&#x4E8E;Cognito&#x7684;&#x5FAE;&#x4FE1;&#x7B2C;&#x4E09;&#x65B9;&#x767B;&#x9678;&#x7CFB;&#x7D71;</h2>
-<h4 id="&#x6B65;&#x9A5F;">&#x6B65;&#x9A5F;</h4>
+                                <h1 id="&#x5B9E;&#x9A8C;&#x4ECB;&#x7ECD;">&#x5B9E;&#x9A8C;&#x4ECB;&#x7ECD;</h1>
+<p>&#x5229;&#x7528;terraform&#x6A21;&#x677F;&#x542F;&#x52A8;DMS&#x4EFB;&#x52A1;</p>
+<h2 id="&#x67B6;&#x6784;&#x56FE;">&#x67B6;&#x6784;&#x56FE;</h2>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/salander/public/dms.png" alt=""></p>
+<h2 id="&#x5B9E;&#x9A8C;&#x524D;&#x63D0;">&#x5B9E;&#x9A8C;&#x524D;&#x63D0;</h2>
 <ol>
-<li>App&#x53D1;&#x8D77;&#x6388;&#x6743;&#xFF0C;&#x5E94;&#x7528;&#x5524;&#x8D77;&#x5FAE;&#x4FE1;&#x5BA2;&#x6236;&#x7AEF;&#xFF0C;&#x8BF1;&#x5BFC;&#x7528;&#x6236;&#x70B9;&#x51FB;&#x6388;&#x6743;&#x6309;&#x9215;</li>
-<li>&#x7528;&#x6236;&#x70B9;&#x51FB;&#x6388;&#x6743;&#x6309;&#x94AE;&#x540E; APP&#x5F97;&#x5230;auth code</li>
-<li>&#x5E94;&#x7528;&#x7528;auth code&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5411;&#x8FDC;&#x7AEF;&#x7684;api&#x53D1;&#x8D77;&#x8BF7;&#x6C42;</li>
-<li>API &#x53D1;&#x9001;auth code&#x5230;&#x5FAE;&#x4FE1;&#x63A5;&#x53E3;  &#x8FD4;&#x56DE;&#x7528;&#x6236;&#x7684;openId&#x548C;AccessToken</li>
-<li>API&#x53D1;&#x9001;AccessToken&#x5230;&#x5FAE;&#x4FE1;&#x63A5;&#x53E3; &#x8FD4;&#x56DE;userinfo  &#x5305;&#x62EC;&#x7528;&#x6236;&#x6635;&#x7A31; &#x5934;&#x50CF;&#x7B49;&#x4FE1;&#x606F;</li>
-<li>API&#x5411;dynamo DB&#x4E2D;&#x52A0;&#x5165;&#x4E00;&#x6761;&#x7528;&#x6236;&#x4FE1;&#x606F; &#x8FD4;&#x56DE;&#x5F97;&#x5230;userId</li>
-<li>API &#x5C07;userId&#x548C;&#x8EAB;&#x4EFD;&#x6C60;Id&#x53D1;&#x9001;&#x5230;cognito&#x63A5;&#x53E3;  &#x8FD4;&#x56DE;user&#x7684;IdentityId&#x548C;token</li>
-<li>&#x5C06;token&#x548C; identityId&#x5B58;&#x5165;dynamo DB</li>
-<li>API&#x5C07;token&#x548C;IdentityId userId &#x8FD4;&#x56DE;&#x7D66;&#x5BA2;&#x6236;&#x7AEF;APP</li>
-<li><p>&#x5BA2;&#x6236;&#x7AEF;APP&#x53EF;&#x4EE5;&#x7528;identity &#x8EAB;&#x4EFD;&#x6C60;Id context&#x4E0A;&#x4E0B;&#x6587; region&#x548C;auth code&#x559A;&#x8D77;client, &#x6700;&#x540E;&#x7528;client&#x8A2A;&#x554F;AWS&#x8CC7;&#x6E90;</p>
-<p><img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cognito/archi.png" alt="&#x56FE;&#x7247;1"></p>
+<li>&#x786E;&#x4FDD;&#x60A8;&#x7684;&#x672C;&#x673A;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5; Terraform  &#xFF08;<a href="https://www.terraform.io/&#xFF09;" target="_blank">https://www.terraform.io/&#xFF09;</a></li>
+<li>&#x63D0;&#x524D;&#x521B;&#x5EFA;&#x597D;EC2&#x7684;&#x79D8;&#x94A5;&#x5BF9;</li>
+<li>&#x4E8B;&#x5148;&#x7528;AWSCLI&#xFF0C;aws configure&#x914D;&#x7F6E;&#x597D;&#x4E86;&#x51ED;&#x8BC1;&#x4EE5;&#x6709;&#x6743;&#x542F;&#x52A8;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;</li>
+</ol>
+<h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
+<p>&#x6B65;&#x9AA4;0:  &#x4E0B;&#x8F7D;&#x4EE3;&#x7801; <a href="https://github.com/lab798/aws-bi-lab-1" target="_blank">https://github.com/lab798/aws-bi-lab-1</a></p>
+<p>&#x6B65;&#x9AA4;1&#xFF1A; &#x66FF;&#x6362;terraform&#x53D8;&#x91CF;
+&#x66FF;&#x6362;variable.tf&#x91CC;&#x9762;&#x7684;&#x53C2;&#x6570;, &#x5305;&#x62EC;&#xFF1A;VPC&#xFF0C;DB subnet,EC2 subnet&#xFF0C;EC2 key pair, region &amp; &#x76F8;&#x5E94;&#x5730;&#x533A;&#x7684;AMI ID&#x3002; </p>
+<p>&#x8865;&#x5145;&#x8BF4;&#x660E;: &#x9ED8;&#x8BA4;&#x5728;us-west-2&#xFF0C;&#x56E0;&#x542F;&#x52A8;&#x811A;&#x672C;&#x7528;&#x4E86;yum install &amp; wget&#x7B49;&#x547D;&#x4EE4;, &#x5982;&#x679C;&#x8981;&#x6362;&#x533A;&#x57DF;&#xFF0C;&#x8BF7;&#x5C3D;&#x91CF;&#x6DFB;&#x52A0;Amazon Linux AMI&#x786E;&#x4FDD;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;   </p>
+<p>&#x6B65;&#x9AA4;2&#xFF1A; &#x542F;&#x52A8;terrform&#x6A21;&#x677F;</p>
+<pre><code>terraform init
+terraform apply
+</code></pre><p>&#x6210;&#x529F;&#x540E;&#x4F1A;&#x521B;&#x5EFA;&#x597D;&#x4EE5;&#x4E0B;&#x76F8;&#x5173;&#x8D44;&#x6E90; ,&#x4E14;bastion EC2&#x5DF2;&#x901A;&#x8FC7;&#x542F;&#x52A8;&#x811A;&#x672C;(mysql_init.tpl)&#x52A0;&#x8F7D;&#x597D;&#x4E86;Aurora&#x7684;&#x5B9E;&#x9A8C;&#x6570;&#x636E;&#x3002;<br>&#x8BB0;&#x4E0B;&#x8FD9;&#x4E9B;output </p>
+<pre><code>Outputs Example:
+Aurora database name = lab
+Aurora endpoint = tf-xxxxxxx.us-west-2.rds.amazonaws.com
+Aurora master password = xxxx
+Aurora master username = root
+DMS Aurora Source ID = pdaxxx
+DMS RedShift Target ID = ehjxxxx
+DMS instanace name = vipxxxx
+EC2 Bastion Endpoint = 
+RedShift Endpoint = xxxxxx.us-west-2.redshift.amazonaws.com
+RedShift database name = lab
+RedShift master password  = 3GMxxxx
+Redshift master username = root
+Quicksight security group = sg-xxxx
+</code></pre><p>&#x6B65;&#x9AA4;3&#xFF1A; &#x521B;&#x5EFA;DMS&#x4EFB;&#x52A1;   </p>
+<p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;DMS&#x4EFB;&#x52A1;&#xFF0C;&#x6307;&#x5B9A;&#x597D;source &amp; target &amp; replication instance &amp; mapping table &#xFF08;schema name: lab&#xFF09;<br>&#x5F53;status&#x4E3A;Load complete&#x65F6;&#xFF0C;DMS&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x68C0;&#x67E5;table loaded&#x8FD9;&#x4E00;&#x680F;&#x5E94;&#x4E3A;1&#xFF0C;full load rows&#x4E3A;41188.</p>
+<p>&#x6B65;&#x9AA4;4&#xFF1A; Quicksight&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;   </p>
+<p>&#x53F3;&#x4E0A;&#x89D2;&#x5207;&#x6362;Quicksight&#x533A;&#x57DF;&#x5230;&#x6307;&#x5B9A;&#x533A;&#x57DF;&#x5982;Oregon, &#x6D4B;&#x8BD5;&#x4ECE;Aurora&#x6216;&#x8005;redshift&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x3002;<br>&#x56E0;&#x4E3A;Aurora&#x548C;redshift&#x5747;&#x5728;&#x79C1;&#x6709;&#x5B50;&#x7F51;&#x5F53;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x9996;&#x5148;&#x9700;&#x8981;&#x7ED9;Quicksight&#x52A0;&#x4E00;&#x4E2A;VPC connection&#x3002;    </p>
+<ul>
+<li><p>&#x6DFB;&#x52A0;VPC connection   </p>
+<p> &#x53F3;&#x4E0A;&#x89D2;&#x9009;&#x62E9;&#x7528;&#x6237;&#x540D;---&#x4E0B;&#x62C9;tab:manage quicksight --- &#x5DE6;&#x4FA7;tab:manage VPC connections --add VPC connection<br> &#x9009;&#x62E9;VPC ID&#x548C;output&#x5F53;&#x4E2D;&#x7684;Quicksight security group&#xFF0C;&#x4EE5;&#x521B;&#x5EFA;VPC&#x8FDE;&#x63A5;   </p>
+<p> &#x6CE8;:   </p>
+<ul>
+<li>&#x5982;&#x6CA1;&#x6709;mange VPC connections&#x7684;&#x9009;&#x9879;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5F00;&#x542F;enterprise&#x7248;&#x672C;  </li>
+<li>&#x8FD9;&#x91CC;Quicksight&#x7684;&#x7AEF;&#x53E3;&#x4E3A;&#x5168;&#x5F00;&#xFF0C;&#x56E0;&#x6B64;aurora&#x548C;redshift&#x5747;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E00;&#x5B89;&#x5168;&#x7EC4;&#x505A;&#x8FDE;&#x63A5;&#x3002;&#x5B9E;&#x9645;&#x751F;&#x4EA7;&#x8BF7;&#x5F00;&#x542F;&#x81EA;&#x5DF1;&#x9700;&#x8981;&#x7684;&#x7AEF;&#x53E3;&#x3002; </li>
+</ul>
 </li>
-</ol>
-<h4 id="qa&#xFF1A;">QA&#xFF1A;</h4>
-<ol>
-<li>&#x6B65;&#x9A5F;&#x539F;&#x7406;&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;</li>
-<li>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FDB;&#x884C;&#x4E8C;&#x6B21;&#x8BBF;&#x95EE;&#xFF1A;
-A&#xFF1A; &#x4E3A;&#x4E86;&#x5F97;&#x5230;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x5934;&#x50CF;&#xFF0C;&#x6635;&#x79F0;&#x7B49;</li>
-<li>&#x5FAE;&#x4FE1;&#x7684;&#x8BA4;&#x8BC1;&#x6388;&#x6743;&#x534F;&#x8BAE;&#xFF1A;
-A: Auth2  &#x5141;&#x8BB8;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;</li>
-<li>&#x7528;&#x6237;&#x62E5;&#x6709;&#x7684;&#x6743;&#x9650;
-A&#xFF1A;&#x540C;&#x8EAB;&#x4EFD;&#x6C60;&#x7684;&#x6743;&#x9650;</li>
-<li>&#x51C6;&#x5907;
-A: AWS&#x8D26;&#x53F7;  &#x521B;&#x5EFA;&#x8EAB;&#x4EFD;&#x6C60;  &#x8BBE;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;  APP&#x5728;&#x5FAE;&#x4FE1;&#x516C;&#x5F00;&#x5E73;&#x53F0;&#x7684;ID&#x548C;&#x5BC6;&#x94A5;</li>
-<li>Cognito&#x662F;&#x4EC0;&#x4E48;
-A&#xFF1A;Amazon Cognito &#x4E3A;&#x60A8;&#x7684; Web &#x548C;&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x3001;&#x6388;&#x6743;&#x548C;&#x7528;&#x6237;&#x7BA1;&#x7406;&#x3002;&#x60A8;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x76F4;&#x63A5;&#x767B;&#x5F55;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7B2C;&#x4E09;&#x65B9; (&#x5982; Facebook&#x3001;Amazon &#x6216; Google) &#x767B;&#x5F55;&#x3002;  <a href="https://aws.amazon.com/cn/documentation/cognito/?id=docs_gateway" target="_blank">https://aws.amazon.com/cn/documentation/cognito/?id=docs_gateway</a></li>
-<li>&#x6BCF;&#x4E00;&#x4E2A;part&#x7684;&#x4F5C;&#x7528;
-&#x6570;&#x636E;&#x5E93;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x4FDD;&#x5B58;&#x7528;&#x6237;&#x4FE1;&#x606F;
-Cognito&#x901A;&#x8FC7;&#x5BF9;&#x8EAB;&#x4EFD;&#x6C60;&#x7684;&#x7BA1;&#x7406;&#x5BF9;&#x7528;&#x6237;&#x505A;&#x6388;&#x6743;
-API gateway:&#x5FAE;&#x4FE1;&#x63A5;&#x53EA;&#x80FD;&#x7531;&#x540E;&#x53F0;&#x8BBF;&#x95EE;&#x6240;&#x4EE5;&#x7528;lambda&#x5B9E;&#x73B0;&#xFF0C;</li>
-<li>IOS&#x517C;&#x5BB9;&#x6027;
-AWS&#x63D0;&#x4F9B;&#x517C;&#x5BB9;IOS&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x5305;</li>
-</ol>
-<h4 id="code">code:</h4>
-<p><a href="https://github.com/xfsnow/android/tree/master/CognitoWX" target="_blank">https://github.com/xfsnow/android/tree/master/CognitoWX</a></p>
-<p><a href="https://github.com/xfsnow/serverless/tree/master/cognitowx" target="_blank">https://github.com/xfsnow/serverless/tree/master/cognitowx</a></p>
+</ul>
+<ul>
+<li><p>&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;   </p>
+<p> &#x9009;&#x62E9;Aurora&#x6216;redshift&#x5B9E;&#x4F8B;&#x4E3A;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x9009;&#x62E9;&#x521A;&#x624D;&#x521B;&#x5EFA;&#x7684;vpc connection. database name:lab&#x3002;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#xFF08;&#x5728;output&#x5F53;&#x4E2D;&#xFF09;  </p>
+<p> validate&#x786E;&#x4FDD;connectivity&#x6CA1;&#x95EE;&#x9898;&#x540E;&#xFF0C;&#x5373;&#x53EF;&#x521B;&#x5EFA;&#x3002;   </p>
+<p> &#x5DE6;&#x4FA7;&#x53EF;&#x4EE5;&#x770B;&#x5230;age, job, marital&#x8FD9;&#x51E0;&#x680F;&#x3002;&#x4EFB;&#x610F;&#x62D6;&#x62FD;&#x6570;&#x636E;&#x680F;&#x751F;&#x6210;&#x81EA;&#x5DF1;&#x7684;dashboard   </p>
+</li>
+</ul>
+<p>&#x6B65;&#x9AA4;5:  &#x9500;&#x6BC1;&#x8D44;&#x6E90;</p>
+<pre><code>terraform destroy
+</code></pre><p>Note: &#x7531;&#x4E8E;&#x4E00;&#x4E9B;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;destroy&#x547D;&#x4EE4;&#x53EF;&#x80FD;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x8FD9;&#x65F6;&#x624B;&#x52A8;&#x5220;&#x9664;&#x62A5;&#x9519;&#x8D44;&#x6E90;&#x518D;&#x8FD0;&#x884C;&#x6B64;&#x547D;&#x4EE4;&#x9500;&#x6BC1;&#x5176;&#x4ED6;&#x8D44;&#x6E90;&#x5373;&#x53EF;&#x3002;</p>
 
                                 
                                 </section>
@@ -834,10 +850,6 @@ AWS&#x63D0;&#x4F9B;&#x517C;&#x5BB9;IOS&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#
             
                 
                 
-                <a href="mobile/serverless-image-handler.html" class="navigation navigation-next navigation-unique" aria-label="Next page: S3图片处理">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
             
         
     </div>
@@ -845,7 +857,7 @@ AWS&#x63D0;&#x4F9B;&#x517C;&#x5BB9;IOS&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cognito实现微信用户第三方登陆","level":"1.9.1","depth":2,"next":{"title":"S3图片处理","level":"1.9.2","depth":2,"path":"mobile/serverless-image-handler.md","ref":"mobile/serverless-image-handler.md","articles":[]},"previous":{"title":"移动开发","level":"1.9","depth":1,"ref":"","articles":[{"title":"Cognito实现微信用户第三方登陆","level":"1.9.1","depth":2,"path":"cognito_android.md","ref":"cognito_android.md","articles":[]},{"title":"S3图片处理","level":"1.9.2","depth":2,"path":"mobile/serverless-image-handler.md","ref":"mobile/serverless-image-handler.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ga","disqus","expandable-chapters","page-toc"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AWS Quick Start","gitbook":"*","description":"AWS快速上手实验，自动化部署CloudFormation, 常用工具集"},"file":{"path":"cognito_android.md","mtime":"2019-05-12T13:31:17.125Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-12T13:32:02.812Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"从Aurora迁移到Redshift并利用Quicksight做数据可视化分析","level":"1.11.1","depth":2,"next":{"title":"QuickStart项目","level":"1.12","depth":1,"ref":"","articles":[{"title":"如何提交文档","level":"1.12.1","depth":2,"path":"how_to_contribute.md","ref":"how_to_contribute.md","articles":[]}]},"previous":{"title":"数据分析 & BI","level":"1.11","depth":1,"ref":"","articles":[{"title":"从Aurora迁移到Redshift并利用Quicksight做数据可视化分析","level":"1.11.1","depth":2,"path":"aurora-to-redshift-bi.md","ref":"aurora-to-redshift-bi.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ga","disqus","expandable-chapters","page-toc"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AWS Quick Start","gitbook":"*","description":"AWS快速上手实验，自动化部署CloudFormation, 常用工具集"},"file":{"path":"aurora-to-redshift-bi.md","mtime":"2019-05-12T13:31:17.125Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-12T13:32:02.812Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

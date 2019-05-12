@@ -633,6 +633,70 @@
                 <span>
             
                     
+                    AI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../AI/amazon-connect-with-lex.html">
+            
+                <a href="../AI/amazon-connect-with-lex.html">
+            
+                    
+                    Amazon Connect + Lex 构建智能聊天机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    数据分析 & BI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../aurora-to-redshift-bi.html">
+            
+                <a href="../aurora-to-redshift-bi.html">
+            
+                    
+                    从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
                     QuickStart项目
             
                 </span>
@@ -642,7 +706,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../how_to_contribute.html">
+        <li class="chapter " data-level="1.12.1" data-path="../how_to_contribute.html">
             
                 <a href="../how_to_contribute.html">
             
@@ -725,13 +789,13 @@
 <h2 id="&#x521B;&#x5EFA;alexa-skill-set">&#x521B;&#x5EFA;Alexa Skill Set</h2>
 <ul>
 <li><p>&#x5728;<a href="https://developer.amazon.com/alexa/console/ask" target="_blank">ASK Console</a>&#x4E2D;&#x70B9;&#x51FB;[Create Still], &#x8F93;&#x5165;&#x6280;&#x80FD;&#x540D;&#x79F0;&#xFF0C;&#x9009;&#x62E9;Custom&#x5E76;&#x521B;&#x5EFA;&#x6280;&#x80FD;
-<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-skillset-custom.png" alt="Custom SkillSet"></p>
+<img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-skillset-custom.png" alt="Custom SkillSet"></p>
 </li>
 <li><p>&#x70B9;&#x51FB;[Add]&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Slot, &#x8F93;&#x5165;<code>status</code>, &#x5E76;&#x4E14;&#x5728;&#x521B;&#x5EFA;<code>on</code>&#x548C;<code>off</code>&#x4E24;&#x4E2A;slot value
-<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-slot.png" alt="SkillSet Slot"></p>
+<img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-slot.png" alt="SkillSet Slot"></p>
 </li>
 <li><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Intent, &#x6309;&#x4E0B;&#x56FE;&#x8F93;&#x5165;&#x7528;&#x4E8E;Intent&#x8BC6;&#x522B;&#x7684;&#x8BED;&#x53E5;, &#x5E76;&#x4E14;&#x9009;&#x62E9;&#x521A;&#x624D;&#x521B;&#x5EFA;slot
-<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-intent.png" alt="SkillSet Intent"></p>
+<img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-intent.png" alt="SkillSet Intent"></p>
 </li>
 </ul>
 <h2 id="&#x90E8;&#x7F72;lambda">&#x90E8;&#x7F72;Lambda</h2>
@@ -747,17 +811,17 @@
 <h2 id="build-alexa-skillset">Build Alexa SkillSet</h2>
 <ul>
 <li>&#x5728;AWS Conole&#x4E2D;&#x627E;&#x5230;&#x521A;&#x624D;&#x53D1;&#x5E03;&#x7684;Lambda&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x590D;&#x5236;arn
-<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/lambda-arn.png" alt="Lambda ARN"></li>
+<img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/lambda-arn.png" alt="Lambda ARN"></li>
 <li>&#x5728;Alexa Console&#x4E2D;&#x627E;&#x5230;&#x7F16;&#x8F91;Endpoint&#xFF0C;&#x5C06;&#x521A;&#x624D;&#x590D;&#x5236;&#x7684;arn&#x586B;&#x5165;[Default region]
-<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-endpoint.png" alt="Endpoint"></li>
+<img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-endpoint.png" alt="Endpoint"></li>
 <li>&#x70B9;&#x51FB;[Save Endpoint]</li>
 <li>&#x9009;&#x62E9;[Invocation], &#x8F93;&#x5165;Invoke Name, &#x70B9;&#x51FB;[Save Model]&#xFF0C;&#x4FDD;&#x5B58;&#x6210;&#x529F;&#x540E;&#x70B9;&#x51FB;[Build Model]
-<img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-build.png" alt="Build"></li>
+<img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-build.png" alt="Build"></li>
 <li>&#x7B49;&#x5F85;&#x6570;&#x79D2;&#x540E;&#xFF0C;Model&#x7F16;&#x8BD1;&#x6210;&#x529F;</li>
 </ul>
 <h2 id="&#x6D4B;&#x8BD5;alexa-skillset">&#x6D4B;&#x8BD5;Alexa SkillSet</h2>
 <p>&#x6309;&#x7167;&#x4E0B;&#x56FE;&#xFF0C;&#x9009;&#x62E9;[Test], &#x6309;&#x4F4F;&#x8BDD;&#x7B52;&#xFF0C;&#x7528;&#x82F1;&#x6587;&#x5411;Alexa&#x53D1;&#x9001;&#x6307;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982; <strong>ask Puppy to turn on the air purifier</strong></p>
-<p><img src="https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-test.png" alt="Test"></p>
+<p><img src="https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-test.png" alt="Test"></p>
 
                                 
                                 </section>
@@ -801,7 +865,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Alexa与AWS IoT的集成","level":"1.7.1.4","depth":3,"next":{"title":"环境配置：在 Windows 中配置 Docker 镜像","level":"1.7.2","depth":2,"path":"DockerGuide.md","ref":"DockerGuide.md","articles":[]},"previous":{"title":"IoT Greengrass实验","level":"1.7.1.3","depth":3,"path":"IoT/lab3.greengrass.md","ref":"IoT/lab3.greengrass.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","disqus","expandable-chapters","page-toc"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AWS Quick Start","gitbook":"*","description":"AWS快速上手实验，自动化部署CloudFormation, 常用工具集"},"file":{"path":"IoT/lab4.Alexa.md","mtime":"2019-01-31T19:09:53.813Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-31T19:10:41.455Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Alexa与AWS IoT的集成","level":"1.7.1.4","depth":3,"next":{"title":"环境配置：在 Windows 中配置 Docker 镜像","level":"1.7.2","depth":2,"path":"DockerGuide.md","ref":"DockerGuide.md","articles":[]},"previous":{"title":"IoT Greengrass实验","level":"1.7.1.3","depth":3,"path":"IoT/lab3.greengrass.md","ref":"IoT/lab3.greengrass.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","disqus","expandable-chapters","page-toc"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"chinalabs"},"search":{},"page-toc":{"position":"top","selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-123322271-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AWS Quick Start","gitbook":"*","description":"AWS快速上手实验，自动化部署CloudFormation, 常用工具集"},"file":{"path":"IoT/lab4.Alexa.md","mtime":"2019-05-12T13:31:16.709Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-12T13:32:02.812Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
