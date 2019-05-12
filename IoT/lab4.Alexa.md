@@ -23,13 +23,13 @@
 ## 创建Alexa Skill Set
 
 * 在[ASK Console](https://developer.amazon.com/alexa/console/ask)中点击[Create Still], 输入技能名称，选择Custom并创建技能
-![Custom SkillSet](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-skillset-custom.png)
+![Custom SkillSet](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-skillset-custom.png)
 
 * 点击[Add]创建一个Slot, 输入`status`, 并且在创建`on`和`off`两个slot value
-![SkillSet Slot](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-slot.png)
+![SkillSet Slot](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-slot.png)
 
 * 创建一个Intent, 按下图输入用于Intent识别的语句, 并且选择刚才创建slot
-![SkillSet Intent](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-intent.png)
+![SkillSet Intent](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-intent.png)
 
 
 ## 部署Lambda
@@ -47,19 +47,19 @@ sls deploy --region us-west-2 // Oregon region
 ## Build Alexa SkillSet
 
 * 在AWS Conole中找到刚才发布的Lambda函数，并复制arn
-![Lambda ARN](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/lambda-arn.png)
+![Lambda ARN](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/lambda-arn.png)
 * 在Alexa Console中找到编辑Endpoint，将刚才复制的arn填入[Default region]
-![Endpoint](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-endpoint.png)
+![Endpoint](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-endpoint.png)
 * 点击[Save Endpoint]
 * 选择[Invocation], 输入Invoke Name, 点击[Save Model]，保存成功后点击[Build Model]
-![Build](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-build.png)
+![Build](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-build.png)
 * 等待数秒后，Model编译成功
 
 ## 测试Alexa SkillSet
 
 按照下图，选择[Test], 按住话筒，用英文向Alexa发送指令，例如 **ask Puppy to turn on the air purifier**
 
-![Test](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab4/alexa-test.png)
+![Test](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab4/alexa-test.png)
 
 
 

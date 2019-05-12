@@ -26,11 +26,11 @@ Fork 到您的 GitHub 账号下，如之前已经 Fork, 请直接进入步骤4.
 * **步骤5**: 在新的分支下完成编辑，并提交到您的GitHub.
 
 * **步骤6**: 登录GitHub, 选择Fork出来的Repo, 点击 **New Pull request** 或者 **Compare & pull request**.
-  ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/HowToContribute/new-pull-request.png)
+  ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/HowToContribute/new-pull-request.png)
   
 * **步骤7**: 选择 **base repository** 为 **chinalabs/quickstart-guide** 的 **develop** 
 分支,选择 **head repository** 为您新创建的分支.
-  ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/HowToContribute/create-pull-request.png)
+  ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/HowToContribute/create-pull-request.png)
     
 * **步骤8**: 添加 **Pull Request** 描述.
 
@@ -46,7 +46,7 @@ Fork 到您的 GitHub 账号下，如之前已经 Fork, 请直接进入步骤4.
 * **步骤2**: 选择 **base repository** 您的 repo 下的 **develop** 分支,
 选择 **head repository** 为 **chinalabs/quickstart-guide** 的 **develop** 分支。
 您可能需要点击 **compare cross forks** 来选择正确的分支。
-  ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/HowToContribute/cross-fork.png)
+  ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/HowToContribute/cross-fork.png)
 
 * **步骤3**: 创建Pull Request, 并Merge.
 

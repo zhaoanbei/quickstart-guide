@@ -7,25 +7,25 @@
 ### 介绍
 这个项目的目的是为了更加快速地熟悉AWS服务，或者在AWS上快速部署服务。
 
-*文档标题带有![CloudFormationLogo](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cloudformation_logo_30.png)
+*文档标题带有![CloudFormationLogo](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cloudformation_logo_30.png)
 表示文章内提供[CloudFormation](https://aws.amazon.com/cloudformation/)自动部署模板*
 
-*文章标题带有![Terraform](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/terraform.png)
+*文章标题带有![Terraform](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/terraform.png)
 表示文章内提供[Terraform](https://www.terraform.io/)自动部署模板*
 
 ### 数据库
-* [RedShift vs. MySQL对比实验](database/RedShift_MySQL.md)![CloudFormationLogo](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cloudformation_logo_30.png)
+* [RedShift vs. MySQL对比实验](database/RedShift_MySQL.md)![CloudFormationLogo](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cloudformation_logo_30.png)
 * [Aurora vs. MySQL性能对比试验](database/Aurora-vs-MySQL.md)
-* [MongoDB自动部署](database/MangoDB.md)![CloudFormationLogo](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cloudformation_logo_30.png)
+* [MongoDB自动部署](database/MangoDB.md)![CloudFormationLogo](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cloudformation_logo_30.png)
 * [ElastiCache:Redis基准测试](database/redis_benchmark.md)
   
 ### 存储
-* [NFS: 利用S3FS自建NFS](storage/S3fs.md)![CloudFormationLogo](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cloudformation_logo_30.png)
+* [NFS: 利用S3FS自建NFS](storage/S3fs.md)![CloudFormationLogo](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cloudformation_logo_30.png)
   
 ### 网络 & 加速
 * [海外域名部署方案：海外域名向国内用户提供服务](ByPassICP.md)
 * [VPC 配置指南](network/vpc_guide.md)
-* <a href="https://github.com/iceflow/easyvpn" target="_blank">快速自建VPN</a>![CloudFormationLogo](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cloudformation_logo_30.png)
+* <a href="https://github.com/iceflow/easyvpn" target="_blank">快速自建VPN</a>![CloudFormationLogo](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cloudformation_logo_30.png)
   
 ### 运维 & 持续集成/发布
 * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
