@@ -1,106 +1,106 @@
-### ×¼±¸¹¤×÷
-- Ñ¡ÔñÁ½¸ö¿ÉÓÃÇø£¬¿ÉÓÃÇøÖĞÓĞÖÁÉÙÒ»¸ö´øÓĞ¹²ÓĞ×ÓÍøµÄVPC
-- ÔÚÃ¿¸övpcÖĞÆô¶¯ec2ÊµÀı
-- ÔÚÃ¿¸öec2ÖĞ°²×°web·şÎñÆ÷£¬È·±£ÕâĞ©ÊµÀıµÄ°²È«×éÔÊĞí¶Ë¿Ú 80 ÉÏµÄ HTTP ·ÃÎÊ¡£ 
-### ²½Öè 1£ºÑ¡Ôñ¸ºÔØ¾ùºâÆ÷ÀàĞÍ
-1. ´ò¿ª [Amazon EC2 ¿ØÖÆÌ¨](https://console.aws.amazon.com/ec2/)¡£
-1. ÔÚµ¼º½À¸ÉÏ£¬Ñ¡ÔñÄúµÄ¸ºÔØ¾ùºâÆ÷µÄÇøÓò¡£ÇëÈ·±£Ñ¡ÔñÓÃÓÚ EC2 ÊµÀıµÄÍ¬Ò»¸öÇøÓò¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-1.png)
-1. ÔÚµ¼º½´°¸ñÉÏµÄ LOAD BALANCING ÏÂ£¬Ñ¡Ôñ Load Balancers¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-2.png)
-1. Ñ¡Ôñ Create Load Balancer¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-3.png)
-1. ¶ÔÓÚ Application Load Balancer£¬Ñ¡Ôñ Create¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-4.png)
-### ²½Öè 2£ºÅäÖÃ¸ºÔØ¾ùºâÆ÷ºÍÕìÌıÆ÷
+### å‡†å¤‡å·¥ä½œ
+- é€‰æ‹©ä¸¤ä¸ªå¯ç”¨åŒºï¼Œå¯ç”¨åŒºä¸­æœ‰è‡³å°‘ä¸€ä¸ªå¸¦æœ‰å…±æœ‰å­ç½‘çš„VPC
+- åœ¨æ¯ä¸ªvpcä¸­å¯åŠ¨ec2å®ä¾‹
+- åœ¨æ¯ä¸ªec2ä¸­å®‰è£…webæœåŠ¡å™¨ï¼Œç¡®ä¿è¿™äº›å®ä¾‹çš„å®‰å…¨ç»„å…è®¸ç«¯å£ 80 ä¸Šçš„ HTTP è®¿é—®ã€‚ 
+### æ­¥éª¤ 1ï¼šé€‰æ‹©è´Ÿè½½å‡è¡¡å™¨ç±»å‹
+1. æ‰“å¼€ [Amazon EC2 æ§åˆ¶å°](https://console.aws.amazon.com/ec2/)ã€‚
+1. åœ¨å¯¼èˆªæ ä¸Šï¼Œé€‰æ‹©æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨çš„åŒºåŸŸã€‚è¯·ç¡®ä¿é€‰æ‹©ç”¨äº EC2 å®ä¾‹çš„åŒä¸€ä¸ªåŒºåŸŸã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-1.png)
+1. åœ¨å¯¼èˆªçª—æ ¼ä¸Šçš„ LOAD BALANCING ä¸‹ï¼Œé€‰æ‹© Load Balancersã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-2.png)
+1. é€‰æ‹© Create Load Balancerã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-3.png)
+1. å¯¹äº Application Load Balancerï¼Œé€‰æ‹© Createã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-4.png)
+### æ­¥éª¤ 2ï¼šé…ç½®è´Ÿè½½å‡è¡¡å™¨å’Œä¾¦å¬å™¨
 
-ÔÚ Configure Load Balancer Ò³ÃæÉÏ£¬Íê³ÉÒÔÏÂ¹ı³Ì¡£
+åœ¨ Configure Load Balancer é¡µé¢ä¸Šï¼Œå®Œæˆä»¥ä¸‹è¿‡ç¨‹ã€‚
 
-1. ÅäÖÃ¸ºÔØ¾ùºâÆ÷ºÍÕìÌıÆ÷
-1. ¶ÔÓÚ Name£¬¼üÈë¸ºÔØ¾ùºâÆ÷µÄÃû³Æ¡£
-1. ÔÚÇøÓòµÄ Application Load Balancer ºÍ Network Load Balancer ¼¯ÄÚ£¬Ó¦ÓÃ³ÌĞò¸ºÔØ¾ùºâÆ÷ µÄÃû³Æ±ØĞëÎ¨Ò»£¬×î¶à¿ÉÒÔÓĞ 32 ¸ö×Ö·û£¬Ö»ÄÜ°üº¬×ÖÄ¸Êı×Ö×Ö·ûºÍÁ¬×Ö·û£¬²»ÄÜÒÔÁ¬×Ö·û¿ªÍ·»ò½áÎ²£¬²¢ÇÒ²»ÄÜÒÔ¡°internal-¡±¿ªÍ·¡£
-1. ¶ÔÓÚ Scheme ºÍ IP address type£¬Çë±£ÁôÄ¬ÈÏÖµ¡£
-1. ¶ÔÓÚ Listeners£¬±£ÁôÄ¬ÈÏÖµ£¬Ä¬ÈÏÕìÌıÆ÷¸ºÔğ½ÓÊÕ¶Ë¿Ú 80 ÉÏµÄ HTTP Á÷Á¿¡£
-1. ¶ÔÓÚ Availability Zones£¬Ñ¡ÔñÓÃÓÚ EC2 ÊµÀıµÄ VPC¡£¶ÔÓÚÓÃÓÚÆô¶¯ EC2 ÊµÀıµÄÃ¿¸ö¿ÉÓÃÇø£¬Ñ¡ÔñÒ»¸ö¿ÉÓÃÇø£¬È»ºóÎª¸Ã¿ÉÓÃÇøÑ¡Ôñ¹«ÓĞ×ÓÍø¡£
-1. Ñ¡Ôñ Next: Configure Security Settings¡£
-1. ÔÚ±¾½Ì³ÌÖĞ£¬½«²»´´½¨ HTTPS ÕìÌıÆ÷¡£Ñ¡Ôñ Next: Configure Security Groups¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-5.png)
-### ²½Öè 3£ºÎª¸ºÔØ¾ùºâÆ÷ÅäÖÃ°²È«×é
+1. é…ç½®è´Ÿè½½å‡è¡¡å™¨å’Œä¾¦å¬å™¨
+1. å¯¹äº Nameï¼Œé”®å…¥è´Ÿè½½å‡è¡¡å™¨çš„åç§°ã€‚
+1. åœ¨åŒºåŸŸçš„ Application Load Balancer å’Œ Network Load Balancer é›†å†…ï¼Œåº”ç”¨ç¨‹åºè´Ÿè½½å‡è¡¡å™¨ çš„åç§°å¿…é¡»å”¯ä¸€ï¼Œæœ€å¤šå¯ä»¥æœ‰ 32 ä¸ªå­—ç¬¦ï¼Œåªèƒ½åŒ…å«å­—æ¯æ•°å­—å­—ç¬¦å’Œè¿å­—ç¬¦ï¼Œä¸èƒ½ä»¥è¿å­—ç¬¦å¼€å¤´æˆ–ç»“å°¾ï¼Œå¹¶ä¸”ä¸èƒ½ä»¥â€œinternal-â€å¼€å¤´ã€‚
+1. å¯¹äº Scheme å’Œ IP address typeï¼Œè¯·ä¿ç•™é»˜è®¤å€¼ã€‚
+1. å¯¹äº Listenersï¼Œä¿ç•™é»˜è®¤å€¼ï¼Œé»˜è®¤ä¾¦å¬å™¨è´Ÿè´£æ¥æ”¶ç«¯å£ 80 ä¸Šçš„ HTTP æµé‡ã€‚
+1. å¯¹äº Availability Zonesï¼Œé€‰æ‹©ç”¨äº EC2 å®ä¾‹çš„ VPCã€‚å¯¹äºç”¨äºå¯åŠ¨ EC2 å®ä¾‹çš„æ¯ä¸ªå¯ç”¨åŒºï¼Œé€‰æ‹©ä¸€ä¸ªå¯ç”¨åŒºï¼Œç„¶åä¸ºè¯¥å¯ç”¨åŒºé€‰æ‹©å…¬æœ‰å­ç½‘ã€‚
+1. é€‰æ‹© Next: Configure Security Settingsã€‚
+1. åœ¨æœ¬æ•™ç¨‹ä¸­ï¼Œå°†ä¸åˆ›å»º HTTPS ä¾¦å¬å™¨ã€‚é€‰æ‹© Next: Configure Security Groupsã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-5.png)
+### æ­¥éª¤ 3ï¼šä¸ºè´Ÿè½½å‡è¡¡å™¨é…ç½®å®‰å…¨ç»„
 
-Äú¸ºÔØ¾ùºâÆ÷µÄ°²È«×é±ØĞëÔÊĞíÆäÍ¨¹ıÕìÌıÆ÷¶Ë¿ÚºÍÔËĞĞ×´¿ö¼ì²é¶Ë¿ÚÓëÒÑ×¢²áÄ¿±ê½øĞĞÍ¨ĞÅ¡£¿ØÖÆÌ¨¿ÉÒÔ´ú±íÄú´´½¨¸ºÔØ¾ùºâÆ÷µÄ°²È«×é£¬ÆäÖĞ°üÀ¨Ö¸¶¨ÕıÈ·Ğ­ÒéºÍ¶Ë¿ÚµÄ¹æÔò¡£Èç¹ûÄúÔ¸Òâ£¬Ò²¿ÉÒÔ×ÔĞĞ´´½¨ºÍÑ¡Ôñ°²È«×é¡£
+æ‚¨è´Ÿè½½å‡è¡¡å™¨çš„å®‰å…¨ç»„å¿…é¡»å…è®¸å…¶é€šè¿‡ä¾¦å¬å™¨ç«¯å£å’Œè¿è¡ŒçŠ¶å†µæ£€æŸ¥ç«¯å£ä¸å·²æ³¨å†Œç›®æ ‡è¿›è¡Œé€šä¿¡ã€‚æ§åˆ¶å°å¯ä»¥ä»£è¡¨æ‚¨åˆ›å»ºè´Ÿè½½å‡è¡¡å™¨çš„å®‰å…¨ç»„ï¼Œå…¶ä¸­åŒ…æ‹¬æŒ‡å®šæ­£ç¡®åè®®å’Œç«¯å£çš„è§„åˆ™ã€‚å¦‚æœæ‚¨æ„¿æ„ï¼Œä¹Ÿå¯ä»¥è‡ªè¡Œåˆ›å»ºå’Œé€‰æ‹©å®‰å…¨ç»„ã€‚
 
 
-1. Ñ¡Ôñ Create a new security group¡£
-1. Îª°²È«×é¼üÈëÃû³ÆºÍÃèÊö£¬»òÕß±£ÁôÄ¬ÈÏÃû³ÆºÍÃèÊö¡£´ËĞÂ°²È«×é°üº¬Ò»Ìõ¹æÔò£¬¸Ã¹æÔòÔÊĞí½«Á÷Á¿´«ËÍµ½ÔÚ Configure Load Balancer Ò³ÃæÉÏÑ¡ÔñµÄ¸ºÔØ¾ùºâÆ÷ÕìÌıÆ÷¶Ë¿Ú¡£
-1. Ñ¡Ôñ Next: Configure Routing¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-6.png)
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-7.png)
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-8.png)
-### ²½Öè 4£ºÅäÖÃÄ¿±ê×é
+1. é€‰æ‹© Create a new security groupã€‚
+1. ä¸ºå®‰å…¨ç»„é”®å…¥åç§°å’Œæè¿°ï¼Œæˆ–è€…ä¿ç•™é»˜è®¤åç§°å’Œæè¿°ã€‚æ­¤æ–°å®‰å…¨ç»„åŒ…å«ä¸€æ¡è§„åˆ™ï¼Œè¯¥è§„åˆ™å…è®¸å°†æµé‡ä¼ é€åˆ°åœ¨ Configure Load Balancer é¡µé¢ä¸Šé€‰æ‹©çš„è´Ÿè½½å‡è¡¡å™¨ä¾¦å¬å™¨ç«¯å£ã€‚
+1. é€‰æ‹© Next: Configure Routingã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-6.png)
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-7.png)
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-8.png)
+### æ­¥éª¤ 4ï¼šé…ç½®ç›®æ ‡ç»„
 
-´´½¨Ò»¸öÒªÔÚÇëÇóÂ·ÓÉÖĞÊ¹ÓÃµÄÄ¿±ê×é¡£ÄúÕìÌıÆ÷µÄÄ¬ÈÏ¹æÔò½«ÇëÇóÂ·ÓÉµ½´ËÄ¿±ê×éÖĞµÄÒÑ×¢²áÄ¿±ê¡£¸ºÔØ¾ùºâÆ÷Ê¹ÓÃÎªÄ¿±ê×é¶¨ÒåµÄÔËĞĞ×´¿ö¼ì²éÉèÖÃÀ´¼ì²é´ËÄ¿±ê×éÖĞÄ¿±êµÄÔËĞĞ×´¿ö¡£ÔÚ Configure Routing Ò³ÃæÉÏ£¬Íê³ÉÒÔÏÂ¹ı³Ì¡£
+åˆ›å»ºä¸€ä¸ªè¦åœ¨è¯·æ±‚è·¯ç”±ä¸­ä½¿ç”¨çš„ç›®æ ‡ç»„ã€‚æ‚¨ä¾¦å¬å™¨çš„é»˜è®¤è§„åˆ™å°†è¯·æ±‚è·¯ç”±åˆ°æ­¤ç›®æ ‡ç»„ä¸­çš„å·²æ³¨å†Œç›®æ ‡ã€‚è´Ÿè½½å‡è¡¡å™¨ä½¿ç”¨ä¸ºç›®æ ‡ç»„å®šä¹‰çš„è¿è¡ŒçŠ¶å†µæ£€æŸ¥è®¾ç½®æ¥æ£€æŸ¥æ­¤ç›®æ ‡ç»„ä¸­ç›®æ ‡çš„è¿è¡ŒçŠ¶å†µã€‚åœ¨ Configure Routing é¡µé¢ä¸Šï¼Œå®Œæˆä»¥ä¸‹è¿‡ç¨‹ã€‚
 
-ÅäÖÃÄ¿±ê×é
+é…ç½®ç›®æ ‡ç»„
 
-1. ¶ÔÓÚ Target group£¬±£ÁôÄ¬ÈÏÖµ New target group¡£
-1. ¶ÔÓÚ Name£¬¼üÈëĞÂÄ¿±ê×éµÄÃû³Æ¡£
-1. ½« Protocol ±£ÁôÎª¡°HTTP¡±£¬Port Îª¡°80¡±£¬Target type Îª¡°instance¡±¡£
-1. ¶ÔÓÚ Health checks£¬±£ÁôÄ¬ÈÏĞ­ÒéºÍ ping Â·¾¶¡£
-1. Ñ¡Ôñ Next: Register Targets¡£
-      ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-9.png)
-### ²½Öè 5£ºÏòÄúµÄÄ¿±ê×é×¢²áÄ¿±ê
+1. å¯¹äº Target groupï¼Œä¿ç•™é»˜è®¤å€¼ New target groupã€‚
+1. å¯¹äº Nameï¼Œé”®å…¥æ–°ç›®æ ‡ç»„çš„åç§°ã€‚
+1. å°† Protocol ä¿ç•™ä¸ºâ€œHTTPâ€ï¼ŒPort ä¸ºâ€œ80â€ï¼ŒTarget type ä¸ºâ€œinstanceâ€ã€‚
+1. å¯¹äº Health checksï¼Œä¿ç•™é»˜è®¤åè®®å’Œ ping è·¯å¾„ã€‚
+1. é€‰æ‹© Next: Register Targetsã€‚
+      ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-9.png)
+### æ­¥éª¤ 5ï¼šå‘æ‚¨çš„ç›®æ ‡ç»„æ³¨å†Œç›®æ ‡
 
-ÔÚ Register Targets Ò³ÃæÉÏ£¬Íê³ÉÒÔÏÂ¹ı³Ì¡£
+åœ¨ Register Targets é¡µé¢ä¸Šï¼Œå®Œæˆä»¥ä¸‹è¿‡ç¨‹ã€‚
 
-ÏòÄ¿±ê×é×¢²áÄ¿±ê
+å‘ç›®æ ‡ç»„æ³¨å†Œç›®æ ‡
 
-1. ¶ÔÓÚ Instances£¬Ñ¡ÔñÒ»¸ö»ò¶à¸öÊµÀı¡£
-1. ±£ÁôÄ¬ÈÏ¶Ë¿Ú 80£¬²¢Ñ¡Ôñ Add to registered¡£
-1. µ±ÄúÍê³ÉÑ¡ÔñÊµÀıºó£¬Ñ¡Ôñ Next: Review¡£
-      ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-10.png)
-	  ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-11.png)
-	  ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-12.png)
-### ²½Öè 6£º´´½¨²¢²âÊÔÄúµÄ¸ºÔØ¾ùºâÆ÷
+1. å¯¹äº Instancesï¼Œé€‰æ‹©ä¸€ä¸ªæˆ–å¤šä¸ªå®ä¾‹ã€‚
+1. ä¿ç•™é»˜è®¤ç«¯å£ 80ï¼Œå¹¶é€‰æ‹© Add to registeredã€‚
+1. å½“æ‚¨å®Œæˆé€‰æ‹©å®ä¾‹åï¼Œé€‰æ‹© Next: Reviewã€‚
+      ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-10.png)
+	  ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-11.png)
+	  ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-12.png)
+### æ­¥éª¤ 6ï¼šåˆ›å»ºå¹¶æµ‹è¯•æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨
 
-ÔÚ´´½¨¸ºÔØ¾ùºâÆ÷Ö®Ç°£¬Çë¼ì²éËùÑ¡µÄÉèÖÃ¡£ÔÚ´´½¨¸ºÔØ¾ùºâÆ÷Ö®ºó£¬¿ÉÒÔÑéÖ¤ÆäÊÇ·ñ½«Á÷Á¿·¢ËÍµ½ÄúµÄ EC2 ÊµÀı¡£
+åœ¨åˆ›å»ºè´Ÿè½½å‡è¡¡å™¨ä¹‹å‰ï¼Œè¯·æ£€æŸ¥æ‰€é€‰çš„è®¾ç½®ã€‚åœ¨åˆ›å»ºè´Ÿè½½å‡è¡¡å™¨ä¹‹åï¼Œå¯ä»¥éªŒè¯å…¶æ˜¯å¦å°†æµé‡å‘é€åˆ°æ‚¨çš„ EC2 å®ä¾‹ã€‚
 
-´´½¨²¢²âÊÔÄúµÄ¸ºÔØ¾ùºâÆ÷
-1. ÔÚ Review Ò³ÃæÉÏ£¬Ñ¡Ôñ Create ¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-13.png)
-1. ÔÚÄúÊÕµ½ÒÑ³É¹¦´´½¨¸ºÔØ¾ùºâÆ÷µÄÍ¨Öªºó£¬Ñ¡Ôñ Close¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-14.png)
-1. ÔÚµ¼º½´°¸ñÉÏµÄ LOAD BALANCING ÏÂ£¬Ñ¡Ôñ Target Groups¡£
-1. Ñ¡ÔñĞÂ´´½¨µÄÄ¿±ê×é¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-15.png)
-1. ÔÚ Targets Ñ¡Ïî¿¨ÖĞ£¬ÑéÖ¤ÄúµÄÊµÀıÊÇ·ñÒÑ×¼±¸¾ÍĞ÷¡£Èç¹ûÊµÀı×´Ì¬ÊÇ initial£¬ºÜ¿ÉÄÜÊÇÒòÎª£¬ÊµÀıÈÔÔÚ×¢²á¹ı³ÌÖĞ£¬»òÕßÎ´Í¨¹ıÊÓÎªÕı³£ÔËĞĞËùĞèµÄÔËĞĞ×´¿ö¼ì²é×îĞ¡ÊıÁ¿¡£ÔÚÄúµÄÖÁÉÙÒ»¸öÊµÀıµÄ×´Ì¬Îª healthy ºó£¬±ã¿É²âÊÔ¸ºÔØ¾ùºâÆ÷¡£
-1. ÔÚµ¼º½´°¸ñÉÏµÄ LOAD BALANCING ÏÂ£¬Ñ¡Ôñ Load Balancers¡£
-1. Ñ¡ÔñĞÂ´´½¨µÄ¸ºÔØ¾ùºâÆ÷¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-16.png)
-1. ÔÚ Description Ñ¡Ïî¿¨ÖĞ£¬¸´ÖÆ¸ºÔØ¾ùºâÆ÷ (ÀıÈç£¬my-load-balancer-1234567890.us-west-2.elb.amazonaws.com) µÄ DNS Ãû³Æ¡£½« DNS Ãû³ÆÕ³Ìùµ½ÒÑÁ¬½Ó Internet µÄ Web ä¯ÀÀÆ÷µÄµØÖ·À¸ÖĞ¡£Èç¹ûÒ»ÇĞÕı³££¬ä¯ÀÀÆ÷»áÏÔÊ¾Äú·şÎñÆ÷µÄÄ¬ÈÏÒ³Ãæ¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ALB/ALB-17.png)
-### »ùÓÚÂ·¾¶µÄÂ·ÓÉ:
-1. ´´½¨µÚ¶ş¸öÄ¿±ê×é
-1. Ñ¡ÔñĞÂ´´½¨µÄ¸ºÔØ¾ùºâÆ÷¡£
-1. ÔÚ ListenersÑ¡Ïî¿¨ÖĞ£¬Ê¹ÓÃ¼ıÍ·²é¿´ÕìÌıÆ÷µÄ¹æÔò£¬È»ºóÑ¡Ôñ Add rule¡£°´ÈçÏÂËùÊ¾Ö¸¶¨¹æÔò£º
-1. ¶ÔÓÚ Target group name£¬Ñ¡ÔñÄú´´½¨µÄµÚ¶ş¸öÄ¿±ê×é¡£
-1. ¶ÔÓÚ Path pattern£¬Ö¸¶¨Õë¶Ô»ùÓÚÂ·¾¶µÄÂ·ÓÉÊ¹ÓÃµÄ×¼È·Ä£Ê½ (ÀıÈç£¬/img/*)¡£
-1. Ñ¡Ôñ Save¡£
-### Ê¹ÓÃÎ¢·şÎñ×÷ÎªÓ¦ÓÃ³ÌĞò¸ºÔØ¾ùºâÆ÷µÄÄ¿±ê
-Äú¿ÉÒÔÔÚ¸÷ EC2 ÊµÀıÉÏ°²×°Ò»¸ö»ò¶à¸öÕâÑùµÄ·şÎñ£¬Ã¿¸ö·şÎñÔÚ²»Í¬¶Ë¿ÚÉÏ½ÓÊÜÁ¬½Ó¡£Äú¿ÉÒÔÊ¹ÓÃµ¥¸öÓ¦ÓÃ³ÌĞò¸ºÔØ¾ùºâÆ÷½«ÇëÇóÂ·ÓÉµ½Ó¦ÓÃ³ÌĞòµÄËùÓĞ·şÎñ¡£ÔÚÄú½« EC2 ÊµÀı×¢²áµ½Ä¿±ê×éÊ±£¬¿ÉÒÔ¶à´Î×¢²á£»¶ÔÓÚÃ¿¸ö·şÎñ£¬Ê¹ÓÃ¸Ã·şÎñµÄ¶Ë¿Ú×¢²áÊµÀı¡£ 
-### ²½Öè 6£ºÉ¾³ıÄúµÄ¸ºÔØ¾ùºâÆ÷ (¿ÉÑ¡)
+åˆ›å»ºå¹¶æµ‹è¯•æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨
+1. åœ¨ Review é¡µé¢ä¸Šï¼Œé€‰æ‹© Create ã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-13.png)
+1. åœ¨æ‚¨æ”¶åˆ°å·²æˆåŠŸåˆ›å»ºè´Ÿè½½å‡è¡¡å™¨çš„é€šçŸ¥åï¼Œé€‰æ‹© Closeã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-14.png)
+1. åœ¨å¯¼èˆªçª—æ ¼ä¸Šçš„ LOAD BALANCING ä¸‹ï¼Œé€‰æ‹© Target Groupsã€‚
+1. é€‰æ‹©æ–°åˆ›å»ºçš„ç›®æ ‡ç»„ã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-15.png)
+1. åœ¨ Targets é€‰é¡¹å¡ä¸­ï¼ŒéªŒè¯æ‚¨çš„å®ä¾‹æ˜¯å¦å·²å‡†å¤‡å°±ç»ªã€‚å¦‚æœå®ä¾‹çŠ¶æ€æ˜¯ initialï¼Œå¾ˆå¯èƒ½æ˜¯å› ä¸ºï¼Œå®ä¾‹ä»åœ¨æ³¨å†Œè¿‡ç¨‹ä¸­ï¼Œæˆ–è€…æœªé€šè¿‡è§†ä¸ºæ­£å¸¸è¿è¡Œæ‰€éœ€çš„è¿è¡ŒçŠ¶å†µæ£€æŸ¥æœ€å°æ•°é‡ã€‚åœ¨æ‚¨çš„è‡³å°‘ä¸€ä¸ªå®ä¾‹çš„çŠ¶æ€ä¸º healthy åï¼Œä¾¿å¯æµ‹è¯•è´Ÿè½½å‡è¡¡å™¨ã€‚
+1. åœ¨å¯¼èˆªçª—æ ¼ä¸Šçš„ LOAD BALANCING ä¸‹ï¼Œé€‰æ‹© Load Balancersã€‚
+1. é€‰æ‹©æ–°åˆ›å»ºçš„è´Ÿè½½å‡è¡¡å™¨ã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-16.png)
+1. åœ¨ Description é€‰é¡¹å¡ä¸­ï¼Œå¤åˆ¶è´Ÿè½½å‡è¡¡å™¨ (ä¾‹å¦‚ï¼Œmy-load-balancer-1234567890.us-west-2.elb.amazonaws.com) çš„ DNS åç§°ã€‚å°† DNS åç§°ç²˜è´´åˆ°å·²è¿æ¥ Internet çš„ Web æµè§ˆå™¨çš„åœ°å€æ ä¸­ã€‚å¦‚æœä¸€åˆ‡æ­£å¸¸ï¼Œæµè§ˆå™¨ä¼šæ˜¾ç¤ºæ‚¨æœåŠ¡å™¨çš„é»˜è®¤é¡µé¢ã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ALB/ALB-17.png)
+### åŸºäºè·¯å¾„çš„è·¯ç”±:
+1. åˆ›å»ºç¬¬äºŒä¸ªç›®æ ‡ç»„
+1. é€‰æ‹©æ–°åˆ›å»ºçš„è´Ÿè½½å‡è¡¡å™¨ã€‚
+1. åœ¨ Listenersé€‰é¡¹å¡ä¸­ï¼Œä½¿ç”¨ç®­å¤´æŸ¥çœ‹ä¾¦å¬å™¨çš„è§„åˆ™ï¼Œç„¶åé€‰æ‹© Add ruleã€‚æŒ‰å¦‚ä¸‹æ‰€ç¤ºæŒ‡å®šè§„åˆ™ï¼š
+1. å¯¹äº Target group nameï¼Œé€‰æ‹©æ‚¨åˆ›å»ºçš„ç¬¬äºŒä¸ªç›®æ ‡ç»„ã€‚
+1. å¯¹äº Path patternï¼ŒæŒ‡å®šé’ˆå¯¹åŸºäºè·¯å¾„çš„è·¯ç”±ä½¿ç”¨çš„å‡†ç¡®æ¨¡å¼ (ä¾‹å¦‚ï¼Œ/img/*)ã€‚
+1. é€‰æ‹© Saveã€‚
+### ä½¿ç”¨å¾®æœåŠ¡ä½œä¸ºåº”ç”¨ç¨‹åºè´Ÿè½½å‡è¡¡å™¨çš„ç›®æ ‡
+æ‚¨å¯ä»¥åœ¨å„ EC2 å®ä¾‹ä¸Šå®‰è£…ä¸€ä¸ªæˆ–å¤šä¸ªè¿™æ ·çš„æœåŠ¡ï¼Œæ¯ä¸ªæœåŠ¡åœ¨ä¸åŒç«¯å£ä¸Šæ¥å—è¿æ¥ã€‚æ‚¨å¯ä»¥ä½¿ç”¨å•ä¸ªåº”ç”¨ç¨‹åºè´Ÿè½½å‡è¡¡å™¨å°†è¯·æ±‚è·¯ç”±åˆ°åº”ç”¨ç¨‹åºçš„æ‰€æœ‰æœåŠ¡ã€‚åœ¨æ‚¨å°† EC2 å®ä¾‹æ³¨å†Œåˆ°ç›®æ ‡ç»„æ—¶ï¼Œå¯ä»¥å¤šæ¬¡æ³¨å†Œï¼›å¯¹äºæ¯ä¸ªæœåŠ¡ï¼Œä½¿ç”¨è¯¥æœåŠ¡çš„ç«¯å£æ³¨å†Œå®ä¾‹ã€‚ 
+### æ­¥éª¤ 6ï¼šåˆ é™¤æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨ (å¯é€‰)
 
-ÔÚÄúµÄ¸ºÔØ¾ùºâÆ÷¿ÉÓÃÖ®ºó£¬ÄúĞèÒªÎª±£³ÖÆäÔËĞĞµÄÃ¿Ğ¡Ê±»ò²¿·ÖĞ¡Ê±Ö§¸¶·ÑÓÃ¡£µ±Äú²»ÔÙĞèÒª¸ºÔØ¾ùºâÆ÷Ê±£¬¿É½«ÆäÉ¾³ı¡£
+åœ¨æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨å¯ç”¨ä¹‹åï¼Œæ‚¨éœ€è¦ä¸ºä¿æŒå…¶è¿è¡Œçš„æ¯å°æ—¶æˆ–éƒ¨åˆ†å°æ—¶æ”¯ä»˜è´¹ç”¨ã€‚å½“æ‚¨ä¸å†éœ€è¦è´Ÿè½½å‡è¡¡å™¨æ—¶ï¼Œå¯å°†å…¶åˆ é™¤ã€‚
 
-É¾³ıÄúµÄ¸ºÔØ¾ùºâÆ÷
+åˆ é™¤æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨
 
-1. ÔÚµ¼º½´°¸ñÖĞµÄ LOAD BALANCING ÏÂ£¬Ñ¡Ôñ Load Balancers¡£
-1. Ñ¡Ôñ¸ºÔØ¾ùºâÆ÷£¬È»ºóÑ¡Ôñ Actions ºÍ Delete¡£
-1. µ±ÏµÍ³ÌáÊ¾½øĞĞÈ·ÈÏÊ±£¬Ñ¡Ôñ Yes, Delete¡£
-### Ïà¹Ø¸ÅÄî¼°ÅäÖÃ£º
-[¸ö¸ºÔØ¾ùºâÆ÷](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/application-load-balancers.html)
+1. åœ¨å¯¼èˆªçª—æ ¼ä¸­çš„ LOAD BALANCING ä¸‹ï¼Œé€‰æ‹© Load Balancersã€‚
+1. é€‰æ‹©è´Ÿè½½å‡è¡¡å™¨ï¼Œç„¶åé€‰æ‹© Actions å’Œ Deleteã€‚
+1. å½“ç³»ç»Ÿæç¤ºè¿›è¡Œç¡®è®¤æ—¶ï¼Œé€‰æ‹© Yes, Deleteã€‚
+### ç›¸å…³æ¦‚å¿µåŠé…ç½®ï¼š
+[ä¸ªè´Ÿè½½å‡è¡¡å™¨](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/application-load-balancers.html)
 
-[ÕìÌıÆ÷](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/load-balancer-listeners.html)
+[ä¾¦å¬å™¨](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/load-balancer-listeners.html)
 
-[Ä¿±ê×é](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/load-balancer-target-groups.html)
+[ç›®æ ‡ç»„](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/load-balancer-target-groups.html)
 
-[¼à¿Ø](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/load-balancer-monitoring.html)
+[ç›‘æ§](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/load-balancer-monitoring.html)

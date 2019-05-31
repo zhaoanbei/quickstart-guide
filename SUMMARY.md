@@ -5,8 +5,10 @@
   * [Aurora vs. MySQL性能对比试验](database/Aurora-vs-MySQL.md)
   * [MongoDB自动部署](database/MangoDB.md)
   * [ElastiCache:Redis基准测试](database/redis_benchmark.md)
+  * [DynamoDB Proxy Using API Gateway](database/api-gateway-proxy-for-ddb.md)
 * 存储
   * [NFS: 利用S3FS自建NFS](storage/S3fs.md)
+  * <a href="https://github.com/lab798/quickstart-kafka" target="_blank">自动构建Kafka集群</a>
 * 网络 & 加速
   * [海外域名部署方案：海外域名向国内用户提供服务](ByPassICP.md)
   * [VPC 配置指南](network/vpc_guide.md)
@@ -36,6 +38,7 @@
 * 移动开发
   * [Cognito实现微信用户第三方登陆](cognito_android.md)
   * [S3图片处理](mobile/serverless-image-handler.md)
+  * <a href="https://github.com/lab798/aws-s3-cognito-lab">Cognito, OpenID Connect实现S3精细化权限控制</a>
 * AI 
   * [Amazon Connect + Lex 构建智能聊天机器人](AI/amazon-connect-with-lex.md)
 * 数据分析 & BI

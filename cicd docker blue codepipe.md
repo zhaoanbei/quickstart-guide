@@ -6,24 +6,24 @@
 - ### 创建codebuild项目： 源码代码->jar包
 1. 此项目构建的目标为把java程序打包成jar包
 2. 输入项目名称和源码存储的地方  如github  github项目url
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-1.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-1.png)
 3. 选择ubuntu为基本镜像
 4. 选择Java环境和openjdk-java9的版本
 5. 选择“buildspex.yml”作为构建脚本
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-2.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-2.png)
 6. 选择S3作为构建的输出
 7. 输入作为输出的S3桶的名称
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-3.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-3.png)
 8. 选择codebuild的执行角色
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-4.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-4.png)
 - ###  创建新的codeBuild项目： jar包->docker镜像
 1. 此项目的目标为将jar包构建为dockers镜像
 2. 输入项目名称和源码存储的地方  如github  github项目url
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-5.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-5.png)
 3. 选择ubuntu为操作系统
 4. 语言为dockers
 5. 运行版本为aws codebuild docker
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-6.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-6.png)
 6.输入构建命令
 
 ```
@@ -47,7 +47,7 @@ artifacts:
 
 ```
 7. 选择无构建   无缓存
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-7.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-7.png)
 8.选择codeBuild的角色
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cicd-docker-codepipe/cicd-docker-codepipe-8.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-codepipe/cicd-docker-codepipe-8.png)
 9. 点击继续

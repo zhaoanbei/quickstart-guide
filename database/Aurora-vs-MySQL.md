@@ -11,7 +11,7 @@
 
 以下是本次测试的架构
 
-![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/architecture.jpg)
+![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/architecture.jpg)
 
 **涉及组件**
 - Aurora
@@ -43,12 +43,12 @@
 
 3. 选择**启动数据库实例**。**启动数据库实例向导**在**选择引擎**页面打开。
 
-   ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/aurora-1.png)
+   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/aurora-1.png)
 
 4. 选择 **Amazon Aurora**, 并将**版本**选择为**与 MySQL 5.6 兼容**，然后选择**下一步**。
 
 5. 在**指定数据库详细信息**页面上，指定数据库实例信息。选择下列值，然后选择 **下一步**。
-   ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/aurora-2.png)
+   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/aurora-2.png)
 
    - **数据库实例类**: **db.r4.xlarge**
    - **多可用区部署**: **是**
@@ -81,7 +81,7 @@
 4. 选择 **MySQL**，然后选择**下一步**。
 
 5. **选择使用案例**页面询问您是否计划使用所创建的数据库实例进行生产。选择 **生产**，然后选择 **下一步** 。
-![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/mysql-1.png)  
+![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/mysql-1.png)  
 
 6. 在**指定数据库详细信息**页面上，指定数据库实例信息。选择下列值，然后选择 **下一步**。 
 
@@ -96,7 +96,7 @@
    - **主密码**和**确认密码**：用户自定义
    - **其他设置保持默认**
 
-![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/mysql-2.png)
+![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/mysql-2.png)
 
 1. 在**配置高级设置**页面上，提供 RDS 启动 MySQL 数据库实例所需的其他信息。选择下列值，然后选择 **下一步**。
 
@@ -108,7 +108,7 @@
    - **备份保留期**：1 天
    - **其他请选择默认**
    
-![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/mysql-3.png)  
+![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/mysql-3.png)  
 
 
 *启动Aurora Multi-AZ部署方式，可以在控制台看到2个数据库实例；启动RDS MySQL Multi-AZ部署方式，在控制台只能看到一个主实例*
@@ -127,7 +127,7 @@
 
    - 在**配置实例详细信息**页面上，自动分配公有 IP 选择**启用**，并保证选择子网和刚才的数据库在同一个可用区，点击**下一步**
    
-   ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/ec2-1.png)
+   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/ec2-1.png)
 
    - 在**添加存储**页面上, 点击**下一步**
    
@@ -192,11 +192,11 @@ cd sysbench
 
 以下是MySQL测试结果，我们需要将以下4台主机的测试结果相加才是我们的最终结果
 
-![mysql测试结果](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/msyql-read.png)
+![mysql测试结果](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/msyql-read.png)
 
 以下是Aurora的测试结果
 
-![Aurora测试结果](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/aurora-read.png)
+![Aurora测试结果](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/aurora-read.png)
 
 
 
@@ -215,11 +215,11 @@ cd sysbench
 
 以下是MySQL的测试结果
 
-![MySQL测试结果](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/mysql-write.png)
+![MySQL测试结果](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/mysql-write.png)
 
 以下是Aurora测试结果
 
-![Aurora测试结果](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/aurora-vs-mysql/aurora-write.png)
+![Aurora测试结果](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/aurora-vs-mysql/aurora-write.png)
 
 
 由于机型的差异，选择更大的机型，Aurora与MySQL的性能差异表现得更加明显。
