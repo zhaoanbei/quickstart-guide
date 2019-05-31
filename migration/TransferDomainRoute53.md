@@ -17,7 +17,7 @@
 
 在 GoDaddy 登录后，点击需要迁移的域名右侧的 DNS 按钮，在弹出网页下方的 Advanced Features 下选择对应操作。您可使用该配置文件在 Route 53 中重新配置 DNS 服务。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/DNS01.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/DNS01.png)
 
 ### 2. 创建托管区域
 
@@ -29,14 +29,14 @@
  
  - 若您是首次使用Route 53, 请在 DNS Managment 下点击 Get Started Now。
  
-   ![image 02](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/DNS02.png)
+   ![image 02](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/DNS02.png)
    
  - 在 Hosted Zones 中点击 Created Hosted Zone。
  - 在该窗口中，输入您的域名，填写注释（可选）。
  - Type 选项保留默认值 Public Hosted Zone。
  - 选择 Create。
    
-   ![image 03](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/DNS03.png)
+   ![image 03](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/DNS03.png)
 
 #### 创建记录
 
@@ -76,7 +76,7 @@
 
  - 选择 Save Record Set。
 
-   ![image 04](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/DNS04.png)
+   ![image 04](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/DNS04.png)
 
 #### 等待原TTL过期
 
@@ -96,7 +96,7 @@
 
     - 记下列出的针对 Name Servers 的四个名称。
     
-   ![image 05](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/DNS05.png)
+   ![image 05](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/DNS05.png)
 
  2. 在 GoDaddy 更新托管区域的 NS 记录。进入 DNS Management 页面,更改 NameServer 部分。
 
@@ -104,7 +104,7 @@
     - 添加您在上步中获取的四个 Route 53 NameServer 的名称。
     - 点击 Save。
    
-   ![image 06](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/DNS06.png)
+   ![image 06](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/DNS06.png)
 
 #### 监控域的流量(可选)
 
@@ -122,15 +122,15 @@
 
 登录 GoDaddy 网站，点击 My Products，选择对应域名下方的 Manage 进入 Domain Settings 界面。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/01.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/01.png)
 
 在该页面中找到 Additional Setting，点击 Domain lock 旁的 Edit。
 
-![image 02](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/03.png)
+![image 02](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/03.png)
  
 关闭 Domain lock，等待 GoDaddy 执行您的更改。完成后，您将收到一封来自 GoDaddy 的邮件，标题为 Domain Status Notification, 提示您修改完毕。
 
-![image 03](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/02.png)
+![image 03](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/02.png)
 
 ## 步骤二 从 GoDaddy 或许授权码到 AWS
 
@@ -138,69 +138,69 @@
 
 同样在 Domain Setting 页面，在 Additional Settings 下面，点击 Get authorization code。
 
-![image 04](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/04.png)
+![image 04](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/04.png)
 
 您将收到一封邮件提示您获取授权码。
 
-![image 042](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/DNS07.png)
+![image 042](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/DNS07.png)
 
 ## 步骤三 在Amazon Route 53 控制台提交迁移请求
 
 进入 AWS 控制台，点击 Amazon Route 53。在 Domain 下方，点击 Registered Domains -> Transfer Domain。 输入域名并选择您域名的后缀。点击 Check。
 
-![image 05](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/05.png)
+![image 05](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/05.png)
 
 在弹出确认框勾选可选框。通常您需要将 DNS 解析服务迁移到 Route 53来保证服务正常运行。 
 
-![image 06](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/06.png)
+![image 06](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/06.png)
 
 点击 Add to cart。
 
-![image 07](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/07.png)
+![image 07](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/07.png)
 
 可在该页面继续添加其他您希望迁移的域名。点击位于页面底部 Continue 提交。
 
 下一个页面中输入您 GoDaddy 账户的 Authorization code。 AWS 会询问如何管理您的 NS 服务。如果您已将 DNS 服务迁移到 Amazon Route 53，可选择第二个选项。
 
-![image 08](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/08.png)
+![image 08](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/08.png)
 
 点击 Continue 并填写注册信息表。您可以选择是否隐藏信息，如选择是，您的个人信息将仅被提供给 ICANN 用于注册。 
 
-![image 09](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/09.png)
+![image 09](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/09.png)
 
 点击 Continue，并确认您填写的信息是否正确。如是，勾选下图中的选择框，并点击 Complete Purchase。
 
-![image 10](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/10.png)
+![image 10](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/10.png)
 
 ## 步骤四 授权 Amazon Route 53 迁移域
 
 完成上述操作后，您将看到您的域名处于 Pending Transfer 的状态。 AWS 将会给域的所有者发送一封邮件。点击该邮件中的链接，在弹出页面中选择 Yes，并点击 Submit。
 
-![image 12](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/12.png)
+![image 12](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/12.png)
 
 ## 步骤五 在 GoDaddy 上通过迁移请求
 
 当您完成步骤四后，GoDaddy 将会给您发送一封请求通过迁移的邮件。 
 
-![image 14](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/14.jpg)
+![image 14](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/14.jpg)
 
 进入您的 GoDaddy 账户，依次选择 My Domains -> Pending transfer out 下面的 view details。
 
-![image 13](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/13.png)
+![image 13](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/13.png)
 
 选择您需要转移的域名，点击 Accept or Decline。
 
-![image 13](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/15.png)
+![image 13](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/15.png)
 
 在弹出页面选择 Accept，点击 OK。
 
-![image 13](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/16.png)
+![image 13](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/16.png)
 
 ## 步骤六 完成迁移
 
 在迁移结束后，您将收到 AWS 的邮件通知域名迁移成功。 Route 53 的  Registered domains 将会显示您已迁移的域名。
 
-![image 13](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/transfer-domain-route53/17.png)
+![image 13](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/transfer-domain-route53/17.png)
 
 ## 备注
 

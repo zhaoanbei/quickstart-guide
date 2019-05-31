@@ -95,7 +95,7 @@
 1. 如尚未导入目录，请选择 Servers -> Import server catalog。如需添加的新服务器，请选择 Re-import server catalog。
 2. 选择要复制的服务器，然后选择 Create replication job。
 
-    ![image 07](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/sms-vmimport/SMS07.png)
+    ![image 07](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/sms-vmimport/SMS07.png)
     
 3. 在 Configure server -> specific settings 页面上的 License type 列中，选择要从复制作业创建的 AMI 的许可类型。选择 Auto 时 AWS SMS 会自行选择适当的许可。注意，Linux 服务器只能使用自带许可 (BYOL)，Windows 服务器可以使用 AWS 提供的许可或 BYOL。 点击 Next。
 4. 在 Configure replication job settings 页面上，有以下设置可用：
@@ -131,7 +131,7 @@
 
 安装客户端后，请在 AWS 控制台中选择 IAM User，创建安全证书并下载访问安全密钥，根据 AWS Access Key 和 AWS Secret Access Key 配置帐户。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/sms-vmimport/VMImport01.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/sms-vmimport/VMImport01.png)
 
 ### 步骤二 配置并导出VM
 
@@ -170,11 +170,11 @@ AWS支持四种格式的磁盘：开放虚拟化存档 (OVA)、虚拟机磁盘 (
 导出VM时，在VirualBox主界面打开File->Export Appliance，选择需要导出的虚拟机，点击Next。
 选择导出配置，这里可以选择OVF/OVA两种格式，并选择保存地址。
 
-![image 02](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/sms-vmimport/VMImport02.png)
+![image 02](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/sms-vmimport/VMImport02.png)
 
 接下来对导出的VM添加说明信息后，就可以导出了，这里大约需要等待3分钟。
 
-![image 03](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/sms-vmimport/VMImport03.png)
+![image 03](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/sms-vmimport/VMImport03.png)
 
 ### 步骤三 将VM作为映像导入
 
@@ -273,7 +273,7 @@ VM Import 需要一个角色在您的账户中执行特定的操作，例如：�
 
 - 记录下输出信息中的 **ImportTaskId**
 
-  ![image 05](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/sms-vmimport/VMImport05.png)
+  ![image 05](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/sms-vmimport/VMImport05.png)
 
 ##### 3.	检查您的导入映像任务的状态
 
@@ -283,7 +283,7 @@ VM Import 需要一个角色在您的账户中执行特定的操作，例如：�
 
 上述命令会根据 AWS 的处理进度，返回查询任务响应中的Status，依次为“Pending”、“Converting”、“Updating”、“Updated”、“Preparing AMI”等。整个的处理过程持续10+分钟，请耐心等待。
 
-![image 04](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/sms-vmimport/VMImport04.png)
+![image 04](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/sms-vmimport/VMImport04.png)
 
 ## 参考资料
 
