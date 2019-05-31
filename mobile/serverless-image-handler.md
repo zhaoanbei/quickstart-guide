@@ -5,7 +5,7 @@
 **本文提到的部署方式，仅适用于AWS China**; 关于能够实现那些图片处理功能，请参考[文档](https://docs.aws.amazon.com/solutions/latest/serverless-image-handler/welcome.html)
 
 ## 修改源代码，配置参数
-[点击此处下载源代码](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/code/ServerlessImageHandler.zip)
+[点击此处下载源代码](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/quickstart-serverless-image-handler/ServerlessImageHandler.zip)
 
 1. 修改`image_handler/thumbor.conf`
   * `TC_AWS_REGION` 定义为 `cn-northwest-1` 或者 `cn-north-1`

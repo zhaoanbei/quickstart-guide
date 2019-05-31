@@ -1,67 +1,67 @@
-### ×¼±¸¹¤×÷
-- Ñ¡ÔñÁ½¸ö¿ÉÓÃÇø£¬¿ÉÓÃÇøÖÐÓÐÖÁÉÙÒ»¸ö´øÓÐ¹²ÓÐ×ÓÍøµÄVPC
-- ÔÚÃ¿¸övpcÖÐÆô¶¯ec2ÊµÀý
-- ÔÚÃ¿¸öec2ÖÐ°²====×°web·þÎñ====Æ÷£¬È·±£ÕâÐ©ÊµÀýµÄ°²È«×éÔÊÐí¶Ë¿Ú 80 ÉÏµÄ HTTP ·ÃÎÊ¡£
+### å‡†å¤‡å·¥ä½œ
+- é€‰æ‹©ä¸¤ä¸ªå¯ç”¨åŒºï¼Œå¯ç”¨åŒºä¸­æœ‰è‡³å°‘ä¸€ä¸ªå¸¦æœ‰å…±æœ‰å­ç½‘çš„VPC
+- åœ¨æ¯ä¸ªvpcä¸­å¯åŠ¨ec2å®žä¾‹
+- åœ¨æ¯ä¸ªec2ä¸­å®‰====è£…webæœåŠ¡====å™¨ï¼Œç¡®ä¿è¿™äº›å®žä¾‹çš„å®‰å…¨ç»„å…è®¸ç«¯å£ 80 ä¸Šçš„ HTTP è®¿é—®ã€‚
 
-### ²½Öè 1£ºÑ¡Ôñ¸ºÔØ¾ùºâÆ÷ÀàÐÍ
-1. ´ò¿ª [Amazon EC2 ¿ØÖÆÌ¨](https://console.aws.amazon.com/ec2/)¡£
-1. ÔÚµ¼º½À¸ÉÏ£¬Ñ¡ÔñÄúµÄ¸ºÔØ¾ùºâÆ÷µÄÇøÓò¡£ÇëÈ·±£Ñ¡ÔñÓÃÓÚ EC2 ÊµÀýµÄÍ¬Ò»¸öÇøÓò¡£
-1. ÔÚµ¼º½´°¸ñÉÏµÄ LOAD BALANCING ÏÂ£¬Ñ¡Ôñ Load Balancers¡£
-1. Ñ¡Ôñ Create Load Balancer¡£
-1. ¶ÔÓÚ Network Load Balancer£¬Ñ¡Ôñ Create¡£
-     ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-1.png)
-### ²½Öè 2£ºÅäÖÃ¸ºÔØ¾ùºâÆ÷ºÍÕìÌýÆ÷
+### æ­¥éª¤ 1ï¼šé€‰æ‹©è´Ÿè½½å‡è¡¡å™¨ç±»åž‹
+1. æ‰“å¼€ [Amazon EC2 æŽ§åˆ¶å°](https://console.aws.amazon.com/ec2/)ã€‚
+1. åœ¨å¯¼èˆªæ ä¸Šï¼Œé€‰æ‹©æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨çš„åŒºåŸŸã€‚è¯·ç¡®ä¿é€‰æ‹©ç”¨äºŽ EC2 å®žä¾‹çš„åŒä¸€ä¸ªåŒºåŸŸã€‚
+1. åœ¨å¯¼èˆªçª—æ ¼ä¸Šçš„ LOAD BALANCING ä¸‹ï¼Œé€‰æ‹© Load Balancersã€‚
+1. é€‰æ‹© Create Load Balancerã€‚
+1. å¯¹äºŽ Network Load Balancerï¼Œé€‰æ‹© Createã€‚
+     ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/NLB/NLB-1.png)
+### æ­¥éª¤ 2ï¼šé…ç½®è´Ÿè½½å‡è¡¡å™¨å’Œä¾¦å¬å™¨
 
-ÔÚ Configure Load Balancer Ò³ÃæÉÏ£¬Íê³ÉÒÔÏÂ¹ý³Ì¡£
+åœ¨ Configure Load Balancer é¡µé¢ä¸Šï¼Œå®Œæˆä»¥ä¸‹è¿‡ç¨‹ã€‚
 
-1. ÅäÖÃ¸ºÔØ¾ùºâÆ÷ºÍÕìÌýÆ÷
-1. ¶ÔÓÚ Name£¬¼üÈë¸ºÔØ¾ùºâÆ÷µÄÃû³Æ¡£
-1. ÔÚÇøÓòµÄ Application Load Balancer ºÍ Network Load Balancer ¼¯ÄÚ£¬Ó¦ÓÃ³ÌÐò¸ºÔØ¾ùºâÆ÷ µÄÃû³Æ±ØÐëÎ¨Ò»£¬×î¶à¿ÉÒÔÓÐ 32 ¸ö×Ö·û£¬Ö»ÄÜ°üº¬×ÖÄ¸Êý×Ö×Ö·ûºÍÁ¬×Ö·û£¬²»ÄÜÒÔÁ¬×Ö·û¿ªÍ·»ò½áÎ²£¬²¢ÇÒ²»ÄÜÒÔ¡°internal-¡±¿ªÍ·¡£
-1. ¶ÔÓÚ Scheme ºÍ IP address type£¬Çë±£ÁôÄ¬ÈÏÖµ¡£
-1. ¶ÔÓÚ Listeners£¬±£ÁôÄ¬ÈÏÖµ£¬Ä¬ÈÏÕìÌýÆ÷¸ºÔð½ÓÊÕ¶Ë¿Ú 80 ÉÏµÄ HTTP Á÷Á¿¡£
-1. ¶ÔÓÚ Availability Zones£¬Ñ¡ÔñÓÃÓÚ EC2 ÊµÀýµÄ VPC¡£¶ÔÓÚÓÃÓÚÆô¶¯ EC2 ÊµÀýµÄÃ¿¸ö¿ÉÓÃÇø£¬Ñ¡ÔñÒ»¸ö¿ÉÓÃÇø£¬È»ºóÎª¸Ã¿ÉÓÃÇøÑ¡Ôñ¹«ÓÐ×ÓÍø¡£
-1. Ñ¡Ôñ Next: Configure Security Settings¡£
-1. ÔÚ±¾½Ì³ÌÖÐ£¬½«²»´´½¨ HTTPS ÕìÌýÆ÷¡£Ñ¡Ôñ Next: Configure Security Groups¡£
-     ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-2.png)
-### ²½Öè 3£ºÎª¸ºÔØ¾ùºâÆ÷ÅäÖÃ°²È«×é
+1. é…ç½®è´Ÿè½½å‡è¡¡å™¨å’Œä¾¦å¬å™¨
+1. å¯¹äºŽ Nameï¼Œé”®å…¥è´Ÿè½½å‡è¡¡å™¨çš„åç§°ã€‚
+1. åœ¨åŒºåŸŸçš„ Application Load Balancer å’Œ Network Load Balancer é›†å†…ï¼Œåº”ç”¨ç¨‹åºè´Ÿè½½å‡è¡¡å™¨ çš„åç§°å¿…é¡»å”¯ä¸€ï¼Œæœ€å¤šå¯ä»¥æœ‰ 32 ä¸ªå­—ç¬¦ï¼Œåªèƒ½åŒ…å«å­—æ¯æ•°å­—å­—ç¬¦å’Œè¿žå­—ç¬¦ï¼Œä¸èƒ½ä»¥è¿žå­—ç¬¦å¼€å¤´æˆ–ç»“å°¾ï¼Œå¹¶ä¸”ä¸èƒ½ä»¥â€œinternal-â€å¼€å¤´ã€‚
+1. å¯¹äºŽ Scheme å’Œ IP address typeï¼Œè¯·ä¿ç•™é»˜è®¤å€¼ã€‚
+1. å¯¹äºŽ Listenersï¼Œä¿ç•™é»˜è®¤å€¼ï¼Œé»˜è®¤ä¾¦å¬å™¨è´Ÿè´£æŽ¥æ”¶ç«¯å£ 80 ä¸Šçš„ HTTP æµé‡ã€‚
+1. å¯¹äºŽ Availability Zonesï¼Œé€‰æ‹©ç”¨äºŽ EC2 å®žä¾‹çš„ VPCã€‚å¯¹äºŽç”¨äºŽå¯åŠ¨ EC2 å®žä¾‹çš„æ¯ä¸ªå¯ç”¨åŒºï¼Œé€‰æ‹©ä¸€ä¸ªå¯ç”¨åŒºï¼Œç„¶åŽä¸ºè¯¥å¯ç”¨åŒºé€‰æ‹©å…¬æœ‰å­ç½‘ã€‚
+1. é€‰æ‹© Next: Configure Security Settingsã€‚
+1. åœ¨æœ¬æ•™ç¨‹ä¸­ï¼Œå°†ä¸åˆ›å»º HTTPS ä¾¦å¬å™¨ã€‚é€‰æ‹© Next: Configure Security Groupsã€‚
+     ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/NLB/NLB-2.png)
+### æ­¥éª¤ 3ï¼šä¸ºè´Ÿè½½å‡è¡¡å™¨é…ç½®å®‰å…¨ç»„
 
-Äú¸ºÔØ¾ùºâÆ÷µÄ°²È«×é±ØÐëÔÊÐíÆäÍ¨¹ýÕìÌýÆ÷¶Ë¿ÚºÍÔËÐÐ×´¿ö¼ì²é¶Ë¿ÚÓëÒÑ×¢²áÄ¿±ê½øÐÐÍ¨ÐÅ¡£¿ØÖÆÌ¨¿ÉÒÔ´ú±íÄú´´½¨¸ºÔØ¾ùºâÆ÷µÄ°²È«×é£¬ÆäÖÐ°üÀ¨Ö¸¶¨ÕýÈ·Ð­ÒéºÍ¶Ë¿ÚµÄ¹æÔò¡£Èç¹ûÄúÔ¸Òâ£¬Ò²¿ÉÒÔ×ÔÐÐ´´½¨ºÍÑ¡Ôñ°²È«×é¡£
+æ‚¨è´Ÿè½½å‡è¡¡å™¨çš„å®‰å…¨ç»„å¿…é¡»å…è®¸å…¶é€šè¿‡ä¾¦å¬å™¨ç«¯å£å’Œè¿è¡ŒçŠ¶å†µæ£€æŸ¥ç«¯å£ä¸Žå·²æ³¨å†Œç›®æ ‡è¿›è¡Œé€šä¿¡ã€‚æŽ§åˆ¶å°å¯ä»¥ä»£è¡¨æ‚¨åˆ›å»ºè´Ÿè½½å‡è¡¡å™¨çš„å®‰å…¨ç»„ï¼Œå…¶ä¸­åŒ…æ‹¬æŒ‡å®šæ­£ç¡®åè®®å’Œç«¯å£çš„è§„åˆ™ã€‚å¦‚æžœæ‚¨æ„¿æ„ï¼Œä¹Ÿå¯ä»¥è‡ªè¡Œåˆ›å»ºå’Œé€‰æ‹©å®‰å…¨ç»„ã€‚
 
 
-1. Ñ¡Ôñ Create a new security group¡£
-1. Îª°²È«×é¼üÈëÃû³ÆºÍÃèÊö£¬»òÕß±£ÁôÄ¬ÈÏÃû³ÆºÍÃèÊö¡£´ËÐÂ°²È«×é°üº¬Ò»Ìõ¹æÔò£¬¸Ã¹æÔòÔÊÐí½«Á÷Á¿´«ËÍµ½ÔÚ Configure Load Balancer Ò³ÃæÉÏÑ¡ÔñµÄ¸ºÔØ¾ùºâÆ÷ÕìÌýÆ÷¶Ë¿Ú¡£
-1. Ñ¡Ôñ Next: Configure Routing¡£
-     ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-3.png)
-### ²½Öè 4£ºÅäÖÃÄ¿±ê×é
+1. é€‰æ‹© Create a new security groupã€‚
+1. ä¸ºå®‰å…¨ç»„é”®å…¥åç§°å’Œæè¿°ï¼Œæˆ–è€…ä¿ç•™é»˜è®¤åç§°å’Œæè¿°ã€‚æ­¤æ–°å®‰å…¨ç»„åŒ…å«ä¸€æ¡è§„åˆ™ï¼Œè¯¥è§„åˆ™å…è®¸å°†æµé‡ä¼ é€åˆ°åœ¨ Configure Load Balancer é¡µé¢ä¸Šé€‰æ‹©çš„è´Ÿè½½å‡è¡¡å™¨ä¾¦å¬å™¨ç«¯å£ã€‚
+1. é€‰æ‹© Next: Configure Routingã€‚
+     ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/NLB/NLB-3.png)
+### æ­¥éª¤ 4ï¼šé…ç½®ç›®æ ‡ç»„
 
-´´½¨Ò»¸öÒªÔÚÇëÇóÂ·ÓÉÖÐÊ¹ÓÃµÄÄ¿±ê×é¡£ÄúÕìÌýÆ÷µÄÄ¬ÈÏ¹æÔò½«ÇëÇóÂ·ÓÉµ½´ËÄ¿±ê×éÖÐµÄÒÑ×¢²áÄ¿±ê¡£¸ºÔØ¾ùºâÆ÷Ê¹ÓÃÎªÄ¿±ê×é¶¨ÒåµÄÔËÐÐ×´¿ö¼ì²éÉèÖÃÀ´¼ì²é´ËÄ¿±ê×éÖÐÄ¿±êµÄÔËÐÐ×´¿ö¡£ÔÚ Configure Routing Ò³ÃæÉÏ£¬Íê³ÉÒÔÏÂ¹ý³Ì¡£
+åˆ›å»ºä¸€ä¸ªè¦åœ¨è¯·æ±‚è·¯ç”±ä¸­ä½¿ç”¨çš„ç›®æ ‡ç»„ã€‚æ‚¨ä¾¦å¬å™¨çš„é»˜è®¤è§„åˆ™å°†è¯·æ±‚è·¯ç”±åˆ°æ­¤ç›®æ ‡ç»„ä¸­çš„å·²æ³¨å†Œç›®æ ‡ã€‚è´Ÿè½½å‡è¡¡å™¨ä½¿ç”¨ä¸ºç›®æ ‡ç»„å®šä¹‰çš„è¿è¡ŒçŠ¶å†µæ£€æŸ¥è®¾ç½®æ¥æ£€æŸ¥æ­¤ç›®æ ‡ç»„ä¸­ç›®æ ‡çš„è¿è¡ŒçŠ¶å†µã€‚åœ¨ Configure Routing é¡µé¢ä¸Šï¼Œå®Œæˆä»¥ä¸‹è¿‡ç¨‹ã€‚
 
-ÅäÖÃÄ¿±ê×é
+é…ç½®ç›®æ ‡ç»„
 
-1. ¶ÔÓÚ Target group£¬±£ÁôÄ¬ÈÏÖµ New target group¡£
-1. ¶ÔÓÚ Name£¬¼üÈëÐÂÄ¿±ê×éµÄÃû³Æ¡£
-1. ½« Protocol ±£ÁôÎª¡°HTTP¡±£¬Port Îª¡°80¡±£¬Target type Îª¡°instance¡±¡£
-1. ¶ÔÓÚ Health checks£¬±£ÁôÄ¬ÈÏÐ­ÒéºÍ ping Â·¾¶¡£
-1. Ñ¡Ôñ Next: Register Targets¡£
-     ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-4.png)
-### ²½Öè 5£ºÏòÄúµÄÄ¿±ê×é×¢²áÄ¿±ê
+1. å¯¹äºŽ Target groupï¼Œä¿ç•™é»˜è®¤å€¼ New target groupã€‚
+1. å¯¹äºŽ Nameï¼Œé”®å…¥æ–°ç›®æ ‡ç»„çš„åç§°ã€‚
+1. å°† Protocol ä¿ç•™ä¸ºâ€œHTTPâ€ï¼ŒPort ä¸ºâ€œ80â€ï¼ŒTarget type ä¸ºâ€œinstanceâ€ã€‚
+1. å¯¹äºŽ Health checksï¼Œä¿ç•™é»˜è®¤åè®®å’Œ ping è·¯å¾„ã€‚
+1. é€‰æ‹© Next: Register Targetsã€‚
+     ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/NLB/NLB-4.png)
+### æ­¥éª¤ 5ï¼šå‘æ‚¨çš„ç›®æ ‡ç»„æ³¨å†Œç›®æ ‡
 
-ÔÚ Register Targets Ò³ÃæÉÏ£¬Íê³ÉÒÔÏÂ¹ý³Ì¡£
+åœ¨ Register Targets é¡µé¢ä¸Šï¼Œå®Œæˆä»¥ä¸‹è¿‡ç¨‹ã€‚
 
-ÏòÄ¿±ê×é×¢²áÄ¿±ê
+å‘ç›®æ ‡ç»„æ³¨å†Œç›®æ ‡
 
-1. ¶ÔÓÚ Instances£¬Ñ¡ÔñÒ»¸ö»ò¶à¸öÊµÀý¡£
-1. ±£ÁôÄ¬ÈÏ¶Ë¿Ú 80£¬²¢Ñ¡Ôñ Add to registered¡£
-1. µ±ÄúÍê³ÉÑ¡ÔñÊµÀýºó£¬Ñ¡Ôñ Next: Review¡£
-     ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-5.png)
-	 ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-6.png)
-### ²½Öè 6£ºÉ¾³ýÄúµÄ¸ºÔØ¾ùºâÆ÷ (¿ÉÑ¡)
+1. å¯¹äºŽ Instancesï¼Œé€‰æ‹©ä¸€ä¸ªæˆ–å¤šä¸ªå®žä¾‹ã€‚
+1. ä¿ç•™é»˜è®¤ç«¯å£ 80ï¼Œå¹¶é€‰æ‹© Add to registeredã€‚
+1. å½“æ‚¨å®Œæˆé€‰æ‹©å®žä¾‹åŽï¼Œé€‰æ‹© Next: Reviewã€‚
+     ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/NLB/NLB-5.png)
+	 ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/NLB/NLB-6.png)
+### æ­¥éª¤ 6ï¼šåˆ é™¤æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨ (å¯é€‰)
 
-ÔÚÄúµÄ¸ºÔØ¾ùºâÆ÷¿ÉÓÃÖ®ºó£¬ÄúÐèÒªÎª±£³ÖÆäÔËÐÐµÄÃ¿Ð¡Ê±»ò²¿·ÖÐ¡Ê±Ö§¸¶·ÑÓÃ¡£µ±Äú²»ÔÙÐèÒª¸ºÔØ¾ùºâÆ÷Ê±£¬¿É½«ÆäÉ¾³ý¡£
+åœ¨æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨å¯ç”¨ä¹‹åŽï¼Œæ‚¨éœ€è¦ä¸ºä¿æŒå…¶è¿è¡Œçš„æ¯å°æ—¶æˆ–éƒ¨åˆ†å°æ—¶æ”¯ä»˜è´¹ç”¨ã€‚å½“æ‚¨ä¸å†éœ€è¦è´Ÿè½½å‡è¡¡å™¨æ—¶ï¼Œå¯å°†å…¶åˆ é™¤ã€‚
 
-É¾³ýÄúµÄ¸ºÔØ¾ùºâÆ÷
+åˆ é™¤æ‚¨çš„è´Ÿè½½å‡è¡¡å™¨
 
-1. ÔÚµ¼º½´°¸ñÖÐµÄ LOAD BALANCING ÏÂ£¬Ñ¡Ôñ Load Balancers¡£
-1. Ñ¡Ôñ¸ºÔØ¾ùºâÆ÷£¬È»ºóÑ¡Ôñ Actions ºÍ Delete¡£
-1. µ±ÏµÍ³ÌáÊ¾½øÐÐÈ·ÈÏÊ±£¬Ñ¡Ôñ Yes, Delete¡£
-   ![Í¼Æ¬1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/NLB/NLB-7.png)
+1. åœ¨å¯¼èˆªçª—æ ¼ä¸­çš„ LOAD BALANCING ä¸‹ï¼Œé€‰æ‹© Load Balancersã€‚
+1. é€‰æ‹©è´Ÿè½½å‡è¡¡å™¨ï¼Œç„¶åŽé€‰æ‹© Actions å’Œ Deleteã€‚
+1. å½“ç³»ç»Ÿæç¤ºè¿›è¡Œç¡®è®¤æ—¶ï¼Œé€‰æ‹© Yes, Deleteã€‚
+   ![å›¾ç‰‡1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/NLB/NLB-7.png)

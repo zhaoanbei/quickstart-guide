@@ -4,7 +4,7 @@
 
 提供 Redshift 和 RDS MySQL 在千万级数据中执行联表查询的性能对比。
 
-[![Image link china](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=RedshiftvsRDS&templateURL=https://s3.cn-north-1.amazonaws.com.cn/redshift-rds/RDSvsRedshift.yaml) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=RedshiftvsRDS&templateURL=https://s3.amazonaws.com/redshift-rds/RDSvsRedshift.yaml)
+[![Image link china](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=RedshiftvsRDS&templateURL=https://s3.cn-north-1.amazonaws.com.cn/redshift-rds/RDSvsRedshift.yaml) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=RedshiftvsRDS&templateURL=https://s3.amazonaws.com/redshift-rds/RDSvsRedshift.yaml)
 
 ## 涉及组件
 
@@ -54,10 +54,10 @@
 
 2. 登录 AWS 管理控制台 并通过以下网址打开 Amazon Redshift 控制台：<https://console.aws.amazon.com/redshift/> 。
 
-3. 在主菜单中，选择您要在其中创建群集的区域。在本教程中，请选择 **美国西部（俄勒冈）**。 ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/rs-gsg-aws-region-selector.png)
+3. 在主菜单中，选择您要在其中创建群集的区域。在本教程中，请选择 **美国西部（俄勒冈）**。 ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/rs-gsg-aws-region-selector.png)
 
 
-   . 在 Amazon Redshift 仪表板上，选择 **Launch Cluster**。									“Amazon Redshift Dashboard”如下所示!![rs-gsg-clusters-launch-cluster-10.png](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/rs-gsg-clusters-launch-cluster-10.png)
+   . 在 Amazon Redshift 仪表板上，选择 **Launch Cluster**。									“Amazon Redshift Dashboard”如下所示!![rs-gsg-clusters-launch-cluster-10.png](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/rs-gsg-clusters-launch-cluster-10.png)
 
 4. 在“Cluster Details”页面上，输入下列值，然后选择 **Continue**：
 
@@ -67,7 +67,7 @@
    - **Master User Name**：键入 `masteruser`。在群集可供使用之后，您将使用此用户名和密码连接到您的数据库。                                     
    - **Master User Password** 和 **Confirm Password**：为主用户账户键入密码。
 
-   ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/conf-rs.jpg)
+   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/conf-rs.jpg)
 
 5. 在“Node Configuration”页面上，选择下列值，然后选择 **Continue**：
 
@@ -75,7 +75,7 @@
    - **Cluster Type**：**Multi Node**
    - **Number of compute nodes**：**2**
 
-   ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/conf-rs-nodes.jpeg)
+   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/conf-rs-nodes.jpeg)
 
 6. 在“**Additional Configuration**”页面上，
 
@@ -113,7 +113,7 @@
    - **主密码**和**确认密码**：键入您的密码
    - **其他设置保持默认**：
 
-   ![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/conf-rds-mysql.jpeg)![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/conf-rds-mysql-2.jpg)
+   ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/conf-rds-mysql.jpeg)![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/conf-rds-mysql-2.jpg)
 
 8. 在**配置高级设置**页面上，提供 RDS 启动 MySQL 数据库实例所需的其他信息。选择下列值，然后选择 **下一步**。
 
@@ -404,8 +404,8 @@ LIMIT 10;
 
 ### RDS 实验结果
 
-![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/result-rds-3.jpg)
+![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/result-rds-3.jpg)
 
 ### RedShift 实验结果
 
-![](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/redshift-vs-mysql/result-rs-3.jpg)
+![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redshift-vs-mysql/result-rs-3.jpg)

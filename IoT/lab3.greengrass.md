@@ -16,7 +16,7 @@
 * [WaveShare CC2530-Eval-Kit5](http://www.waveshare.net/shop/CC2530-Eval-Kit5.htm) x 2
 * [WaveShare Moisture Sensor](http://www.waveshare.net/shop/Moisture-Sensor.htm)
 
-![设备总览](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/device.jpg)
+![设备总览](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab3/device.jpg)
 
 **设备接线如下**：
 
@@ -60,7 +60,7 @@ serverless deploy --region us-west-2  # deploy to Oregon region
 
 打开Lambda，找到`aws-smarthome-greengrass-dev-getMoistureValue`确认Lambda部署成功
 
-![Mosisture Lambda](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/moisture-lambda.png)
+![Mosisture Lambda](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab3/moisture-lambda.png)
 
 在创建部署lambda的过程中，也可以使用原生的方式进行部署Lambda, 请参考[教程](https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/create-lambda.html)
 
@@ -79,11 +79,11 @@ serverless deploy --region us-west-2  # deploy to Oregon region
 * [点击下载代码](https://cdn.joeshi.im/blog/iot-series-greengrass-1/aws-smarthome-moisture.zip)
 * 将UNO的USB连接至电脑，并打开工程文件
 * 选择Board为Arduino UNO, 如下图
-![Board](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/arduino_board.png)
+![Board](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab3/arduino_board.png)
 * 选择正确的串口，如下图
-![Board](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/arduino_port.png)
+![Board](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab3/arduino_port.png)
 * 点击【Sketch】, 选择【Upload】将程序烧录至UNO
 
 **步骤7:** 打开AWS IoT测试工具，验证数据是否正确上传
 
-![验证结果](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/IoT/lab3/moisture_data.png)
+![验证结果](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/IoT/lab3/moisture_data.png)

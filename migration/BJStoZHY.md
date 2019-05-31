@@ -17,7 +17,7 @@
 
  - 在 EC2 控制台中，在左侧选择栏中点击 Instances，选中您希望迁移的实例，右键选择 Image -> Create Image。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/01.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/01.png)
 
  - 也可选择使用 CLI 命令行进行操作。
 
@@ -29,11 +29,11 @@
 
  - 在 EC2 控制台中，右击刚创建的 AMI，选择 Copy AMI。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/02.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/02.png)
 
  - 在 Destination region 部分选择您希望迁移的目标可用区。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/03.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/03.png)
 
  - 您也可选择使用 AWS CLI 命令行创建 AMI。
 
@@ -41,7 +41,7 @@
 	
  - 在控制台左侧选择栏，选择 Images-> AMIs 查看刚刚创建的 AMI,右键点击 Launch 部署您的 EC2 服务。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/04.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/04.png)
 
 ## 2. 将EBS服务从BJS迁移至ZHY
 
@@ -51,21 +51,21 @@
 
  - 为对应 EBS 卷创建实例。右击卷名称，选择 Create Snapshot。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/05.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/05.png)
 
 #### 步骤二 迁移到其他可用区
 
  - 在控制台左侧选择栏点击 Snapshots, 选中您刚创建的实例，点击 Action -> Copy 复制快照到其他可用区。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/06.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/06.png)
 
  - 在目标区域中选择宁夏，点击 Copy。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/07.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/07.png)
 
  - 创建完成后，请将控制台切换到宁夏区，可以查看上一步骤中复制的快照，右击快照选择 Create Volume 部署 EBS。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/08.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/08.png)
 
 ## 3. 将 RDS 服务从 BJS 迁移至ZHY 
 
@@ -77,23 +77,23 @@
 
  - 在RDS控制台选中您希望转移的实例，依次选择 Action -> Take a DB snapshot。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/09.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/09.png)
 
  - 填写快照名称。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/10.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/10.png)
 
  - 在左侧导航栏中选择 Snapshot，右击刚创建的快照，选择 copy snapshot 复制 RDS 服务快照。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/11.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/11.png)
 
  - 选择宁夏区作为您复制快照的目标区域。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/12.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/12.png)
 
  - 您可以在宁夏区的 snapshot 中查看上一步复制的快照，并在宁夏区重新部署该服务。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/13.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/13.png)
 
 （2）方案二 基于 BJS Master Node 迁移数据
 
@@ -101,11 +101,11 @@
 
  - 在北京区点击您希望迁移的数据库，进入页面后，选择 Instance actions -> Create read replica。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/22.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/22.png)
 
  - 选择将复制实例放在宁夏区，Multi-AZ deployment 选择 Yes。 
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/23.png)	
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/23.png)	
 
  - 按需求配置复制实例其他参数。
 
@@ -113,7 +113,7 @@
  
  - 监控数据库实例的 Replication 状态，等待滞后时间 Lag 变为 0。
  
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/26.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/26.png)
 
  - 选择 Instance actions -> Promote Read Replica。将其升为主库。
 
@@ -136,7 +136,7 @@
 
  - 在 S3 控制台中，点击 Create Bucket，选择宁夏作为桶的可用区，在 Copy settings from an existing bucket 选项中，选择您欲做迁移的 S3 桶，可同步两个桶的配置。
 
-![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/14.png)
+![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/14.png)
 
  - 在 CLI 端运行以下命令行，开始复制桶内文件。
 
@@ -165,11 +165,11 @@
  
   - 在控制台选中希望迁移的 Redis 服务，点击上方的 Backup 按钮创建备份。
 	
-	![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/15.png)
+	![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/15.png)
 
  - 在控制台左侧选择栏中点击 Backups 选项，查看您刚创建的备份。
 
-	![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/16.png)
+	![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/16.png)
 	
  - 创建一个 S3 桶用来存储 ElastiCache 备份。
    注意：桶的**可用区**需要和 ElastiCache 相同。
@@ -187,7 +187,7 @@
    Write objects
    Read bucket permissions*
 
-   ![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/17.png)
+   ![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/17.png)
 
  - 选择 Save，授权 ElastiCache 读写 S3 桶内文件.
 
@@ -201,7 +201,7 @@
 
  - 在 Import data to cluster 项中填入位于宁夏 S3 桶中的备份文件路径。
 
- 	![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/18.png)
+ 	![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/18.png)
 
 ## 6. 将 DynamoDB 服务从 BJS 迁移至 ZHY
 
@@ -309,11 +309,11 @@
 
  - 使用 SSH 连接主机。
 
-	![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/24.png)
+	![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/24.png)
 
  - 登入 Hive
 
-	![image 01](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/bjs-to-zhy/25.png)
+	![image 01](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/bjs-to-zhy/25.png)
  
  - 在 Hive 创建2个 External table，location 分别指向 BJS 和 ZHY。
 

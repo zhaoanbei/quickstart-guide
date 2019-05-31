@@ -14,7 +14,7 @@
 9.	API將token和IdentityId userId 返回給客戶端APP
 10.	客戶端APP可以用identity 身份池Id context上下文 region和auth code喚起client, 最后用client訪問AWS資源
 
-  ![图片1](https://s3.cn-north-1.amazonaws.com.cn/chinalabs/assets/cognito/archi.png)
+  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cognito/archi.png)
 
 #### QA：
 1.	步驟原理如上图所示
