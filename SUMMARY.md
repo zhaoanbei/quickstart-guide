@@ -5,6 +5,7 @@
   * [Aurora vs. MySQL性能对比试验](database/Aurora-vs-MySQL.md)
   * [MongoDB自动部署](database/MangoDB.md)
   * [ElastiCache:Redis基准测试](database/redis_benchmark.md)
+  * [DynamoDB Proxy Using API Gateway](database/api-gateway-proxy-for-ddb.md)
 * 存储
   * [NFS: 利用S3FS自建NFS](storage/S3fs.md)
   * <a href="https://github.com/lab798/quickstart-kafka" target="_blank">自动构建Kafka集群</a>

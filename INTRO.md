@@ -18,6 +18,7 @@
 * [Aurora vs. MySQL性能对比试验](database/Aurora-vs-MySQL.md)
 * [MongoDB自动部署](database/MangoDB.md)![CloudFormationLogo](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cloudformation_logo_30.png)
 * [ElastiCache:Redis基准测试](database/redis_benchmark.md)
+* [DynamoDB Proxy Using API Gateway](database/api-gateway-proxy-for-ddb.md)
   
 ### 存储
 * [NFS: 利用S3FS自建NFS](storage/S3fs.md)![CloudFormationLogo](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cloudformation_logo_30.png)
