@@ -21,14 +21,14 @@ AWS的 [Cognito User Pool](https://docs.aws.amazon.com/zh_cn/cognito/latest/deve
 
 下面这张流程图展示了一个用户在 Alexa APP 中进行账户关联，Alexa 是如何从授权服务器获得 AccessToken 的整个过程。
 
-![Auth-Code-Flow](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/auth-code-flow.png)
+![Auth-Code-Flow](http://cdn.quickstart.org.cn/assets/alexa/account-linking/auth-code-flow.png)
 
 在完成 Alexa 的账户关联之后，用户与 Skill 交互产生的指令会被发送到 Resource Server, 该指令中包含用户的 AccessToken。
 这里的 Resource Server 就是 Alexa Kill 控制中配置的 [**Endpoint**](https://developer.amazon.com/zh/docs/custom-skills/host-a-custom-skill-as-a-web-service.html)。
 
 在 Resource Server 上，通过 Decode AccessToken, 能够获得用户名。
 
-![Flow](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/skill-interaction-flow.png)
+![Flow](http://cdn.quickstart.org.cn/assets/alexa/account-linking/skill-interaction-flow.png)
 
 ## 配置Cognito User Pool
 AWS Cognito User Pool提供了基于OAuth 2.0的实现，这里提供详细的Cognito User Pool的配置流程。
@@ -80,7 +80,7 @@ AWS Cognito User Pool提供了基于OAuth 2.0的实现，这里提供详细的Co
  
  > Alexa 根据用户在哪里注册的设备，跳转到不同的URL, 为了服务所有Alexa用户，建议将三个Redirect URL都填入Cognito，点击查看[更多信息](https://developer.amazon.com/docs/account-linking/configure-authorization-code-grant.html#redirect-url-values)
 
- ![Redirect Urls](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/redirect-urls.png)
+ ![Redirect Urls](http://cdn.quickstart.org.cn/assets/alexa/account-linking/redirect-urls.png)
 
 5. 在**允许的 OAuth 流程**中，选择 **Authorization code grant**。
 
@@ -88,7 +88,7 @@ AWS Cognito User Pool提供了基于OAuth 2.0的实现，这里提供详细的Co
 
 7. 选择**保存修改**。
 
- ![OAuth 2.0配置](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/enable-oauth.png)
+ ![OAuth 2.0配置](http://cdn.quickstart.org.cn/assets/alexa/account-linking/enable-oauth.png)
 
 ### 配置 Cognito User Pool 认证域名
 Cognito 域名是 Alexa 进行 OAuth2.0 认证时的跳转域名。默认的域名为`https://<domain-prefix>.auth.<region>.amazoncognito.com`。
@@ -101,14 +101,14 @@ Cognito 域名是 Alexa 进行 OAuth2.0 认证时的跳转域名。默认的域�
 
 3. 当提示为**此域可用**后，选择**保存更改**。
 
- ![域名](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/cognito-domain.png)
+ ![域名](http://cdn.quickstart.org.cn/assets/alexa/account-linking/cognito-domain.png)
 
 > 请记录 Cognito User Pool 的认证域名，可以使用默认域名或者自己的域名，在后续的Alexa配置中需要使用。
 
 ### 配置 Amazon Cognito认证UI（可选）
 Amazon Cognito提供默认的UI, 如下图:
 
- ![默认UI](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/cognito-UI.png)
+ ![默认UI](http://cdn.quickstart.org.cn/assets/alexa/account-linking/cognito-UI.png)
 
 可以根据[自定义内置登录网页和注册网页](https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/cognito-user-pools-app-ui-customization.html)
 修改登录的页面。如果不希望使用Cognito提供的登录和注册页面，也可以根据API自己实现。
@@ -134,11 +134,11 @@ Amazon Cognito提供默认的UI, 如下图:
 
  > 在**Cognito控制台**左侧选择**应用程序客户端**, 点击**显示详细信息**，可以查看**应用程序客户端 ID**和**应用程序客户端密钥**。
 
- ![App Client](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/app-client.png)
+ ![App Client](http://cdn.quickstart.org.cn/assets/alexa/account-linking/app-client.png)
 
 9. 在**Client Secret**，指定Cognito应用程序客户端的**应用程序客户端密钥**。
 
- ![Alexa Account Linking](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/alexa-account-linking.png)
+ ![Alexa Account Linking](http://cdn.quickstart.org.cn/assets/alexa/account-linking/alexa-account-linking.png)
 
 10. 在页面左上角，选择**Save**。
 
@@ -159,7 +159,7 @@ Amazon Cognito提供默认的UI, 如下图:
 
 4. 选择**创建用户**，并指定**用户名**, **临时密码**, **电话号码**及**电子邮件**，并选择创建用户。
 
- ![测试用户](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/demo-user.png)
+ ![测试用户](http://cdn.quickstart.org.cn/assets/alexa/account-linking/demo-user.png)
 
 ### 账户关联
 
@@ -183,7 +183,7 @@ Amazon Cognito提供默认的UI, 如下图:
 
 9. 账户关联成功。
 
- ![](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/alexa/account-linking/link-success.png)
+ ![](http://cdn.quickstart.org.cn/assets/alexa/account-linking/link-success.png)
 
 此时，账号已经关联成功，Alexa 在后续发送给 HTTP Endpoint 或者 AWS Lambda 的消息体中均会包含用户的 **accessToken**, 
 该 **accessToken** 为 JWT 格式。Alexa 发送的 JWT token 中的 **sub** 字段就是 Cognito User Pool 中的用户名。

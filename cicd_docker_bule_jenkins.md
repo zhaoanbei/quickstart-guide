@@ -8,23 +8,23 @@
 5. 增加构建后操作： 切换生产端口
 ##### 1. 创建自由风格的项目
 ##### 2. 输入github项目的地址
-  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-jenkins/cicd-docker-jenkins-1.png)
+  ![图片1](http://cdn.quickstart.org.cn/assets/cicd-docker-jenkins/cicd-docker-jenkins-1.png)
 ##### 3. 输入github项目的git地址和分支
-  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-jenkins/cicd-docker-jenkins-2.png)
+  ![图片1](http://cdn.quickstart.org.cn/assets/cicd-docker-jenkins/cicd-docker-jenkins-2.png)
 ##### 4. 勾选Github hook trigger for GITScm polling  实现github代码更新的自动触发
-  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-jenkins/cicd-docker-jenkins-3.png)
+  ![图片1](http://cdn.quickstart.org.cn/assets/cicd-docker-jenkins/cicd-docker-jenkins-3.png)
 ##### 5. 点击“添加构建步骤”  选择“AWS cloud build”插件
 ##### 6. 输入aws的accessId 和accessKey
 ##### 7. 输入code build项目的项目名称和可用区
-  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-jenkins/cicd-docker-jenkins-4.png)
+  ![图片1](http://cdn.quickstart.org.cn/assets/cicd-docker-jenkins/cicd-docker-jenkins-4.png)
 ##### 8. 点击“添加构建步骤”  选择“AWS cloud build”插件
 ##### 9. 输入aws的accessId 和accessKey
 ##### 10. 输入code build项目的项目名称和可用区
 ##### 11. 此项目目的为把源码打包为jar包并上传到S3桶中
-  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-jenkins/cicd-docker-jenkins-5.png)
+  ![图片1](http://cdn.quickstart.org.cn/assets/cicd-docker-jenkins/cicd-docker-jenkins-5.png)
 ##### 12. 选择“添加构建步骤“
 ##### 13. 选择“执行 shell“
-  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-jenkins/cicd-docker-jenkins-6.png)
+  ![图片1](http://cdn.quickstart.org.cn/assets/cicd-docker-jenkins/cicd-docker-jenkins-6.png)
   
   本段代码的逻辑是：
 1.	根据build_number也就是每次build的环境变量值，我们判断使用哪个任务定义模板  区别在于不同的模板中容器与实例的端口号对应不同
@@ -35,7 +35,7 @@
 ##### 15.选择 lambda invocation
 1. 填写acces Id和access Key
 2. 填写lambda所在的可用区和即将调用的lambda名称
-  ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/cicd-docker-jenkins/cicd-docker-jenkins-7.png)
+  ![图片1](http://cdn.quickstart.org.cn/assets/cicd-docker-jenkins/cicd-docker-jenkins-7.png)
 
 Lambda逻辑为：
 
