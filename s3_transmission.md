@@ -2,7 +2,7 @@
 很多跨国企业都会有数据同步的需求，这些大型文件主要是存储在S3桶上，通过console或者命令行的形式从本地上传至S3中。本文描述了一种基于容器化的，在Amazon ECS平台上搭建的、快速同步的且基于负载进行扩容和收缩的、通用的解决方案。
 ### 解决方案概述
 该方案如下图所示。
- ![图片1](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/s3_transmission/archi.png)
+ ![图片1](http://cdn.quickstart.org.cn/assets/s3_transmission/archi.png)
 在该方案中，我们会启动以下资源：
 1. 一个global的S3桶：用于global作为数据传输的源
 2. 4个Lambda函数： 分别用于文件分片，容器的扩张与收缩，发送传输完成信号
@@ -12,8 +12,8 @@
 6. 两个dynamoDB 表： T 和C。表T用于记录传输的uplaodID和分段，传输情况，表C用于记录每个片段的唯一标记值-etag。
 7. 具有相应的权限的角色。
 
-[![Image link global](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ecsStack&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/ecs.yaml)
-[![Image link global](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=lamStackS&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/lambda.yaml)
+[![Image link global](http://cdn.quickstart.org.cn/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ecsStack&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/ecs.yaml)
+[![Image link global](http://cdn.quickstart.org.cn/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=lamStackS&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/lambda.yaml)
 
 **在运行cloudformation之前需要您准备好：**
 国内：一个S3桶，用户的访问密钥 AccessId 和AccessKey

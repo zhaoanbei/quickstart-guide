@@ -31,7 +31,7 @@
 
 2. 选择控制面板中的 **Redis**, 在点击**创建**。
 
-   ![image-20180822165919460](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redis_benchmark/image-20180822165919460.png)
+   ![image-20180822165919460](http://cdn.quickstart.org.cn/assets/redis_benchmark/image-20180822165919460.png)
 
 3. 在**创建您的 Amazon ElasticCache 集群**界面, 按照以下内容填写:
 
@@ -52,7 +52,7 @@
      - **启动自动备份**: **不勾选**
    - **其他**: **全部保持默认**
 
-   ![image-20180822171714896](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redis_benchmark/image-20180822171714896.png)
+   ![image-20180822171714896](http://cdn.quickstart.org.cn/assets/redis_benchmark/image-20180822171714896.png)
 
 4. 选择 **创建** 以启动集群。
 
@@ -68,7 +68,7 @@
    - 在**配置安全组**页面选择**选择一个现有的安全组**，并在表格中选择**配置 VPC**这一步骤中创建的安全组
    - 在**审核**页面选择**启动**
 
-   ![image-20180822174234945](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redis_benchmark/image-20180822174234945.png)
+   ![image-20180822174234945](http://cdn.quickstart.org.cn/assets/redis_benchmark/image-20180822174234945.png)
 
    - 当系统提示提供密钥时，选择 **选择现有的密钥对**，然后选择合适的密钥对。若没有创建密钥对，请参考[创建密钥对](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#create-a-key-pair)
 
@@ -99,7 +99,7 @@
 
 在 **EC2 实例**的命令提示符处，键入以下命令，并使用您的集群的终端节点替换*<your-redis-endpoint>*中的内容
 
-![image-20180822175613338](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redis_benchmark/image-20180822175613338.png)
+![image-20180822175613338](http://cdn.quickstart.org.cn/assets/redis_benchmark/image-20180822175613338.png)
 
 ```shell
 src/redis-benchmark -h <your-redis-endpoint> -p 6379 -t set -r 100000 -n 1000000
@@ -107,6 +107,6 @@ src/redis-benchmark -h <your-redis-endpoint> -p 6379 -t set -r 100000 -n 1000000
 
 测试结果类似下图
 
-![image-20180822180538910](https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/assets/redis_benchmark/image-20180822180538910.png)
+![image-20180822180538910](http://cdn.quickstart.org.cn/assets/redis_benchmark/image-20180822180538910.png)
 
 若您需要其他情况下的性能测试, 可以参考 [Redis 中国站](http://www.redis.cn/topics/benchmarks.html)
