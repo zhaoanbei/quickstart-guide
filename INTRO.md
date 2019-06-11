@@ -60,7 +60,7 @@
 
 ### AI 
 * [Amazon Connect + Lex 构建智能聊天机器人](AI/amazon-connect-with-lex.md)
-
+* [Deep Learning AMI下 Tensorflow环境的安装与切换](AI/tensorflow-env.md)
 ### 数据分析 & BI
 * [从Aurora迁移到Redshift并利用Quicksight做数据可视化分析](aurora-to-redshift-bi.md)![TerraformLogo](http://cdn.quickstart.org.cn/assets/terraform.png)
 

@@ -41,6 +41,7 @@
   * <a href="https://github.com/lab798/aws-s3-cognito-lab">Cognito, OpenID Connect实现S3精细化权限控制</a>
 * AI 
   * [Amazon Connect + Lex 构建智能聊天机器人](AI/amazon-connect-with-lex.md)
+  * [Deep Learning AMI下 Tensorflow环境的安装与切换](AI/tensorflow-env.md)
 * 数据分析 & BI
   * [从Aurora迁移到Redshift并利用Quicksight做数据可视化分析](aurora-to-redshift-bi.md)
 * QuickStart项目
