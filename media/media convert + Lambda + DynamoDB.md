@@ -40,7 +40,7 @@
 ![](https://image-resources-aws.s3.amazonaws.com/Screen+Shot+2019-06-26+at+10.28.55+PM.png)
 
 ### 4.创建Lambda函数(2个)
-#### 开始转换的Lambad
+#### 开始转换的Lambda
 * 名字:media-convert-resize
 * 触发器:
     * S3:source-video-bucket
