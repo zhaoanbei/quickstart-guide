@@ -138,5 +138,4 @@ exports.handler = function(event, context, callback) {
 ```
 * Target
 * SNS Topic: dynamodb
-
 ![](https://image-resources-aws.s3.amazonaws.com/Screen+Shot+2019-06-26+at+10.59.44+PM.png)
