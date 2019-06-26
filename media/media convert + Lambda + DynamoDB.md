@@ -63,7 +63,7 @@ exports.handler = function(event, context, callback) {
     //get the paramters about s3 and object from the event
     var srcBucket = event.Records[0].s3.bucket.name;
     var srcKey = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, " "));
-    //根据您的具体配置生成params,是一个json file
+    //根据您的具体配置生成params,是一个json
     var params = {...};
     mediaconvert.createJob(params, function(err, data){
         if (err) callback(err, err.stack);
