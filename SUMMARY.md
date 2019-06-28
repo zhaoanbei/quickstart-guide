@@ -20,6 +20,7 @@
   * [基于CodePipeline, ECS的cicd解决方案](cicd.md)
   * [基于jenkins的容器蓝绿部署解决方案](cicd_docker_bule_jenkins.md)
   * [基于jenkins的java应用程序CICD解决方案](cicd_jar_jenkins.md)
+  * [自动化监测 & 启动可用资源](automatic-apply-resource.md)
 * 迁移服务
   * [镜像迁移：本地镜像导入AWS](migration/SMS_vm-import.md)
   * [域名迁移：从GoDaddy到Route 53](migration/TransferDomainRoute53.md)
