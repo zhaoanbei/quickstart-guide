@@ -60,7 +60,7 @@ while 1:
 ```
 
 运行此上脚本分三种情况：
-### 1. 执行成功，会成功预留此容量，程序运行结束。
+#### 1. 执行成功，会成功预留此容量，程序运行结束。
 ****注意：在不使用的情况下未取消预留容量也会持续扣费。如不再使用，可随时通过控制台或SDK取消。***
 ```
 
@@ -70,16 +70,18 @@ response = client.cancel_capacity_reservation(
 )
 
 ```
-### 2. 启动失败：当前无可用资源 Insufficient capacity
+#### 2. 启动失败：当前无可用资源 Insufficient capacity
 此可用区当前无可用资源。此时程序不会退出，会一直维持while循环，直到成功或者手动停止此程序。
  
-### 3. 启动失败：已达到实例上限 InstanceLimitExceeded
+#### 3. 启动失败：已达到实例上限 InstanceLimitExceeded
 每个账户下会有instance limit, 如果已经达到此上限，无法启动成功，此时需要提case给后台申请提高此限制。   
 此时程序直接退出。
 
 
 ## 参考链接
-https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_capacity_reservation
+
+https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_capacity_reservation   
+
 https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
 
 
