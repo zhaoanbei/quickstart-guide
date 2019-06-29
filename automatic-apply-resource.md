@@ -10,21 +10,23 @@
 
 ## 前提条件
  
-### 1. 安装以及配置AWSCLI   
-安装：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-install.html
-配置：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-configure.html  
+#### 1. 安装以及配置AWSCLI   
+安装：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-install.html    
+配置：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-configure.html      
 ```
 aws configure
 ```
-### 2. 安装AWS官方python SDK BOTO3
+#### 2. 安装AWS官方python SDK BOTO3
 ```
 sudo easy_install pip 
 pip install boto3
 ```
-### 3. 执行前需要修改参数：实例类型（如c5.2xlarge），平台/操作系统(如Linux, windows，可添加多个),  可用区。
+#### 3. 执行前需要修改参数：实例类型（如c5.2xlarge），平台/操作系统(如Linux, windows，可添加多个),  可用区。
 具体参数说明：https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_capacity_reservation
 
 ## 具体实现
+
+注：以下基于python2.7
 
 ```
 
