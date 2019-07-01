@@ -1,7 +1,7 @@
 # AWS Quick Start
 此项目的主要目的是帮助中国用户快速了解AWS的服务，并且提供常用的快速部署方案。
 
-[点击此处查看](https://chinalabs.github.io/quickstart-guide/)
+[点击此处查看](https://quickstart.org.)
 
 ## 如何提交文档
 
