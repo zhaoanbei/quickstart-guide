@@ -21,7 +21,7 @@
 * [DynamoDB Proxy Using API Gateway](database/api-gateway-proxy-for-ddb.md)
   
 ### 存储
-* [NFS: 利用S3FS自建NFS](storage/S3fs.md)![CloudFormationLogo](http://cdn.quickstart.org.cn/assets/cloudformation_logo_30.png)
+* [NFS: 利用S3FS实现共享存储](storage/S3fs.md)![CloudFormationLogo](http://cdn.quickstart.org.cn/assets/cloudformation_logo_30.png)
 * <a href="https://github.com/lab798/quickstart-kafka" target="_blank">自动构建Kafka集群</a>![TerraformLogo](http://cdn.quickstart.org.cn/assets/terraform.png)
   
 ### 网络 & 加速

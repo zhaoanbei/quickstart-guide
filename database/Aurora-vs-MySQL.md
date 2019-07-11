@@ -1,8 +1,4 @@
-
-
-
-
-# Aurora VS MySQL
+# Aurora VS MySQL 压测
 
 ## 实验目的
 > 本实验大约耗时**35分钟**

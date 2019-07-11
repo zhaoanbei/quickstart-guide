@@ -7,7 +7,7 @@
   * [ElastiCache:Redis基准测试](database/redis_benchmark.md)
   * [DynamoDB Proxy Using API Gateway](database/api-gateway-proxy-for-ddb.md)
 * 存储
-  * [NFS: 利用S3FS自建NFS](storage/S3fs.md)
+  * [NFS: 利用S3FS实现共享存储](storage/S3fs.md)
   * <a href="https://github.com/lab798/quickstart-kafka" target="_blank">自动构建Kafka集群</a>
 * 网络 & 加速
   * [海外域名部署方案：海外域名向国内用户提供服务](ByPassICP.md)
