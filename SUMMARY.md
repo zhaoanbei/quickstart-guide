@@ -16,7 +16,7 @@
   * [NLB 配置指南](NLB.md)
   * <a href="https://github.com/iceflow/easyvpn" target="_blank">快速自建VPN</a>
 * 运维 & 持续集成/发布
-  * [EC2,EBS,AMI,Snapshot自动打Tag](EC2_Auto_Tag.md)
+  * <a href="https://github.com/lab798/aws-resource-auto-tagging" target="_blank">AWS 资源自动 Tag 方案</a>
   * [基于CodePipeline, ECS的cicd解决方案](cicd.md)
   * [基于jenkins的容器蓝绿部署解决方案](cicd_docker_bule_jenkins.md)
   * [基于jenkins的java应用程序CICD解决方案](cicd_jar_jenkins.md)
