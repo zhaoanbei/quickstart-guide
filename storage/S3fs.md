@@ -2,7 +2,7 @@
 
 您可以启动Quick Start，将 S3fs 部署到 AWS 账户中。完成部署需要约 5 分钟。请查看下述实施详细信息，按照此指南后面部分提供的分步说明进行操作。
 
-[![Image link china](http://cdn.quickstart.org.cn/assets/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=S3FS&templateURL=https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/s3fs-revised.template) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](http://cdn.quickstart.org.cn/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=S3FS&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/s3fs-fixed.template)
+[![Image link china](http://cdn.quickstart.org.cn/assets/ChinaRegion.png)](https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks/new?stackName=S3FS&templateURL=https://s3.cn-northwest-1.amazonaws.com.cn/aws-quickstart/quickstart-s3fs/template/s3fs-revised.template) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Image link global](http://cdn.quickstart.org.cn/assets/GlobalRegion.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=S3FS&templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/s3fs-fixed.template)
 
 
 ## 前提条件        
@@ -11,7 +11,7 @@
 且需注意：最终定义的EBS卷的容量需要大于S3桶的总大小。可通过下列方法调用查看桶的大小.
 ![](http://cdn.quickstart.org.cn/assets/s3fs/get-total-size.png)
 
-### 实现步骤      
+## 实现步骤      
 
 ****步骤一：启动资源****      
 
