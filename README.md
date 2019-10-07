@@ -2,6 +2,8 @@
 
 Lab798 启用了新的目录结构，原内容已移至 [lab798/index](https://github.com/lab798/index) 项目中。
 
+[https://quickstart.org.cn](https://quickstart.org.cn) 访问域名保持不变。
+
 
 ## AWS Quick Start
 此项目的主要目的是帮助中国用户快速了解AWS的服务，并且提供常用的快速部署方案。
