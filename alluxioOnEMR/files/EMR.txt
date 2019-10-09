@@ -1,0 +1,4 @@
+This is a EMR test file. 
+Row 1. emr.
+Row 2. Spark.
+Row 3. EMR.
